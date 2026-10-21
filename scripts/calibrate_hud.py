@@ -7,6 +7,7 @@ python scripts/calibrate_hud.py --video media/extensions/weapon_demo.mp4 --time 
 The page embeds one decoded frame. It downloads a JSON configuration, never
 uploads images or installs a server. Inspect several times before relying on a
 profile. Unknown map mode conservatively breaks minimap identity continuity.
+Use the language switch or append ?lang=en to open the English interface.
 """
 
 from __future__ import annotations
@@ -112,33 +113,243 @@ def build_page(image, config, metadata):
 
 HTML = r"""<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>HUD / 小地图校准</title><style>
-*{box-sizing:border-box}body{margin:0;background:#111722;color:#e9eef7;font:15px system-ui,sans-serif}header{padding:20px 26px;border-bottom:1px solid #334055}h1{font-size:23px;margin:0 0 6px}p{margin:5px 0;line-height:1.5;color:#afbed2}main{display:grid;grid-template-columns:minmax(0,1fr) 350px;gap:18px;padding:20px}section,aside{background:#1a2434;border:1px solid #334055;border-radius:12px;padding:16px}canvas{width:100%;height:auto;display:block;background:#080b11;touch-action:none;border-radius:5px}#preview{max-height:150px;width:auto;max-width:100%;margin:auto;image-rendering:auto}label{display:block;margin:13px 0 5px;color:#c8d7ed}select,input,textarea,button{font:inherit;border-radius:6px;border:1px solid #50637e;background:#101a29;color:#eef4ff;padding:8px}select,input,textarea{width:100%}button{cursor:pointer;margin:4px 4px 4px 0}button.primary{background:#2868c7;border-color:#4b91f5}button:hover{filter:brightness(1.2)}.row{display:flex;gap:8px}.row>*{flex:1}small{display:block;color:#a9bdd6;font-size:12px;line-height:1.5}#status{color:#8de4ba;min-height:25px}.warn{color:#ffd28b}input[type=checkbox]{width:auto}textarea{font:12px ui-monospace,monospace;min-height:140px}details{margin-top:16px}summary{cursor:pointer;color:#bfd5f6}@media(max-width:1000px){main{grid-template-columns:1fr}aside{order:-1}}
-</style><header><h1>HUD / 小地图校准</h1><p>选择区域，在图上移动或拖动四角；也可点「重新框选」后拖出新区域。所有坐标保存为 0–1 的 ROI。</p><small id="source"></small></header>
-<main><section><canvas id="canvas"></canvas><p id="status"></p><div class="row"><button id="redraw">重新框选</button><button id="restore">恢复此区域</button><button id="toggle">隐藏其他框</button></div><p class="warn">小地图坐标只表示当前可见 UI。旋转、缩放、局部地图不能直接解释为真实世界位置。颜色与模板需逐录像核验。</p><details open><summary>所选区域预览</summary><canvas id="preview"></canvas></details></section>
-<aside><label for="region">当前区域</label><select id="region"></select><label for="coords">归一化 x1, y1, x2, y2</label><input id="coords" aria-describedby="coordStatus" spellcheck="false"><button id="applyCoords" type="button">应用坐标</button><small id="coordStatus" aria-live="polite">输入四个 0–1 数字；有效坐标会即时应用。</small><small id="pixels"></small><label for="profile">配置名称</label><input id="profile"><div class="row"><div><label for="mode">地图朝向</label><select id="mode"><option value="unknown">未知（不保持地图 ID）</option><option value="fixed">固定</option><option value="rotating">随视角旋转</option></select></div><div><label for="coverage">覆盖范围</label><select id="coverage"><option value="unknown">未知</option><option value="full">全图</option><option value="partial">局部</option></select></div></div>
-<label for="ocrscale">OCR 放大倍数（0.5–4）</label><input id="ocrscale" type="number" min="0.5" max="4" step="0.5"><label for="interval">战术 HUD 采样间隔（秒）</label><input id="interval" type="number" min="0.01" step="0.05"><div class="row"><div><label for="pitch">击杀条行距（1080p 像素）</label><input id="pitch" type="number" min="1"></div><div><label for="rowheight">击杀条高度（1080p 像素）</label><input id="rowheight" type="number" min="1"></div></div><label for="rowoffset">首行偏移（1080p 像素）</label><input id="rowoffset" type="number" min="0"><label><input id="keepTemplates" type="checkbox"> 我已确认原模板与队色适用于当前录像</label><small class="warn">未勾选时导出会移除已有地图/下包图标模板，保留 OCR 与未知颜色观测。头像队色映射和地图大小改变后需要重新校验模板。</small><button id="download" class="primary">下载配置 JSON</button><button id="copy">复制 JSON</button><details><summary>导出内容</summary><textarea id="json" readonly></textarea></details><small>离线文件，不上传图像。下载后使用 --tactical-config 指定配置；health/ammo ROI 需并入主 --config。请在同一视频的多个时刻检查。</small></aside></main>
+*{box-sizing:border-box}body{margin:0;background:#111722;color:#e9eef7;font:15px system-ui,sans-serif}header{padding:20px 26px;border-bottom:1px solid #334055}.heading{display:flex;align-items:center;justify-content:space-between;gap:16px}.heading button{flex:none}h1{font-size:23px;margin:0 0 6px}p{margin:5px 0;line-height:1.5;color:#afbed2}main{display:grid;grid-template-columns:minmax(0,1fr) 350px;gap:18px;padding:20px}section,aside{background:#1a2434;border:1px solid #334055;border-radius:12px;padding:16px}canvas{width:100%;height:auto;display:block;background:#080b11;touch-action:none;border-radius:5px}#preview{max-height:150px;width:auto;max-width:100%;margin:auto;image-rendering:auto}label{display:block;margin:13px 0 5px;color:#c8d7ed}select,input,textarea,button{font:inherit;border-radius:6px;border:1px solid #50637e;background:#101a29;color:#eef4ff;padding:8px}select,input,textarea{width:100%}button{cursor:pointer;margin:4px 4px 4px 0}button.primary{background:#2868c7;border-color:#4b91f5}button:hover{filter:brightness(1.2)}.row{display:flex;gap:8px}.row>*{flex:1}small{display:block;color:#a9bdd6;font-size:12px;line-height:1.5}#status{color:#8de4ba;min-height:25px}.warn{color:#ffd28b}input[type=checkbox]{width:auto}textarea{font:12px ui-monospace,monospace;min-height:140px}details{margin-top:16px}summary{cursor:pointer;color:#bfd5f6}@media(max-width:1000px){main{grid-template-columns:1fr}aside{order:-1}}
+</style><header><div class="heading"><h1 data-i18n="title">HUD / 小地图校准</h1><button id="language" type="button" lang="en" aria-label="Switch to English">English</button></div><p data-i18n="intro">选择区域，在图上移动或拖动四角；也可点「重新框选」后拖出新区域。所有坐标保存为 0–1 的 ROI。</p><small id="source"></small></header>
+<main><section><canvas id="canvas"></canvas><p id="status" role="status"></p><div class="row"><button id="redraw" data-i18n="redraw">重新框选</button><button id="restore" data-i18n="restore">恢复此区域</button><button id="toggle" data-i18n="hideOthers">隐藏其他框</button></div><p class="warn" data-i18n="mapNote">小地图坐标只表示当前可见 UI。旋转、缩放、局部地图不能直接解释为真实世界位置。颜色与模板需逐录像核验。</p><details open><summary data-i18n="preview">所选区域预览</summary><canvas id="preview"></canvas></details></section>
+<aside><label for="region" data-i18n="region">当前区域</label><select id="region"></select><label for="coords" data-i18n="coords">归一化 x1, y1, x2, y2</label><input id="coords" aria-describedby="coordStatus" spellcheck="false"><button id="applyCoords" type="button" data-i18n="applyCoords">应用坐标</button><small id="coordStatus" aria-live="polite" data-i18n="coordHint">输入四个 0–1 数字；有效坐标会即时应用。</small><small id="pixels"></small><label for="profile" data-i18n="profile">配置名称</label><input id="profile"><div class="row"><div><label for="mode" data-i18n="mode">地图朝向</label><select id="mode"><option value="unknown" data-i18n="modeUnknown">未知（不保持地图 ID）</option><option value="fixed" data-i18n="modeFixed">固定</option><option value="rotating" data-i18n="modeRotating">随视角旋转</option></select></div><div><label for="coverage" data-i18n="coverage">覆盖范围</label><select id="coverage"><option value="unknown" data-i18n="unknown">未知</option><option value="full" data-i18n="full">全图</option><option value="partial" data-i18n="partial">局部</option></select></div></div>
+<label for="ocrscale" data-i18n="ocrscale">OCR 放大倍数（0.5–4）</label><input id="ocrscale" type="number" min="0.5" max="4" step="0.5"><label for="interval" data-i18n="interval">战术 HUD 采样间隔（秒）</label><input id="interval" type="number" min="0.01" step="0.05"><div class="row"><div><label for="pitch" data-i18n="pitch">击杀条行距（1080p 像素）</label><input id="pitch" type="number" min="1"></div><div><label for="rowheight" data-i18n="rowheight">击杀条高度（1080p 像素）</label><input id="rowheight" type="number" min="1"></div></div><label for="rowoffset" data-i18n="rowoffset">首行偏移（1080p 像素）</label><input id="rowoffset" type="number" min="0"><label><input id="keepTemplates" type="checkbox"> <span data-i18n="keepTemplates">我已确认原模板与队色适用于当前录像</span></label><small class="warn" data-i18n="templateNote">未勾选时导出会移除已有地图/下包图标模板，保留 OCR 与未知颜色观测。头像队色映射和地图大小改变后需要重新校验模板。</small><button id="download" class="primary" data-i18n="download">下载配置 JSON</button><button id="copy" data-i18n="copy">复制 JSON</button><details><summary data-i18n="export">导出内容</summary><textarea id="json" readonly></textarea></details><small data-i18n="footer">离线文件，不上传图像。下载后使用 --tactical-config 指定配置；health/ammo ROI 需并入主 --config。请在同一视频的多个时刻检查。</small></aside></main>
 <script id="payload" type="application/json">__PAYLOAD__</script><script>
 'use strict';const D=JSON.parse(document.getElementById('payload').textContent),$=id=>document.getElementById(id),image=new Image();
 const canvas=$('canvas'),ctx=canvas.getContext('2d'),preview=$('preview'),pctx=preview.getContext('2d');canvas.width=D.width;canvas.height=D.height;
 const original=structuredClone(D.regions),regions=D.regions;let index=0,drag=null,drawNew=false,showOthers=true;
-$('source').textContent=`${D.metadata.video_name} | ${D.width} × ${D.height} | requested ${D.metadata.requested_seconds}s | decoded ${D.metadata.decoded_seconds ?? 'unknown'}s`;
-regions.forEach((r,i)=>{const opt=document.createElement('option');opt.value=i;opt.textContent=r.label;$('region').appendChild(opt)});
+
+// Language changes affect presentation only; exported configuration keys and
+// values, ROI edits and validation state stay independent of the UI language.
+const MESSAGES={
+  "title": [
+    "HUD / 小地图校准",
+    "HUD / Minimap Calibration"
+  ],
+  "intro": [
+    "选择区域，在图上移动或拖动四角；也可点「重新框选」后拖出新区域。所有坐标保存为 0–1 的 ROI。",
+    "Select a region, then move it or drag its corners. Use “Draw new region” to replace it. All regions of interest (ROIs) use normalized coordinates from 0 to 1."
+  ],
+  "redraw": [
+    "重新框选",
+    "Draw new region"
+  ],
+  "restore": [
+    "恢复此区域",
+    "Reset this region"
+  ],
+  "hideOthers": [
+    "隐藏其他框",
+    "Hide other regions"
+  ],
+  "showOthers": [
+    "显示其他框",
+    "Show other regions"
+  ],
+  "mapNote": [
+    "小地图坐标只表示当前可见 UI。旋转、缩放、局部地图不能直接解释为真实世界位置。颜色与模板需逐录像核验。",
+    "Minimap coordinates refer to the visible UI. Rotation, zoom and partial maps prevent direct interpretation as world positions. Verify colors and templates for each recording."
+  ],
+  "preview": [
+    "所选区域预览",
+    "Selected region preview"
+  ],
+  "region": [
+    "当前区域",
+    "Selected region"
+  ],
+  "coords": [
+    "归一化 x1, y1, x2, y2",
+    "Normalized x1, y1, x2, y2"
+  ],
+  "applyCoords": [
+    "应用坐标",
+    "Apply coordinates"
+  ],
+  "coordHint": [
+    "输入四个 0–1 数字；有效坐标会即时应用。",
+    "Enter four numbers from 0 to 1. Valid coordinates apply immediately."
+  ],
+  "profile": [
+    "配置名称",
+    "Profile name"
+  ],
+  "mode": [
+    "地图朝向",
+    "Map orientation"
+  ],
+  "modeUnknown": [
+    "未知（不保持地图 ID）",
+    "Unknown (map IDs reset)"
+  ],
+  "modeFixed": [
+    "固定",
+    "Fixed"
+  ],
+  "modeRotating": [
+    "随视角旋转",
+    "Rotates with view"
+  ],
+  "coverage": [
+    "覆盖范围",
+    "Map coverage"
+  ],
+  "unknown": [
+    "未知",
+    "Unknown"
+  ],
+  "full": [
+    "全图",
+    "Full map"
+  ],
+  "partial": [
+    "局部",
+    "Partial map"
+  ],
+  "ocrscale": [
+    "OCR 放大倍数（0.5–4）",
+    "OCR scale (0.5–4)"
+  ],
+  "interval": [
+    "战术 HUD 采样间隔（秒）",
+    "Tactical HUD sampling interval (seconds)"
+  ],
+  "pitch": [
+    "击杀条行距（1080p 像素）",
+    "Killfeed row spacing (pixels at 1080p)"
+  ],
+  "rowheight": [
+    "击杀条高度（1080p 像素）",
+    "Killfeed row height (pixels at 1080p)"
+  ],
+  "rowoffset": [
+    "首行偏移（1080p 像素）",
+    "First row offset (pixels at 1080p)"
+  ],
+  "keepTemplates": [
+    "我已确认原模板与队色适用于当前录像",
+    "I have verified the existing templates and team colors for this recording"
+  ],
+  "templateNote": [
+    "未勾选时导出会移除已有地图/下包图标模板，保留 OCR 与未知颜色观测。头像队色映射和地图大小改变后需要重新校验模板。",
+    "If unchecked, the export removes existing minimap and planted-Spike icon templates. OCR and observations with unknown team colors remain enabled. Recheck templates when portrait/team-color mappings or minimap size change."
+  ],
+  "download": [
+    "下载配置 JSON",
+    "Download JSON config"
+  ],
+  "copy": [
+    "复制 JSON",
+    "Copy JSON"
+  ],
+  "export": [
+    "导出内容",
+    "Export preview"
+  ],
+  "footer": [
+    "离线文件，不上传图像。下载后使用 --tactical-config 指定配置；health/ammo ROI 需并入主 --config。请在同一视频的多个时刻检查。",
+    "This page works offline and does not upload images. Pass the downloaded config with --tactical-config; merge health/ammo ROIs into the main --config. Check several timestamps from the same video."
+  ],
+  "coordSynced": [
+    "当前区域坐标已同步；输入有效四值可即时应用。",
+    "Coordinates are synced. Enter four valid values to apply changes immediately."
+  ],
+  "pixels": [
+    "像素",
+    "Pixels"
+  ],
+  "requested": [
+    "请求时间",
+    "Requested"
+  ],
+  "decoded": [
+    "解码时间",
+    "Decoded"
+  ],
+  "dragHint": [
+    "请拖动当前框，或点击「重新框选」。",
+    "Drag the selected region or click “Draw new region”."
+  ],
+  "regionUpdated": [
+    "区域已更新；下载 JSON 保存配置。",
+    "Region updated. Download the JSON to save your configuration."
+  ],
+  "drawHint": [
+    "在图上拖出新的左上角与右下角。",
+    "Drag from the new top-left corner to the bottom-right corner."
+  ],
+  "coordInvalid": [
+    "未应用：请输入四个 0–1 数字，且 x1<x2、y1<y2。",
+    "Not applied: enter four numbers from 0 to 1, with x1 < x2 and y1 < y2."
+  ],
+  "coordNotApplied": [
+    "坐标尚未应用，未导出。请修正后点「应用坐标」。",
+    "Coordinates have not been applied or exported. Correct them and click “Apply coordinates”."
+  ],
+  "coordApplied": [
+    "已应用到图框、像素坐标和导出 JSON。",
+    "Applied to the region, pixel coordinates and exported JSON."
+  ],
+  "coordSaved": [
+    "坐标已应用；下载 JSON 保存配置。",
+    "Coordinates applied. Download the JSON to save your configuration."
+  ],
+  "settingsInvalid": [
+    "OCR 倍数须为 0.5–4；采样间隔和行尺寸必须为正数，偏移不得为负。",
+    "OCR scale must be 0.5–4. Sampling interval and row dimensions must be positive; offset cannot be negative."
+  ],
+  "downloaded": [
+    "配置已导出。请在其他时间点复核。",
+    "Configuration exported. Verify it at other timestamps."
+  ],
+  "copied": [
+    "JSON 已复制。",
+    "JSON copied."
+  ],
+  "copyFallback": [
+    "浏览器限制剪贴板；已选中 JSON，可手动复制。",
+    "Clipboard access is blocked. The JSON is selected for manual copying."
+  ]
+};
+const REGION_ZH={"Health":"生命值","Magazine ammo":"弹匣弹药","Minimap":"小地图","Planted icon":"已安装 Spike 图标","Round / defuse text":"回合 / 拆包文字","Death report (observation only)":"死亡报告（仅观测）","Killfeed":"击杀信息","Spike down / carrier text":"Spike 掉落 / 携带者文字","Ally planting progress UI":"友军安装 Spike 进度"};
+let language=new URLSearchParams(location.search).get('lang')==='en'?'en':'zh',statusKey='',coordStatusKey='coordHint';
+function tr(key){return MESSAGES[key][language==='en'?1:0]}
+function regionLabel(region){return language==='en'?region.label:(REGION_ZH[region.label]||region.label)}
+function setStatus(key){statusKey=key;$('status').textContent=key?tr(key):''}
+function setCoordStatus(key){coordStatusKey=key;$('coordStatus').textContent=tr(key)}
+function updatePixels(){const b=regions[index].roi;$('pixels').textContent=`${tr('pixels')}: ${Math.floor(b[0]*D.width)}, ${Math.floor(b[1]*D.height)}, ${Math.ceil(b[2]*D.width)}, ${Math.ceil(b[3]*D.height)}`}
+function applyLanguage(){
+  document.documentElement.lang=language==='en'?'en':'zh-CN';document.title=tr('title');
+  document.querySelectorAll('[data-i18n]').forEach(el=>el.textContent=tr(el.dataset.i18n));
+  $('language').textContent=language==='en'?'中文':'English';$('language').lang=language==='en'?'zh-CN':'en';$('language').setAttribute('aria-label',language==='en'?'切换为中文':'Switch to English');
+  Array.from($('region').options).forEach((opt,i)=>opt.textContent=regionLabel(regions[i]));
+  $('source').textContent=`${D.metadata.video_name} | ${D.width} × ${D.height} | ${tr('requested')} ${D.metadata.requested_seconds}s | ${tr('decoded')} ${D.metadata.decoded_seconds ?? tr('unknown')}s`;
+  $('toggle').textContent=tr(showOthers?'hideOthers':'showOthers');setStatus(statusKey);setCoordStatus(coordStatusKey);updatePixels();render();
+}
+
+regions.forEach((r,i)=>{const opt=document.createElement('option');opt.value=i;opt.textContent=regionLabel(r);$('region').appendChild(opt)});
 const tactical=D.config.tactical||{},map=tactical.minimap||{},ui=tactical.ui||{};
 $('profile').value=tactical.profile_name||D.metadata.video_name.replace(/\.[^.]+$/,'')+'_calibrated';$('mode').value=map.mode||'unknown';$('coverage').value=map.coverage||'unknown';$('interval').value=tactical.sample_interval_seconds||.2;$('ocrscale').value=ui.ocr_scale||1;$('pitch').value=ui.killfeed_row_pitch_at_1080||39;$('rowheight').value=ui.killfeed_row_height_at_1080||34;$('rowoffset').value=ui.killfeed_row_offset_at_1080||0;
 function setPath(obj,path,value){for(const part of path.slice(0,-1)){if(!obj[part]||typeof obj[part]!=='object')obj[part]={};obj=obj[part]}obj[path.at(-1)]=value}
 function exported(){const out=structuredClone(D.config);for(const r of regions)setPath(out,r.path,r.roi.slice());const t=out.tactical||(out.tactical={});t.enabled=true;t.profile_name=$('profile').value.trim()||'calibrated';t.calibration_aspect_ratio=D.width/D.height;t.sample_interval_seconds=+$('interval').value;t.minimap=t.minimap||{};t.minimap.mode=$('mode').value;t.minimap.coverage=$('coverage').value;t.ui=t.ui||{};t.ui.ocr_scale=+$('ocrscale').value;t.ui.killfeed_row_pitch_at_1080=+$('pitch').value;t.ui.killfeed_row_height_at_1080=+$('rowheight').value;t.ui.killfeed_row_offset_at_1080=+$('rowoffset').value;if(!$('keepTemplates').checked){t.minimap.templates=[];delete t.ui.spike_template_path;if(t.minimap.detector)t.minimap.detector.team_colors_calibrated=false}out.calibration={...D.metadata,width:D.width,height:D.height,coordinate_space:'normalized_roi',templates_retained_after_manual_check:$('keepTemplates').checked};return out}
-function update(syncInput=true){const r=regions[index],b=r.roi;if(syncInput){$('coords').value=b.map(String).join(', ');$('coords').setAttribute('aria-invalid','false');$('coordStatus').textContent='当前区域坐标已同步；输入有效四值可即时应用。';}$('pixels').textContent=`像素: ${Math.floor(b[0]*D.width)}, ${Math.floor(b[1]*D.height)}, ${Math.ceil(b[2]*D.width)}, ${Math.ceil(b[3]*D.height)}`;$('json').value=JSON.stringify(exported(),null,2);render()}
-function render(){if(!image.complete)return;ctx.drawImage(image,0,0);for(let i=0;i<regions.length;i++){if(!showOthers&&i!==index)continue;const b=regions[i].roi,x=b[0]*D.width,y=b[1]*D.height,w=(b[2]-b[0])*D.width,h=(b[3]-b[1])*D.height;ctx.strokeStyle=i===index?'#ffda5e':'#56b5ff';ctx.lineWidth=i===index?3:1;ctx.strokeRect(x,y,w,h);ctx.fillStyle=ctx.strokeStyle;ctx.font=`${Math.max(13,D.width/110)}px sans-serif`;ctx.fillText(regions[i].label,x+3,Math.max(16,y-5));if(i===index){const z=Math.max(8,D.width/180);for(const [cx,cy] of [[x,y],[x+w,y],[x,y+h],[x+w,y+h]])ctx.fillRect(cx-z/2,cy-z/2,z,z)}}const b=regions[index].roi,w=Math.max(1,Math.round((b[2]-b[0])*D.width)),h=Math.max(1,Math.round((b[3]-b[1])*D.height));preview.width=w;preview.height=h;pctx.drawImage(image,b[0]*D.width,b[1]*D.height,w,h,0,0,w,h)}
+function update(syncInput=true){const r=regions[index],b=r.roi;if(syncInput){$('coords').value=b.map(String).join(', ');$('coords').setAttribute('aria-invalid','false');setCoordStatus('coordSynced');}updatePixels();$('json').value=JSON.stringify(exported(),null,2);render()}
+function render(){if(!image.complete||!image.naturalWidth)return;ctx.drawImage(image,0,0);for(let i=0;i<regions.length;i++){if(!showOthers&&i!==index)continue;const b=regions[i].roi,x=b[0]*D.width,y=b[1]*D.height,w=(b[2]-b[0])*D.width,h=(b[3]-b[1])*D.height;ctx.strokeStyle=i===index?'#ffda5e':'#56b5ff';ctx.lineWidth=i===index?3:1;ctx.strokeRect(x,y,w,h);ctx.fillStyle=ctx.strokeStyle;ctx.font=`${Math.max(13,D.width/110)}px sans-serif`;ctx.fillText(regionLabel(regions[i]),x+3,Math.max(16,y-5));if(i===index){const z=Math.max(8,D.width/180);for(const [cx,cy] of [[x,y],[x+w,y],[x,y+h],[x+w,y+h]])ctx.fillRect(cx-z/2,cy-z/2,z,z)}}const b=regions[index].roi,w=Math.max(1,Math.round((b[2]-b[0])*D.width)),h=Math.max(1,Math.round((b[3]-b[1])*D.height));preview.width=w;preview.height=h;pctx.drawImage(image,b[0]*D.width,b[1]*D.height,w,h,0,0,w,h)}
 function point(e){const r=canvas.getBoundingClientRect();return [Math.min(1,Math.max(0,(e.clientX-r.left)/r.width)),Math.min(1,Math.max(0,(e.clientY-r.top)/r.height))]}
-canvas.addEventListener('pointerdown',e=>{const p=point(e),b=regions[index].roi;canvas.setPointerCapture(e.pointerId);if(drawNew){drag={kind:'new',start:p};return}const tol=12/canvas.getBoundingClientRect().width;const corners=[[b[0],b[1]],[b[2],b[1]],[b[0],b[3]],[b[2],b[3]]];let corner=corners.findIndex(c=>Math.hypot(c[0]-p[0],(c[1]-p[1])*D.height/D.width)<tol);if(corner>=0)drag={kind:'corner',corner,base:b.slice()};else if(p[0]>=b[0]&&p[0]<=b[2]&&p[1]>=b[1]&&p[1]<=b[3])drag={kind:'move',start:p,base:b.slice()};else{$('status').textContent='请拖动当前框，或点击「重新框选」。'}});
+canvas.addEventListener('pointerdown',e=>{const p=point(e),b=regions[index].roi;canvas.setPointerCapture(e.pointerId);if(drawNew){drag={kind:'new',start:p};return}const tol=12/canvas.getBoundingClientRect().width;const corners=[[b[0],b[1]],[b[2],b[1]],[b[0],b[3]],[b[2],b[3]]];let corner=corners.findIndex(c=>Math.hypot(c[0]-p[0],(c[1]-p[1])*D.height/D.width)<tol);if(corner>=0)drag={kind:'corner',corner,base:b.slice()};else if(p[0]>=b[0]&&p[0]<=b[2]&&p[1]>=b[1]&&p[1]<=b[3])drag={kind:'move',start:p,base:b.slice()};else{setStatus('dragHint')}});
 canvas.addEventListener('pointermove',e=>{if(!drag)return;const p=point(e),epsilon=1/Math.max(D.width,D.height);let b;if(drag.kind==='new')b=[Math.min(p[0],drag.start[0]),Math.min(p[1],drag.start[1]),Math.max(p[0],drag.start[0]),Math.max(p[1],drag.start[1])];else if(drag.kind==='move'){b=drag.base.slice();const dx=Math.max(-b[0],Math.min(1-b[2],p[0]-drag.start[0])),dy=Math.max(-b[1],Math.min(1-b[3],p[1]-drag.start[1]));b=[b[0]+dx,b[1]+dy,b[2]+dx,b[3]+dy]}else{b=drag.base.slice();if(drag.corner%2===0)b[0]=Math.min(p[0],b[2]-epsilon);else b[2]=Math.max(p[0],b[0]+epsilon);if(drag.corner<2)b[1]=Math.min(p[1],b[3]-epsilon);else b[3]=Math.max(p[1],b[1]+epsilon)}if(b[2]-b[0]>=epsilon&&b[3]-b[1]>=epsilon)regions[index].roi=b;update()});
-canvas.addEventListener('pointerup',()=>{drag=null;drawNew=false;$('status').textContent='区域已更新；下载 JSON 保存配置。'});canvas.addEventListener('pointercancel',()=>{drag=null;drawNew=false});
-$('region').onchange=()=>{index=+$('region').value;update()};$('redraw').onclick=()=>{drawNew=true;$('status').textContent='在图上拖出新的左上角与右下角。'};$('restore').onclick=()=>{regions[index].roi=original[index].roi.slice();update()};$('toggle').onclick=()=>{showOthers=!showOthers;render()};function applyCoordinates(explicit=false){const text=$('coords').value.trim().replace(/^\[([\s\S]*)\]$/,'$1'),b=text.split(/[,，;；\s]+/).filter(Boolean).map(Number);if(b.length!==4||b.some(v=>!Number.isFinite(v)||v<0||v>1)||b[0]>=b[2]||b[1]>=b[3]){$('coordStatus').textContent='未应用：请输入四个 0–1 数字，且 x1<x2、y1<y2。';$('coords').setAttribute('aria-invalid','true');if(explicit)$('status').textContent='坐标尚未应用，未导出。请修正后点「应用坐标」。';return false}regions[index].roi=b;$('coords').setAttribute('aria-invalid','false');$('coordStatus').textContent='已应用到图框、像素坐标和导出 JSON。';update(false);if(explicit)$('status').textContent='坐标已应用；下载 JSON 保存配置。';return true}
+canvas.addEventListener('pointerup',()=>{drag=null;drawNew=false;setStatus('regionUpdated')});canvas.addEventListener('pointercancel',()=>{drag=null;drawNew=false});
+$('region').onchange=()=>{index=+$('region').value;update()};$('redraw').onclick=()=>{drawNew=true;setStatus('drawHint')};$('restore').onclick=()=>{regions[index].roi=original[index].roi.slice();update()};$('toggle').onclick=()=>{showOthers=!showOthers;$('toggle').textContent=tr(showOthers?'hideOthers':'showOthers');render()};function applyCoordinates(explicit=false){const text=$('coords').value.trim().replace(/^\[([\s\S]*)\]$/,'$1'),b=text.split(/[,，;；\s]+/).filter(Boolean).map(Number);if(b.length!==4||b.some(v=>!Number.isFinite(v)||v<0||v>1)||b[0]>=b[2]||b[1]>=b[3]){setCoordStatus('coordInvalid');$('coords').setAttribute('aria-invalid','true');if(explicit)setStatus('coordNotApplied');return false}regions[index].roi=b;$('coords').setAttribute('aria-invalid','false');setCoordStatus('coordApplied');update(false);if(explicit)setStatus('coordSaved');return true}
 $('coords').addEventListener('input',()=>applyCoordinates(false));$('coords').addEventListener('change',()=>applyCoordinates(true));$('coords').addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();applyCoordinates(true)}});$('applyCoords').onclick=()=>applyCoordinates(true);
 for(const id of ['profile','mode','coverage','interval','ocrscale','pitch','rowheight','rowoffset','keepTemplates'])$(id).onchange=()=>update(false);
 function valid(){const o=exported(),u=o.tactical.ui;return u.ocr_scale>=.5&&u.ocr_scale<=4&&o.tactical.sample_interval_seconds>0&&u.killfeed_row_pitch_at_1080>0&&u.killfeed_row_height_at_1080>0&&u.killfeed_row_offset_at_1080>=0&&[u.ocr_scale,o.tactical.sample_interval_seconds,u.killfeed_row_pitch_at_1080,u.killfeed_row_height_at_1080,u.killfeed_row_offset_at_1080].every(Number.isFinite)}
-$('download').onclick=()=>{if(!applyCoordinates(true))return;if(!valid()){$('status').textContent='采样间隔和行尺寸必须为正数，偏移不得为负。';return}const blob=new Blob([JSON.stringify(exported(),null,2)+'\n'],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=($('profile').value||'hud_profile').replace(/[^a-z0-9_-]/gi,'_')+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000);$('status').textContent='配置已导出。请在其他时间点复核。'};
-$('copy').onclick=async()=>{if(!applyCoordinates(true)||!valid())return;try{await navigator.clipboard.writeText($('json').value);$('status').textContent='JSON 已复制。'}catch(e){$('json').focus();$('json').select();$('status').textContent='浏览器限制剪贴板；已选中 JSON，可手动复制。'}};
+$('download').onclick=()=>{if(!applyCoordinates(true))return;if(!valid()){setStatus('settingsInvalid');return}const blob=new Blob([JSON.stringify(exported(),null,2)+'\n'],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=($('profile').value||'hud_profile').replace(/[^a-z0-9_-]/gi,'_')+'.json';a.click();setTimeout(()=>URL.revokeObjectURL(a.href),2000);setStatus('downloaded')};
+$('copy').onclick=async()=>{if(!applyCoordinates(true))return;if(!valid()){setStatus('settingsInvalid');return}try{await navigator.clipboard.writeText($('json').value);setStatus('copied')}catch(e){$('json').focus();$('json').select();setStatus('copyFallback')}};
+$('language').onclick=()=>{language=language==='en'?'zh':'en';applyLanguage();try{const url=new URL(location.href);url.searchParams.set('lang',language);history.replaceState(null,'',url)}catch(e){/* Offline browser policies may restrict URL updates. */}};
+applyLanguage();
 image.onload=()=>update();image.src='data:image/jpeg;base64,__IMAGE__';
 </script></html>"""
 
