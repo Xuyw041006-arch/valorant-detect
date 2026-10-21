@@ -6,132 +6,117 @@
 
 本项目使用 Python，将游戏录像中的视觉信息转换为目标轨迹和结构化事件。系统检测敌方/友方人物、掉落/已安放的 Spike、地面武器，并结合 HUD、击杀栏和部分技能观察。系统不读取游戏内存，也不使用实时对局数据接口。
 
-提交材料包括 [Python 源码](src/valorant_events/)、本中英文 README、[样例 JSON](events.json)/[CSV](events.csv)，以及[中文](docs/presentation/valorant_demo_zh.mp4)/[英文](docs/presentation/valorant_demo_en.mp4)标注视频。[交互 Demo](docs/DEMO.html)包含 128 条复核后的展示事件，提供四个大类、21 个具体事件筛选项。可直接打开在线 Demo，也可用下方本地服务器运行。
+提交材料包括 [Python 源码](src/valorant_events/)、本中英文 README、[样例 JSON](events.json)/[CSV](events.csv)，以及[中文](docs/presentation/valorant_demo_zh.mp4)/[英文](docs/presentation/valorant_demo_en.mp4)标注视频。[交互 Demo](https://xuyw041006-arch.github.io/valorant-detect/DEMO.html)包含 128 条复核后的展示事件，提供四个大类、21 个具体事件筛选项。可直接打开在线 Demo，筛选事件并跳转到对应的视频时间。
 
 ## 采用的方法
 
-系统把同一帧拆成主视角、游戏界面和小地图三条观察路径，再用时间规则稳定观察、整合证据并生成事件。下图直接标出原题前三项 bonus 的使用位置；它表示数据流，各模块按对应视频配置和采样频率启用，并非每一帧都执行全部模型。
+系统把同一帧拆成主视角、游戏界面和小地图三条观察路径，再用时间规则稳定观察、整合证据并生成事件。下图展示整体处理流程，各模块按对应视频配置和采样频率启用，并非每一帧都执行全部模型。
 
 ```mermaid
 flowchart TD
     A["视频输入与区域校准<br/>帧、时间戳、片段配置"] --> B["主视角检测与跟踪<br/>YOLO + ByteTrack<br/>目标框与特工身份"]
-    A --> C["Bonus 1 · OCR<br/>血量、弹药、状态提示<br/>击杀栏文字与图标"]
-    A --> D["Bonus 3 · 定位<br/>小地图符号与坐标<br/>视图变化重置关联"]
-    B --> E["Bonus 2 · 时间平滑<br/>多帧确认与标签投票<br/>断裂重关联与去重"]
+    A --> C["界面 OCR<br/>血量、弹药、状态提示<br/>击杀栏文字与图标"]
+    A --> D["小地图定位<br/>小地图符号与坐标<br/>视图变化重置关联"]
+    B --> E["时间平滑<br/>多帧确认与标签投票<br/>断裂重关联与去重"]
     C --> E
     D --> E
     E --> F["证据整合<br/>四类事件推导"]
     F --> G["事件与逐帧记录<br/>JSON / CSV / JSONL"]
     F --> H["中英文视频与 Demo<br/>筛选、定位、暂停、对照"]
-    classDef bonus fill:#e8f3ff,stroke:#2563eb,color:#172554;
-    class C,D,E bonus;
+    classDef processing fill:#e8f3ff,stroke:#2563eb,color:#172554;
+    class C,D,E processing;
 ```
-
-**Bonus 1：从游戏界面读取信息，而不只检测场景目标。** 先按归一化坐标裁剪血量、弹药、击杀栏和提示区域，按配置放大或二值化，再由 EasyOCR 读取。数字必须通过置信阈值、完整数字格式和合理范围检查；读取失败保持未知，不当作 0。经多次确认后，血量/弹药变化生成带 `field`、`from`、`to` 的 `state_changed`；`SPIKE DOWN`、`SPIKE CARRIER KILLED` 等文字为 Spike 状态提供证据。击杀栏另外结合头像与枪械图标匹配，在证据支持时补充死者、击杀者和枪械。实现见 [HUD OCR](src/valorant_events/hud.py)、[战术 UI 读取](src/valorant_events/tactical.py)和[击杀武器匹配](src/valorant_events/killfeed_weapon.py)。
-
-**Bonus 2：用连续观察减少闪烁、重复和轨迹断裂。** ByteTrack 先关联检测框，事件层再进行置信加权标签投票、多帧确认、消失等待和提示去重。例如 [P006 配置](configs/integrated_p006.json)要求目标类别获得至少 3 次支持、跨越至少 0.25 秒，并在 1.5 秒窗口内达到 70% 加权票数；敌方轨迹缺失 0.8 秒后才触发普通消失。全部六个切片还统一启用最长 0.5 秒的短间隔人物重关联：比较身体颜色外观、经镜头运动或局部双向光流校验后的位置，并排除候选歧义。**人物合并不要求阵营一致**，原始阵营观察仍用于描述；同时可见的两个人和不同物体类别不能合并。这样可减少把短暂漏检当作新人物的情况，代价是确认延迟及潜在的错误关联。实现见[时间事件规则](src/valorant_events/events.py)和[轨迹重关联](src/valorant_events/stitching.py)。
-
-**Bonus 3：记录物体在哪，以及小地图上实际可见的信息。** 主视角保存目标框与轨迹；启用小地图的配置则裁剪指定区域，用专项检测器识别人物、死亡、最后已知敌人及烟雾等符号，并记录相对于该区域的 `[x, y]` 坐标（范围 0–1），证据保存在 `tactical.jsonl`。只有经过颜色校准时才用图标边缘颜色辅助判定阵营，未知阵营保留未知。为适应玩家不同设置，[校准工具](docs/hud_calibration.html)记录地图区域、固定/旋转模式及全图/局部覆盖；运行时估计视图的旋转、缩放和平移，超阈值或无法可靠解释的变化会清空旧关联，避免把地图移动当成人物移动。此定位限于可见图像，不恢复世界坐标，不将最后已知位置视作敌人当前位置，也不单凭死亡图标认定某个场景人物死亡。当前未启用不稳定的小地图技能类型分类器。实现见[小地图检测与关联](src/valorant_events/tactical.py)。
-
-整合阶段将死亡作为人物消失的子类，依据击杀栏等证据补充原因；证据不足的身份或属性保留未知。不同任务使用独立模型、标签和阈值，便于针对性微调，但会增加推理和校准成本。最终 **79.9 秒双语演示**合并六段实录并在切换处重置状态；事件文字、检测框和点击暂停共用同一套帧编号。视频下方另有技能截图的参考标注（GT）与预测对比。
 
 ## 选择的模型与工具
 
 | 模型/工具 | 用途与选择原因 |
-|---|---|
-| 微调后的 YOLO26s 与专项模型 | 复用预训练视觉特征识别游戏目标；将身份和小物体任务分别处理，无需从零训练模型。 |
+| --- | --- |
+| 微调后的 YOLO26 系列模型 | 基于 YOLO26 系列预训练模型，针对人物与 Spike、特工身份、武器、技能道具、烟雾及小地图符号分别进行微调，复用预训练视觉特征，无需从零训练模型。 |
 | ByteTrack | 关联跨帧检测结果，提供用于事件推导的轨迹编号。 |
 | EasyOCR 与离线图标模板 | 读取血量、弹药及游戏提示，利用头像和枪械图标辅助解释击杀栏。 |
 | OpenCV、Python、HTML/JavaScript 本地演示 | 完成视频处理、区域裁剪、时间逻辑、结构化导出和交互复核。 |
 
-微调使用 Colab A100。本仓库只保留最终配置使用的 6 个权重、推理与演示代码、必要评估输入；训练脚本、笔记本、原始数据集、旧模型、历史实验报告、测试代码及验证日志不上传。来源与许可见[第三方说明](THIRD_PARTY_NOTICES.md)，模型列表见[权重清单](weights/manifest.json)。
+微调使用 Colab A100。本仓库只保留最终配置使用的 6 个权重、推理与演示代码、必要评估输入。模型列表见[权重清单](weights/manifest.json)。
+
+## 数据来源声明
+
+本项目的模型微调使用了公开的 VALORANT 图像及标注数据，主要包括 Roboflow 上的[人物与 Spike 数据集](https://universe.roboflow.com/daniels-magonis-0pjzx/valorant-9ufcp/dataset/3)、[特工身份数据集](https://universe.roboflow.com/valorant-object-detection/valorant-object-detection-r9qkl/dataset/21)、[技能道具数据集](https://universe.roboflow.com/valorantdetector-wvavl/valorant_detector/dataset/2)、[烟雾与效果数据集](https://universe.roboflow.com/cso-esports/cso-vision-valorant/dataset/8)和[小地图符号数据集](https://universe.roboflow.com/valo-wix1q/valo-minimap/dataset/10)。游戏实录与部分补充抽帧素材来自 [BEACON](https://huggingface.co/datasets/beacon-gui/BEACON-Dataset) 和 [D2E](https://huggingface.co/datasets/open-world-agents/D2E-Original)。
+
+在公开数据基础上，本项目进行了样本筛选、标签统一、部分补充标注和模型微调。部分补充标注使用 AI 辅助生成，作者对部分样本进行了复核。视频事件评估的参考标注同样由 AI 生成并经作者初步核对，其准确性限制见[视频评估页面](https://xuyw041006-arch.github.io/valorant-detect/EVALUATION.html)。
+
+公开数据与原始素材的权利归各自权利人，使用范围遵循原始许可。本项目用于非商业的求职技术演示。
 
 ## 如何从检测结果推导事件
 
 系统先通过多帧确认、标签投票、短间隔轨迹关联和去重稳定观察，再输出事件。
 
 | 事件 | 推导逻辑 |
-|---|---|
-| `person_appeared` | 确认新出现的可见人物轨迹；有足够证据时附加阵营与特工身份。 |
-| `person_disappeared` | 轨迹持续缺失 0.8 秒，或新的击杀栏记录确认死亡。死亡使用 `details.reason = "death"`，证据支持时补充击杀者和枪械。 |
-| `object_detected` | 观察到有证据支持的武器、Spike 或技能物体。物体消失不能直接推断为拾取。 |
+| --- | --- |
+| `person_appeared` | 确认新出现的可见人物轨迹；有足够证据支持时附加阵营与特工身份。 |
+| `person_disappeared` | 追踪轨迹持续缺失一定时间，或新的击杀栏记录确认死亡。死亡使用 `details.reason = "death"`，证据支持时补充击杀者和枪械。 |
+| `object_detected` | 观察到有证据支持的武器、Spike 或技能物体。物体消失不能直接推断为物体被拾取走。 |
 | `state_changed` | 确认 HUD 数值变化，或 Spike/状态/效果证据表明进入新状态。数值变化保存 `field`、`from`、`to`。 |
 
 死亡归入人物消失。敌方没有确认死亡的消失在界面统一显示为“非死亡消失”，但这不代表确认其存活。不确定身份使用 `null` 或 `unknown`；轨迹编号不是跨片段永久有效的玩家身份。
 
-事件包含题目要求的 `timestamp`、`event`、`confidence`，并补充 `subject` 和按需提供的 `details`。时间戳为合并演示视频中的秒数；置信分数不等于经过校准的正确概率。以下为 [events.json](events.json) 中的真实记录：
+事件包含题目要求的 `timestamp`、`event`、`confidence`，使用 `subject` 表示事件主体（角色或物品），并按需提供 `details`。时间戳为合并演示视频中的秒数。以下为 [events.json](events.json) 中的真实记录，表示一名角色被击杀，包含被击杀者阵营、特工身份、击杀者和枪械信息：
 
 ```json
 {
   "timestamp": 1.4,
   "event": "person_disappeared",
   "confidence": 0.992,
-  "subject": {"team": "teammate", "agent": "sage"},
-  "details": {"reason": "death", "killer": "waylay", "weapon": "Ghost"}
+  "subject": {
+    "team": "teammate",
+    "agent": "sage"
+  },
+  "details": {
+    "reason": "death",
+    "killer": "waylay",
+    "weapon": "Ghost"
+  }
 }
 ```
 
 表格输出和完整格式约束分别见 [events.csv](events.csv)、[event_schema.json](event_schema.json)。
 
-## 已知失败情况
+## 限制与具体失败情况
 
-- 遮挡、低分辨率、穿墙轮廓和尸体可能导致误检、漏检及轨迹断裂；断裂可能产生重复的出现/消失事件。
-- 小型武器与特工身份可能混淆。击杀栏识别依赖清晰的头像、图标和文字，不确定字段保持未知。
-- HUD 和小地图布局需要校准。地图位置仅相对于图像，不代表世界坐标或隐藏敌人位置。小地图技能类型分类器因旋转测试不稳定而关闭。
-- 部分技能只有选取的单帧证据，不能据此认定所有技能或烟雾类型均可靠。一条未解决的 Spike 物体/状态冲突仍标记为待确认。
-- 当前为离线处理，不保证实时速度。演示由六段片段组成，最后一段分辨率较低，视频不含音轨。
+1. **同一人物被重复记录。** 例如敌人短暂被墙角或烟雾遮挡，或者镜头快速转动后再次看到该敌人，跟踪器可能分配新的 ID，导致同一人物被记录为“消失后重新出现”。低分辨率、穿墙轮廓和尸体也可能干扰检测；短间隔重关联可以缓解这类问题，但不能完全消除。
 
-## Assessment：评分标准逐项对应
+2. **界面变化导致漏读或关联中断。** 例如换用另一位玩家的录像后，HUD 缩放或位置发生变化，原先校准的区域可能裁不全弹药数字，造成弹药变化漏报或误报。小地图旋转、缩放或切换全图时，系统可能重置符号关联，无法保持连续轨迹，因此新布局需要重新校准。
 
-下表对应原题 **Evaluation** 部分的五项评分标准，说明本项目如何实现，以及评审可以查看什么证据。
+3. **小物体或未覆盖的外观被漏检、错分。** 例如远处掉落的枪械只占少量像素，或技能道具被特效遮挡，模型可能无法识别。地面武器和部分技能的标注样本覆盖仍有限；来自不同游戏版本的数据也可能缺少新特工或新外观，导致身份未知或分类错误。小型武器与特工身份可能混淆；击杀栏识别依赖清晰的头像、图标和文字，不确定字段保持未知。
 
-| 原题评分标准 | 本项目的对应实现与证据 |
-|---|---|
-| **Detection/tracking correctness（检测与跟踪正确性）** | 可通过标注视频、原片对照及[逐帧记录](examples/render_inputs/p006/tracks.jsonl)检查目标框、类别和 ID 连续性。ByteTrack 与[视觉重关联](src/valorant_events/stitching.py)维持片段内轨迹。最终视频尚无完整的逐帧目标框及身份 GT，因此未量化最终视频的框级检测准确率和身份跟踪准确率。 |
-| **Logic used to derive gameplay events（事件推导逻辑）** | 四类事件采用明确的确认、消失和状态变化规则；死亡需要击杀栏证据，不把物体消失直接认定为拾取。证据见[基础事件逻辑](src/valorant_events/events.py)、[融合事件描述](src/valorant_events/story_events.py)和[格式约束](event_schema.json)。 |
-| **Code quality and structure（代码质量与结构）** | 检测、HUD、战术观察、专项模型和事件规范化分为独立模块，提供六套配置；视频、JSON/CSV 与静态演示共享事件定义。验证在仓库外执行，测试代码与日志不上传。 |
-| **Evaluation methodology（评估方法）** | 将 [AI 生成的事件参考标注](evaluation/final_video/truth.json)与全部未经删改的预测，按固定[时间/语义协议](evaluation/final_video/protocol.json)比较；提供 TP/FP/FN、分类结果及匹配输入数据。作者初步复核及标注不确定性见下文，整理后的展示事件不参与评分。 |
-| **Understanding of limitations and trade-offs（对局限与取舍的理解）** | 已列出具体失败情况；多帧确认减少闪烁但增加延迟，专项模型扩展能力但增加推理成本，逐布局校准改善 HUD 读取但降低通用性。明确区分开发片段评估与独立测试。 |
+此外，这些失败情况与数据规模、场景覆盖和游戏版本差异有关，模型仍可能无法识别部分新版本角色和枪械。
 
-## Bonus：加分项逐项对应
+小地图定位仅表示图像中的相对位置，不代表世界坐标或隐藏敌人的位置；小地图技能类型分类器因旋转测试不稳定而关闭。部分技能仅有选取的单帧展示，尚不能证明所有技能或烟雾类型均可可靠识别。当前系统为离线处理，不保证实时速度。
 
-| 原题加分项 | 实现、证据与适用范围 |
-|---|---|
-| **OCR from the gameplay UI（游戏界面 OCR）** | [HUD OCR](src/valorant_events/hud.py)读取血量/弹药，[战术模块](src/valorant_events/tactical.py)读取相关提示和击杀栏文字；Demo 展示数值变化与状态事件。新布局或语言需校准。 |
-| **Temporal smoothing（时间平滑）** | 多帧确认、标签投票、短间隔重关联、消失等待与去重，统一用于六套配置。[外观与位置关联](src/valorant_events/stitching.py)不要求阵营一致。多帧确认减少闪烁，但增加事件输出延迟。 |
-| **Minimap/object localization（小地图/物体定位）** | 检测可见小地图符号并记录地图相对位置；[校准工具](docs/hud_calibration.html)与[配置](configs/integrated_p006.json)支持区域大小、朝向和覆盖范围，布局变化时重置关联。未声称支持世界坐标、隐藏敌人追踪或可靠的旋转技能图标分类。 |
-| **Quantitative precision/recall evaluation（定量评估）** | 最终视频事件 Precision **48.46%**、Recall **40.65%**，提供下方 TP/FP/FN 及匹配输入数据。保留全部原始预测参与评分；技能截图仅作展示，不纳入评估。 |
+以下为三个例子，未改动截图中的检测框、文字或游戏画面。时间均为合并后演示视频的时间。
 
-## 视频事件评估
+### 1. 特工身份识别或关联错误（33.10 秒）
 
-评估使用 **130 条未经删改的原始预测**，与 **155 条由 AI 根据原始视频生成的事件参考标注**比较。项目作者已初步核对，整体未发现明显问题，但尚未经过独立逐条复核，仍可能存在误标、漏标或时间边界偏差，不能保证标注完全准确。这些片段已用于项目开发，因此本次属于开发评估，并非独立留出测试。
+左侧人物的游戏原生头像和名称显示为 **Fade（黑梦）**，但检测框标签却是“友方 Reyna”。这说明检测到人物后，特工身份识别及其与目标框的关联仍可能出错。
 
-每条预测最多匹配一条参考事件，要求位于**同一原始切片，时间差不超过 ±0.5 秒**，且事件类型及对应属性一致：阵营、死亡/非死亡、物品类别、准确的 HUD 数值或 Spike/效果状态。未匹配的预测记为 FP，未匹配的参考事件记为 FN；重复预测不能重复得分。
+![特工身份识别或关联错误](docs/failure_cases/identity_33_10.png)
 
-| 事件 Precision | 事件 Recall | TP | FP | FN |
-|---:|---:|---:|---:|---:|
-| **48.46%** | **40.65%** | 63 | 67 | 92 |
+### 2. 人物仍然可见，却产生消失事件（34.30 秒）
 
-Precision = 63 ÷ (63 + 67)；Recall = 63 ÷ (63 + 92)。
+箱子上的 Reyna 仍然可见，但右侧已经记录了 33.9 秒的“友方 Reyna 消失：原因未知”。检测或跟踪关联中断时，系统可能把短暂漏检当作人物消失。
 
-**评分范围：**匹配不要求是同一个人物或同一个轨迹 ID。特工、击杀者和枪械身份，检测框位置、轨迹连续性及小地图坐标均未纳入评分，因此这些事件指标不能证明检测/跟踪正确性。六组技能 GT/预测截图仅作定性展示，不计入分数。
+![人物仍可见但记录为消失](docs/failure_cases/disappearance_34_30.png)
 
-Demo 移除两条明确的物体误检，并将缺乏支持的身份/阵营字段改为未知，保留 128 条事件；评分使用全部 130 条记录，包含这些错误。主要误差来自人物跟踪断裂产生的重复事件，以及部分片段未输出弹药变化和击杀提示。
+### 3. 可见敌人漏检（22.00 秒）
 
-可查看[参考标注](evaluation/final_video/truth.json)、[逐条匹配结果](evaluation/final_video/prediction_review.csv)、[漏检记录](evaluation/final_video/missed_events.csv)或[评估页面](docs/EVALUATION.html)。
+画面中央通道内有两名带黄色轮廓的敌人，但均没有检测框；该时刻的逐帧记录也没有人物轨迹。这表明对较小目标或特殊轮廓外观的检测仍可能出现漏检。
 
+![两名可见敌人未被检测](docs/failure_cases/missed_enemies_22_00.png)
 
 ## 本地运行
 
-观看已生成的 Demo 只需要 Python 3.10+，在仓库根目录执行：
+以下命令均在仓库根目录执行。
 
-```bash
-python scripts/serve_demo.py --port 8794
-```
-
-打开 <http://127.0.0.1:8794/DEMO.html>（中文）或 <http://127.0.0.1:8794/>（英文）。GitHub Pages 直接展示同一套 `docs/` 文件；网页播放已有结果，模型推理在 Python 中执行。
-
-### 安装推理依赖
+### 1. 安装推理依赖
 
 推荐 Python 3.10–3.12 虚拟环境，已验证 3.12。Windows 将激活命令替换为 `.venv\Scripts\activate`。
 
@@ -143,9 +128,11 @@ python -m pip install -e . --no-deps
 python scripts/prepare_ocr.py
 ```
 
-PyTorch/torchvision 使用对应平台版本；Colab 保留原有兼容的 CUDA 版本。`prepare_ocr.py` 首次下载标准英文 OCR 推理权重，不涉及训练。推理无需账号或 API Key。
+`prepare_ocr.py` 首次下载标准英文 OCR 推理权重。Colab 中保留原有兼容的 PyTorch/CUDA 版本。推理无需账号或 API Key。
 
-### 重新推理
+### 2. 运行视频推理
+
+使用仓库提供的视频、权重及对应配置：
 
 ```bash
 python -m valorant_events.pipeline \
@@ -155,46 +142,32 @@ python -m valorant_events.pipeline \
   --device cpu --output runs/p006
 ```
 
-兼容 CUDA 显卡使用 `--device 0`，Apple GPU 可使用 `--device mps`（OCR 仍使用 CPU）。每次选择新的输出目录。`--no-ocr` 会关闭文字相关能力，仅用于精简运行；更换录像需重新[校准 HUD 与小地图](docs/hud_calibration.html)。
+兼容 CUDA 显卡使用 `--device 0`；Apple GPU 可使用 `--device mps`，OCR 仍在 CPU 上运行。每次选择新的输出目录。更换视频时，需要调整配置并重新[校准 HUD 与小地图](https://xuyw041006-arch.github.io/valorant-detect/hud_calibration.html?lang=zh)。
 
-输出包含 `annotated.mp4`、逐帧记录、原始事件及采用四类事件格式的 `compact/events.json` / `compact/events.csv`。时间戳以输入切片为基准。新推理结果与仓库根目录经过复核合并的展示样例分开保存。OpenCV 推理视频采用 `mp4v`，在线演示视频已转成浏览器可播放的 H.264。
-
-使用各自配置运行全部六个原始切片，切片之间重置状态：
+如需按各自配置推理全部六个原始切片：
 
 ```bash
 python scripts/run_demo_inference.py --device cpu --output runs/all_clips
 ```
 
-添加 `--max-frames 40` 可对每套配置先跑 40 帧。这会实际加载模型推理，不读取缓存预测，也不覆盖已发布 Demo 与固定评估。
+### 3. 查看推理输出
 
-### 评估与演示生成
+单个视频的结果保存在 `--output` 指定的目录中，主要包括：
 
-```bash
-python scripts/build_hr_viewer.py --lang en
-python scripts/build_hr_viewer.py --lang zh
-```
+- `annotated.mp4`：带检测框和事件提示的推理视频。
+- `compact/events.json`、`compact/events.csv`：采用四类事件格式的结构化结果。
+- `tracks.jsonl`：逐帧目标框、轨迹及相关观察记录。
+- `run_summary.json`：运行状态、处理帧数和统计信息。
 
-[评估输入与结果](evaluation/README.md)保留全部 130 条预测和 155 条 AI 参考标注。测试程序及验证日志按要求保留在仓库外。
-
-如需根据保留的原始画面和绘制记录重建最终标注视频：
-
-```bash
-python -m pip install -r requirements-presentation.txt
-python scripts/render_merged_demo.py --lang en
-python scripts/render_merged_demo.py --lang zh
-```
-
-渲染需要中文字体：macOS STHeiti、Linux `fonts-noto-cjk`，或设置 `VALORANT_FONT=/path/to/font.ttc`。网页生成和推理不需要中文字体。最终视频属于离线回放，事件文字及最终关联身份绘制在事件发生帧；原始确认时间仍保留于 `evidence.json`，不能用此演示衡量实时延迟。
+事件时间戳对应输入视频的时间轴；批量推理时，每个切片的结果分别保存。
 
 ## 仓库结构
 
 | 路径 | 内容 |
-|---|---|
+| --- | --- |
 | `src/valorant_events/` | 最终推理、跟踪、HUD 和事件逻辑 |
 | `configs/`、`weights/`、`assets/`、`effects/` | 六套视频配置、最终权重及参考素材 |
 | `docs/` | 双语静态 Demo、视频、技能截图及评估页面 |
 | `media/`、`examples/render_inputs/`、`presentation/` | 原始切片、绘制记录及时间轴信息 |
 | `evaluation/` | AI 参考标注、全部预测、匹配结果 |
 | `scripts/` | 最终推理、渲染、网页生成及本地服务命令 |
-
-素材使用范围见[第三方说明](THIRD_PARTY_NOTICES.md)。公开仓库不改变上游素材的非商业使用限制。
