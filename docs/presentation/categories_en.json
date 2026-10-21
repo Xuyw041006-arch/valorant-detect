@@ -1,0 +1,150 @@
+{
+  "main_categories": [
+    {
+      "id": "person_appeared",
+      "name": "Person appeared"
+    },
+    {
+      "id": "person_disappeared",
+      "name": "Person disappeared / death"
+    },
+    {
+      "id": "object_detected",
+      "name": "Objects and abilities"
+    },
+    {
+      "id": "state_changed",
+      "name": "State changes"
+    }
+  ],
+  "subcategories": [
+    {
+      "id": "appearance_enemy",
+      "main": "person_appeared",
+      "name": "Enemy appeared"
+    },
+    {
+      "id": "appearance_teammate",
+      "main": "person_appeared",
+      "name": "Ally appeared"
+    },
+    {
+      "id": "appearance_unknown",
+      "main": "person_appeared",
+      "name": "Unknown team appeared"
+    },
+    {
+      "id": "death_enemy",
+      "main": "person_disappeared",
+      "name": "Enemy killed"
+    },
+    {
+      "id": "death_teammate",
+      "main": "person_disappeared",
+      "name": "Ally killed"
+    },
+    {
+      "id": "enemy_non_death_disappearance",
+      "main": "person_disappeared",
+      "name": "Non-death disappearance"
+    },
+    {
+      "id": "left_view_suspected",
+      "main": "person_disappeared",
+      "name": "Likely left view"
+    },
+    {
+      "id": "tracking_loss_suspected",
+      "main": "person_disappeared",
+      "name": "Possible tracking loss"
+    },
+    {
+      "id": "unknown",
+      "main": "person_disappeared",
+      "name": "Disappearance: unknown cause"
+    },
+    {
+      "id": "object_dropped_spike",
+      "main": "object_detected",
+      "name": "Dropped Spike"
+    },
+    {
+      "id": "object_dropped_weapon",
+      "main": "object_detected",
+      "name": "Dropped weapon"
+    },
+    {
+      "id": "object_smoke",
+      "main": "object_detected",
+      "name": "Smoke"
+    },
+    {
+      "id": "object_wall_effect",
+      "main": "object_detected",
+      "name": "Wall effect"
+    },
+    {
+      "id": "ammo_decrease",
+      "main": "state_changed",
+      "name": "Ammo decreased"
+    },
+    {
+      "id": "ammo_increase",
+      "main": "state_changed",
+      "name": "Ammo increased"
+    },
+    {
+      "id": "effect_flashed",
+      "main": "state_changed",
+      "name": "Flash effect"
+    },
+    {
+      "id": "health_decrease",
+      "main": "state_changed",
+      "name": "Health decreased"
+    },
+    {
+      "id": "status_defused",
+      "main": "state_changed",
+      "name": "Spike defused"
+    },
+    {
+      "id": "status_dropped",
+      "main": "state_changed",
+      "name": "Spike dropped"
+    },
+    {
+      "id": "status_planted",
+      "main": "state_changed",
+      "name": "Spike planted"
+    },
+    {
+      "id": "status_planting",
+      "main": "state_changed",
+      "name": "Spike planting"
+    }
+  ],
+  "counts": {
+    "appearance_teammate": 26,
+    "appearance_enemy": 13,
+    "ammo_decrease": 23,
+    "death_teammate": 3,
+    "status_dropped": 2,
+    "health_decrease": 5,
+    "death_enemy": 5,
+    "enemy_non_death_disappearance": 11,
+    "ammo_increase": 3,
+    "object_smoke": 3,
+    "unknown": 18,
+    "status_planting": 1,
+    "status_planted": 2,
+    "tracking_loss_suspected": 2,
+    "object_dropped_weapon": 3,
+    "object_dropped_spike": 1,
+    "appearance_unknown": 1,
+    "status_defused": 1,
+    "object_wall_effect": 2,
+    "effect_flashed": 2,
+    "left_view_suspected": 1
+  }
+}

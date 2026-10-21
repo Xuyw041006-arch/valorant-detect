@@ -1,0 +1,298 @@
+{
+  "detector": {
+    "imgsz": 640,
+    "confidence": 0.15,
+    "iou": 0.5,
+    "max_det": 100
+  },
+  "tracker": {
+    "name": "bytetrack.yaml",
+    "buffer_seconds": 1.5,
+    "stitching": {
+      "enabled": true,
+      "local_reacquire": true,
+      "soft_team": true,
+      "ignore_team_for_person_bridge": true,
+      "max_gap_seconds": 0.5
+    }
+  },
+  "events": {
+    "event_confirmation_seconds": 0.25,
+    "event_min_observations": 3,
+    "disappearance_seconds": 0.8,
+    "label_window_seconds": 1.5,
+    "label_min_vote_ratio": 0.7,
+    "min_track_confidence": 0.25,
+    "hud_confirmation_seconds": 0.04,
+    "hud_min_observations": 2,
+    "hud_min_confidence": 0.9,
+    "hud_candidate_max_gap_seconds": 0.75,
+    "health_max": 100,
+    "ammo_max": 200
+  },
+  "hud": {
+    "enabled": true,
+    "backend": "easyocr",
+    "gpu": true,
+    "interval_seconds": 0.04,
+    "min_confidence": 0.9,
+    "health_roi": [
+      0.27734375,
+      0.92875,
+      0.321875,
+      0.97
+    ],
+    "ammo_roi": [
+      0.68125,
+      0.93,
+      0.71328125,
+      0.97
+    ],
+    "health_max": 100,
+    "ammo_max": 200,
+    "download_enabled": false,
+    "recognition_methods": {
+      "health": "recognize",
+      "ammo": "detect"
+    },
+    "ocr_scales": {
+      "health": 2,
+      "ammo": 2
+    },
+    "preprocess": {
+      "health": "gray_threshold",
+      "ammo": "none"
+    },
+    "thresholds": {
+      "health": 210,
+      "ammo": 210
+    }
+  },
+  "reset_times": [],
+  "visualization": {
+    "event_hold_seconds": 2.5,
+    "show_hud_rois": false,
+    "max_recent_events": 5
+  },
+  "specialists": {
+    "agent_identity": {
+      "enabled": true,
+      "mode": "classifier",
+      "weights": "weights/agent_identity.pt",
+      "label_semantics": "visible_world_body_identity",
+      "imgsz": 224,
+      "confidence": 0.75,
+      "classification_margin": 0.15,
+      "crop_margin": 0.05
+    },
+    "ground_weapon": {
+      "enabled": true,
+      "mode": "detector",
+      "weights": "weights/ground_weapon_v5.pt",
+      "label_semantics": "ground_dropped_weapon",
+      "imgsz": 960,
+      "confidence": 0.2,
+      "sliced": false
+    }
+  },
+  "tactical": {
+    "enabled": true,
+    "sample_interval_seconds": 0.2,
+    "minimap": {
+      "enabled": true,
+      "roi": [
+        0,
+        0,
+        0.24,
+        0.4
+      ],
+      "association_distance": 0.055,
+      "ttl_seconds": 0.6,
+      "min_area_at_1080": 5,
+      "max_area_at_1080": 220,
+      "max_side_at_1080": 27,
+      "mode": "rotating",
+      "coverage": "unknown",
+      "min_gray_surround": 0.25,
+      "max_rotation_degrees": 2,
+      "max_scale_change": 0.035,
+      "max_translation_roi": 0.025,
+      "max_unresolved_gray_difference": 0.12,
+      "templates": [],
+      "template_ambiguity_margin": 0.03,
+      "detector": {
+        "enabled": true,
+        "weights": "weights/minimap_v1.pt",
+        "imgsz": 768,
+        "confidence": 0.35,
+        "iou": 0.5,
+        "max_det": 80,
+        "team_colors_calibrated": true,
+        "team_colors": {
+          "teammate": [
+            [
+              [
+                75,
+                45,
+                100
+              ],
+              [
+                95,
+                255,
+                255
+              ]
+            ]
+          ]
+        },
+        "edge_ring_fraction": 0.2,
+        "min_edge_color_fraction": 0.15,
+        "edge_color_margin": 0.08,
+        "min_colored_sides": 2,
+        "device": 0
+      }
+    },
+    "ui": {
+      "enabled": true,
+      "ocr_enabled": true,
+      "languages": [
+        "en"
+      ],
+      "download_enabled": false,
+      "min_ocr_confidence": 0.6,
+      "spike_roi": [
+        0.45,
+        0,
+        0.55,
+        0.17
+      ],
+      "spike_template_path": "assets/tactical/spike_planted_red.png",
+      "spike_match_threshold": 0.75,
+      "banner_roi": [
+        0.39,
+        0.08,
+        0.61,
+        0.3
+      ],
+      "death_roi": [
+        0.8,
+        0.28,
+        0.99,
+        0.325
+      ],
+      "death_panel_events": false,
+      "killfeed_roi": [
+        0.67,
+        0.0875,
+        0.995,
+        0.225
+      ],
+      "victim_color_to_team": {
+        "red": "enemy",
+        "teal": "teammate"
+      },
+      "min_observations": 2,
+      "confirmation_seconds": 0.15,
+      "max_gap_seconds": 0.75,
+      "dedupe_seconds": 10,
+      "killfeed_row_pitch_at_1080": 36.45,
+      "killfeed_row_height_at_1080": 34,
+      "killfeed_row_offset_at_1080": 0,
+      "spike_text_roi": [
+        0.3,
+        0.1,
+        0.7,
+        0.35
+      ],
+      "ocr_scale": 1,
+      "planting_roi": [
+        0.3,
+        0.1,
+        0.7,
+        0.25
+      ],
+      "phrases": {
+        "planting": [
+          "ALLY PLANTING"
+        ]
+      },
+      "ocr_scales": {
+        "banner": 3,
+        "spike_text": 2,
+        "planting": 2
+      },
+      "recognition_methods": {},
+      "ocr_allowlists": {},
+      "spike_match_method": "local_mask_iou",
+      "spike_template_reference_height": 1080,
+      "spike_search_scales": [
+        0.8,
+        0.9,
+        1,
+        1.1,
+        1.2
+      ],
+      "spike_search_min_red_pixels": 20,
+      "spike_search_min_side": 12,
+      "weapon_recognition": {
+        "enabled": true,
+        "threshold": 0.72,
+        "margin": 0.06
+      }
+    },
+    "calibration_aspect_ratio": 1.6,
+    "profile_name": "P006_posthoc_development_calibrated",
+    "gpu": true,
+    "calibration_note": "Post-test development: ROI, threshold preprocessing, numeric confidence and cadence were inspected against this clip. Do not report this as held-out performance."
+  },
+  "utility": {
+    "enabled": false
+  },
+  "abilities": {
+    "world": {
+      "enabled": true,
+      "weights": "weights/world23.pt",
+      "imgsz": 960,
+      "confidence": 0.4,
+      "label_groups": {
+        "sage_barrier": "wall_effect",
+        "vision_wall": "wall_effect"
+      }
+    },
+    "smoke": {
+      "enabled": true,
+      "weights": "weights/smoke_specialist.pt",
+      "imgsz": 960,
+      "confidence": 0.4
+    },
+    "minimap": {
+      "enabled": false
+    },
+    "flash": {
+      "enabled": true,
+      "templates": [
+        "effects/images/cso_full_0087.jpg",
+        "effects/images/cso_full_0102.jpg"
+      ],
+      "threshold": 0.72
+    },
+    "status": {
+      "enabled": true,
+      "roi": [
+        0.3,
+        0.16,
+        0.7,
+        0.36
+      ],
+      "confidence": 0.65,
+      "languages": [
+        "en"
+      ],
+      "scale": 2
+    },
+    "enabled": true,
+    "sample_interval_seconds": 0.1
+  },
+  "narrative": {
+    "enabled": true
+  }
+}

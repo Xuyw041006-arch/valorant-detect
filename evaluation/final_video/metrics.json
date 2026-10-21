@@ -1,0 +1,586 @@
+{
+  "tp": 63,
+  "fp": 67,
+  "fn": 92,
+  "precision": 0.4846153846153846,
+  "recall": 0.4064516129032258,
+  "matches": [
+    {
+      "prediction_index": 0,
+      "reference_id": "gt_001",
+      "time_error_seconds": 0.08
+    },
+    {
+      "prediction_index": 2,
+      "reference_id": "gt_003",
+      "time_error_seconds": 0.0
+    },
+    {
+      "prediction_index": 3,
+      "reference_id": "gt_004",
+      "time_error_seconds": 0.0
+    },
+    {
+      "prediction_index": 4,
+      "reference_id": "gt_005",
+      "time_error_seconds": 0.0
+    },
+    {
+      "prediction_index": 5,
+      "reference_id": "gt_008",
+      "time_error_seconds": 0.0
+    },
+    {
+      "prediction_index": 6,
+      "reference_id": "gt_007",
+      "time_error_seconds": 0.08
+    },
+    {
+      "prediction_index": 7,
+      "reference_id": "gt_009",
+      "time_error_seconds": 0.08
+    },
+    {
+      "prediction_index": 8,
+      "reference_id": "gt_011",
+      "time_error_seconds": 0.08
+    },
+    {
+      "prediction_index": 9,
+      "reference_id": "gt_012",
+      "time_error_seconds": 0.0
+    },
+    {
+      "prediction_index": 10,
+      "reference_id": "gt_013",
+      "time_error_seconds": 0.0
+    },
+    {
+      "prediction_index": 11,
+      "reference_id": "gt_014",
+      "time_error_seconds": 0.0
+    },
+    {
+      "prediction_index": 12,
+      "reference_id": "gt_015",
+      "time_error_seconds": 0.0
+    },
+    {
+      "prediction_index": 13,
+      "reference_id": "gt_016",
+      "time_error_seconds": 0.0
+    },
+    {
+      "prediction_index": 14,
+      "reference_id": "gt_017",
+      "time_error_seconds": 0.0
+    },
+    {
+      "prediction_index": 15,
+      "reference_id": "gt_018",
+      "time_error_seconds": 0.0
+    },
+    {
+      "prediction_index": 16,
+      "reference_id": "gt_019",
+      "time_error_seconds": 0.0
+    },
+    {
+      "prediction_index": 17,
+      "reference_id": "gt_020",
+      "time_error_seconds": 0.0
+    },
+    {
+      "prediction_index": 18,
+      "reference_id": "gt_021",
+      "time_error_seconds": 0.0
+    },
+    {
+      "prediction_index": 19,
+      "reference_id": "gt_022",
+      "time_error_seconds": 0.0
+    },
+    {
+      "prediction_index": 22,
+      "reference_id": "gt_025",
+      "time_error_seconds": 0.08
+    },
+    {
+      "prediction_index": 23,
+      "reference_id": "gt_026",
+      "time_error_seconds": 0.2
+    },
+    {
+      "prediction_index": 25,
+      "reference_id": "gt_027",
+      "time_error_seconds": 0.08
+    },
+    {
+      "prediction_index": 27,
+      "reference_id": "gt_028",
+      "time_error_seconds": 0.0
+    },
+    {
+      "prediction_index": 28,
+      "reference_id": "gt_030",
+      "time_error_seconds": 0.22
+    },
+    {
+      "prediction_index": 36,
+      "reference_id": "gt_032",
+      "time_error_seconds": 0.2
+    },
+    {
+      "prediction_index": 37,
+      "reference_id": "gt_033",
+      "time_error_seconds": 0.36
+    },
+    {
+      "prediction_index": 40,
+      "reference_id": "gt_034",
+      "time_error_seconds": 0.08
+    },
+    {
+      "prediction_index": 43,
+      "reference_id": "gt_035",
+      "time_error_seconds": 0.12
+    },
+    {
+      "prediction_index": 44,
+      "reference_id": "gt_036",
+      "time_error_seconds": 0.0
+    },
+    {
+      "prediction_index": 45,
+      "reference_id": "gt_037",
+      "time_error_seconds": 0.066
+    },
+    {
+      "prediction_index": 48,
+      "reference_id": "gt_048",
+      "time_error_seconds": 0.2
+    },
+    {
+      "prediction_index": 51,
+      "reference_id": "gt_060",
+      "time_error_seconds": 0.166667
+    },
+    {
+      "prediction_index": 56,
+      "reference_id": "gt_072",
+      "time_error_seconds": 0.233333
+    },
+    {
+      "prediction_index": 60,
+      "reference_id": "gt_075",
+      "time_error_seconds": 0.033333
+    },
+    {
+      "prediction_index": 61,
+      "reference_id": "gt_077",
+      "time_error_seconds": 0.033333
+    },
+    {
+      "prediction_index": 63,
+      "reference_id": "gt_076",
+      "time_error_seconds": 0.233333
+    },
+    {
+      "prediction_index": 65,
+      "reference_id": "gt_079",
+      "time_error_seconds": 0.0
+    },
+    {
+      "prediction_index": 66,
+      "reference_id": "gt_080",
+      "time_error_seconds": 0.0
+    },
+    {
+      "prediction_index": 67,
+      "reference_id": "gt_083",
+      "time_error_seconds": 0.399667
+    },
+    {
+      "prediction_index": 76,
+      "reference_id": "gt_096",
+      "time_error_seconds": 0.167
+    },
+    {
+      "prediction_index": 88,
+      "reference_id": "gt_107",
+      "time_error_seconds": 0.333
+    },
+    {
+      "prediction_index": 93,
+      "reference_id": "gt_115",
+      "time_error_seconds": 0.100333
+    },
+    {
+      "prediction_index": 94,
+      "reference_id": "gt_116",
+      "time_error_seconds": 0.033333
+    },
+    {
+      "prediction_index": 95,
+      "reference_id": "gt_117",
+      "time_error_seconds": 0.033333
+    },
+    {
+      "prediction_index": 97,
+      "reference_id": "gt_118",
+      "time_error_seconds": 0.033333
+    },
+    {
+      "prediction_index": 99,
+      "reference_id": "gt_119",
+      "time_error_seconds": 0.066667
+    },
+    {
+      "prediction_index": 100,
+      "reference_id": "gt_120",
+      "time_error_seconds": 0.033333
+    },
+    {
+      "prediction_index": 101,
+      "reference_id": "gt_121",
+      "time_error_seconds": 0.166333
+    },
+    {
+      "prediction_index": 102,
+      "reference_id": "gt_123",
+      "time_error_seconds": 0.0
+    },
+    {
+      "prediction_index": 105,
+      "reference_id": "gt_127",
+      "time_error_seconds": 0.033333
+    },
+    {
+      "prediction_index": 106,
+      "reference_id": "gt_129",
+      "time_error_seconds": 0.066333
+    },
+    {
+      "prediction_index": 107,
+      "reference_id": "gt_130",
+      "time_error_seconds": 0.033333
+    },
+    {
+      "prediction_index": 108,
+      "reference_id": "gt_131",
+      "time_error_seconds": 0.033333
+    },
+    {
+      "prediction_index": 109,
+      "reference_id": "gt_132",
+      "time_error_seconds": 0.033333
+    },
+    {
+      "prediction_index": 110,
+      "reference_id": "gt_133",
+      "time_error_seconds": 0.033333
+    },
+    {
+      "prediction_index": 112,
+      "reference_id": "gt_134",
+      "time_error_seconds": 0.033333
+    },
+    {
+      "prediction_index": 113,
+      "reference_id": "gt_135",
+      "time_error_seconds": 0.066667
+    },
+    {
+      "prediction_index": 116,
+      "reference_id": "gt_136",
+      "time_error_seconds": 0.033333
+    },
+    {
+      "prediction_index": 117,
+      "reference_id": "gt_137",
+      "time_error_seconds": 0.0
+    },
+    {
+      "prediction_index": 120,
+      "reference_id": "gt_138",
+      "time_error_seconds": 0.066667
+    },
+    {
+      "prediction_index": 122,
+      "reference_id": "gt_140",
+      "time_error_seconds": 0.133
+    },
+    {
+      "prediction_index": 125,
+      "reference_id": "gt_143",
+      "time_error_seconds": 0.133
+    },
+    {
+      "prediction_index": 129,
+      "reference_id": "gt_152",
+      "time_error_seconds": 0.4
+    }
+  ],
+  "false_positives": [
+    1,
+    20,
+    21,
+    24,
+    26,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    38,
+    39,
+    41,
+    42,
+    46,
+    47,
+    49,
+    50,
+    52,
+    53,
+    54,
+    55,
+    57,
+    58,
+    59,
+    62,
+    64,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    89,
+    90,
+    91,
+    92,
+    96,
+    98,
+    103,
+    104,
+    111,
+    114,
+    115,
+    118,
+    119,
+    121,
+    123,
+    124,
+    126,
+    127,
+    128
+  ],
+  "false_negatives": [
+    "gt_000",
+    "gt_002",
+    "gt_006",
+    "gt_010",
+    "gt_023",
+    "gt_024",
+    "gt_029",
+    "gt_031",
+    "gt_038",
+    "gt_039",
+    "gt_040",
+    "gt_041",
+    "gt_042",
+    "gt_043",
+    "gt_044",
+    "gt_045",
+    "gt_046",
+    "gt_047",
+    "gt_049",
+    "gt_050",
+    "gt_051",
+    "gt_052",
+    "gt_053",
+    "gt_054",
+    "gt_055",
+    "gt_056",
+    "gt_057",
+    "gt_058",
+    "gt_059",
+    "gt_061",
+    "gt_062",
+    "gt_063",
+    "gt_064",
+    "gt_065",
+    "gt_066",
+    "gt_067",
+    "gt_068",
+    "gt_069",
+    "gt_070",
+    "gt_071",
+    "gt_073",
+    "gt_074",
+    "gt_078",
+    "gt_081",
+    "gt_082",
+    "gt_084",
+    "gt_085",
+    "gt_086",
+    "gt_087",
+    "gt_088",
+    "gt_089",
+    "gt_090",
+    "gt_091",
+    "gt_092",
+    "gt_093",
+    "gt_094",
+    "gt_095",
+    "gt_097",
+    "gt_098",
+    "gt_099",
+    "gt_100",
+    "gt_101",
+    "gt_102",
+    "gt_103",
+    "gt_104",
+    "gt_105",
+    "gt_106",
+    "gt_108",
+    "gt_109",
+    "gt_110",
+    "gt_111",
+    "gt_112",
+    "gt_113",
+    "gt_114",
+    "gt_122",
+    "gt_124",
+    "gt_125",
+    "gt_126",
+    "gt_128",
+    "gt_139",
+    "gt_141",
+    "gt_142",
+    "gt_144",
+    "gt_145",
+    "gt_146",
+    "gt_147",
+    "gt_148",
+    "gt_149",
+    "gt_150",
+    "gt_151",
+    "gt_153",
+    "gt_154"
+  ],
+  "by_event": {
+    "object_detected": {
+      "tp": 3,
+      "fp": 8,
+      "fn": 8,
+      "precision": 0.2727272727272727,
+      "recall": 0.2727272727272727
+    },
+    "person_appeared": {
+      "tp": 11,
+      "fp": 29,
+      "fn": 11,
+      "precision": 0.275,
+      "recall": 0.5
+    },
+    "person_disappeared": {
+      "tp": 12,
+      "fp": 28,
+      "fn": 12,
+      "precision": 0.3,
+      "recall": 0.5
+    },
+    "state_changed": {
+      "tp": 37,
+      "fp": 2,
+      "fn": 61,
+      "precision": 0.9487179487179487,
+      "recall": 0.37755102040816324
+    }
+  },
+  "by_clip": {
+    "agents": {
+      "tp": 5,
+      "fp": 23,
+      "fn": 27,
+      "precision": 0.17857142857142858,
+      "recall": 0.15625
+    },
+    "baseline": {
+      "tp": 19,
+      "fp": 9,
+      "fn": 9,
+      "precision": 0.6785714285714286,
+      "recall": 0.6785714285714286
+    },
+    "native": {
+      "tp": 3,
+      "fp": 6,
+      "fn": 13,
+      "precision": 0.3333333333333333,
+      "recall": 0.1875
+    },
+    "p006": {
+      "tp": 28,
+      "fp": 16,
+      "fn": 8,
+      "precision": 0.6363636363636364,
+      "recall": 0.7777777777777778
+    },
+    "spike": {
+      "tp": 3,
+      "fp": 3,
+      "fn": 2,
+      "precision": 0.5,
+      "recall": 0.6
+    },
+    "weapon": {
+      "tp": 5,
+      "fp": 10,
+      "fn": 33,
+      "precision": 0.3333333333333333,
+      "recall": 0.13157894736842105
+    }
+  },
+  "scope": "V11 tracking refinement on the unchanged final V10 video, 79.9 seconds; unfiltered predictions; original ±0.5s semantic event matching. No still-image metric.",
+  "status": "AI-generated reference annotations; preliminary user spot-check; development evaluation, not independent ground truth",
+  "prediction_count": 130,
+  "reference_count": 155,
+  "source": "evaluation/predictions/events.json",
+  "prediction_sha256": "3dc583be8127656bf609fd5cbf4491215e84d3bad096494fe9bc27a700f2e962",
+  "truth_sha256": "e3ab92a143e01ceca06a26b6ab17e96b0f573f8ef547358c25e032975bb62cff",
+  "protocol_sha256": "8ea3588cf6518b6ac8795587df148c3534b40e8eb30243afc0a07d04bdcf2b7f",
+  "tolerance_seconds": 0.5,
+  "timing_sensitivity": {
+    "0.25": {
+      "tp": 59,
+      "fp": 71,
+      "fn": 96,
+      "precision": 0.45384615384615384,
+      "recall": 0.38064516129032255
+    },
+    "1.0": {
+      "tp": 67,
+      "fp": 63,
+      "fn": 88,
+      "precision": 0.5153846153846153,
+      "recall": 0.432258064516129
+    }
+  }
+}

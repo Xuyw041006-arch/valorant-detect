@@ -1,0 +1,77 @@
+{
+  "source_file": "media/extensions/weapon_demo.mp4, decoded frame 60 (JPEG calibration reference)",
+  "image_sha256": "d47ffaf094965e837eac3152d28f78fbf2c1990f5dbdbd8180168f9f45f90dd2",
+  "video": "weapon_demo.mp4",
+  "video_frame_index": 60,
+  "local_timestamp": 2.0,
+  "source_requested_seek_seconds": 658,
+  "upstream_exact_pts_verified": false,
+  "image_size": [
+    1920,
+    1080
+  ],
+  "review": "Assistant visually inspected native frame and 10x crops. Development calibration examples, not independent test.",
+  "team_semantics": "Yellow outlined Cypher/Fade are enemies relative original player Me/Chamber and currently spectated allied Fade in this clip. White portrait specifically denotes the observed Fade; it is NOT a global white=teammate rule. Blue X is a death-position marker with team/identity unresolved. Golden planted Spike icon is not an agent.",
+  "templates": [
+    {
+      "name": "enemy_cypher",
+      "label": "enemy",
+      "agent_name": "cypher",
+      "bbox_xyxy": [
+        336,
+        191,
+        355,
+        210
+      ],
+      "file": "enemy_cypher.png"
+    },
+    {
+      "name": "enemy_fade",
+      "label": "enemy",
+      "agent_name": "fade",
+      "bbox_xyxy": [
+        341,
+        211,
+        361,
+        232
+      ],
+      "file": "enemy_fade.png"
+    },
+    {
+      "name": "spectated_friendly_fade",
+      "label": "teammate",
+      "agent_name": "fade",
+      "bbox_xyxy": [
+        333,
+        157,
+        354,
+        178
+      ],
+      "file": "spectated_friendly_fade.png"
+    },
+    {
+      "name": "blue_x",
+      "label": "death_marker",
+      "agent_name": null,
+      "bbox_xyxy": [
+        312,
+        306,
+        327,
+        321
+      ],
+      "file": "blue_x.png"
+    },
+    {
+      "name": "planted_spike",
+      "label": "spike",
+      "agent_name": null,
+      "bbox_xyxy": [
+        353,
+        195,
+        373,
+        214
+      ],
+      "file": "planted_spike.png"
+    }
+  ]
+}

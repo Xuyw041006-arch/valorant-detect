@@ -1,0 +1,64 @@
+{
+  "version": "V11",
+  "fps": 30,
+  "frames": 2397,
+  "duration": 79.9,
+  "segments": [
+    {
+      "id": "p006",
+      "start": 0.0,
+      "end": 20.0,
+      "frames": 600,
+      "duration": 20.0,
+      "source_video": "media/v3/P006_S001_tactical_test_600_620.mp4",
+      "title": "人物、击杀与 Spike"
+    },
+    {
+      "id": "weapon",
+      "start": 20.0,
+      "end": 27.966666666666665,
+      "frames": 239,
+      "duration": 7.966666666666667,
+      "source_video": "media/extensions/weapon_demo.mp4",
+      "title": "掉落武器与拆包"
+    },
+    {
+      "id": "spike",
+      "start": 27.966666666666665,
+      "end": 31.9,
+      "frames": 118,
+      "duration": 3.933333333333333,
+      "source_video": "media/v3/P008_S001_spike_drop_dev_1378_1382.mp4",
+      "title": "消失原因与 Operator 击杀"
+    },
+    {
+      "id": "agents",
+      "start": 31.9,
+      "end": 38.9,
+      "frames": 210,
+      "duration": 7.0,
+      "source_video": "media/extensions/agent_demo.mp4",
+      "title": "角色身份与友方消失"
+    },
+    {
+      "id": "baseline",
+      "start": 38.9,
+      "end": 59.9,
+      "frames": 630,
+      "duration": 21.0,
+      "source_video": "media/demo_input.mp4",
+      "title": "基础人物与数值变化"
+    },
+    {
+      "id": "native",
+      "start": 59.9,
+      "end": 79.9,
+      "frames": 600,
+      "duration": 20.0,
+      "source_video": "media/native_748_768.mp4",
+      "title": "墙体与闪光影响"
+    }
+  ],
+  "editing_policy": "Only real-video sections of the two V8 presentations, in their existing order. All still-image cards and explanatory intertitles removed. Real gameplay flash footage retained. Normal playback speed; no inference across cuts.",
+  "event_count": 130
+}

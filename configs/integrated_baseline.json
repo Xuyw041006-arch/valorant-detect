@@ -1,0 +1,108 @@
+{
+  "detector": {
+    "imgsz": 640,
+    "confidence": 0.15,
+    "iou": 0.5,
+    "max_det": 100
+  },
+  "tracker": {
+    "name": "bytetrack.yaml",
+    "buffer_seconds": 1.5,
+    "stitching": {
+      "enabled": true,
+      "local_reacquire": true,
+      "soft_team": true,
+      "ignore_team_for_person_bridge": true,
+      "max_gap_seconds": 0.5
+    }
+  },
+  "events": {
+    "event_confirmation_seconds": 0.25,
+    "event_min_observations": 3,
+    "disappearance_seconds": 0.8,
+    "label_window_seconds": 1.5,
+    "label_min_vote_ratio": 0.7,
+    "min_track_confidence": 0.25,
+    "hud_confirmation_seconds": 0.08,
+    "hud_min_observations": 2,
+    "hud_min_confidence": 0.6,
+    "hud_candidate_max_gap_seconds": 0.75,
+    "health_max": 100,
+    "ammo_max": 200
+  },
+  "hud": {
+    "enabled": true,
+    "backend": "easyocr",
+    "gpu": true,
+    "interval_seconds": 0.1,
+    "min_confidence": 0.6,
+    "health_roi": [
+      0.296875,
+      0.9231481481481482,
+      0.340625,
+      0.9777777777777777
+    ],
+    "ammo_roi": [
+      0.6744791666666666,
+      0.9259259259259259,
+      0.6942708333333333,
+      0.9722222222222222
+    ],
+    "health_max": 100,
+    "ammo_max": 200,
+    "download_enabled": true,
+    "recognition_methods": {
+      "health": "detect",
+      "ammo": "recognize"
+    }
+  },
+  "reset_times": [],
+  "visualization": {
+    "event_hold_seconds": 2.5,
+    "show_hud_rois": false,
+    "max_recent_events": 5
+  },
+  "tactical": {
+    "enabled": false
+  },
+  "utility": {
+    "enabled": false
+  },
+  "abilities": {
+    "world": {
+      "enabled": true,
+      "weights": "weights/world23.pt",
+      "imgsz": 960,
+      "confidence": 0.4,
+      "label_groups": {
+        "sage_barrier": "wall_effect",
+        "vision_wall": "wall_effect"
+      }
+    },
+    "smoke": {
+      "enabled": true,
+      "weights": "weights/smoke_specialist.pt",
+      "imgsz": 960,
+      "confidence": 0.4
+    },
+    "minimap": {
+      "enabled": false
+    },
+    "flash": {
+      "enabled": true,
+      "templates": [
+        "effects/images/cso_full_0087.jpg",
+        "effects/images/cso_full_0102.jpg"
+      ],
+      "threshold": 0.72
+    },
+    "status": {
+      "enabled": false
+    },
+    "enabled": true,
+    "sample_interval_seconds": 0.1
+  },
+  "narrative": {
+    "enabled": true
+  }
+}

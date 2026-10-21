@@ -1,0 +1,150 @@
+{
+  "main_categories": [
+    {
+      "id": "person_appeared",
+      "name": "人物出现"
+    },
+    {
+      "id": "person_disappeared",
+      "name": "人物消失（含死亡）"
+    },
+    {
+      "id": "object_detected",
+      "name": "物品与技能"
+    },
+    {
+      "id": "state_changed",
+      "name": "状态变化"
+    }
+  ],
+  "subcategories": [
+    {
+      "id": "appearance_enemy",
+      "main": "person_appeared",
+      "name": "敌方出现"
+    },
+    {
+      "id": "appearance_teammate",
+      "main": "person_appeared",
+      "name": "友方出现"
+    },
+    {
+      "id": "appearance_unknown",
+      "main": "person_appeared",
+      "name": "阵营未知出现"
+    },
+    {
+      "id": "death_enemy",
+      "main": "person_disappeared",
+      "name": "敌方被击杀"
+    },
+    {
+      "id": "death_teammate",
+      "main": "person_disappeared",
+      "name": "友方被击杀"
+    },
+    {
+      "id": "enemy_non_death_disappearance",
+      "main": "person_disappeared",
+      "name": "非死亡消失"
+    },
+    {
+      "id": "left_view_suspected",
+      "main": "person_disappeared",
+      "name": "疑似离开画面"
+    },
+    {
+      "id": "tracking_loss_suspected",
+      "main": "person_disappeared",
+      "name": "疑似跟踪丢失"
+    },
+    {
+      "id": "unknown",
+      "main": "person_disappeared",
+      "name": "消失原因未确认"
+    },
+    {
+      "id": "object_dropped_spike",
+      "main": "object_detected",
+      "name": "掉落 Spike"
+    },
+    {
+      "id": "object_dropped_weapon",
+      "main": "object_detected",
+      "name": "掉落武器"
+    },
+    {
+      "id": "object_smoke",
+      "main": "object_detected",
+      "name": "烟雾"
+    },
+    {
+      "id": "object_wall_effect",
+      "main": "object_detected",
+      "name": "墙体效果"
+    },
+    {
+      "id": "ammo_decrease",
+      "main": "state_changed",
+      "name": "弹药减少"
+    },
+    {
+      "id": "ammo_increase",
+      "main": "state_changed",
+      "name": "弹药增加"
+    },
+    {
+      "id": "effect_flashed",
+      "main": "state_changed",
+      "name": "闪光影响"
+    },
+    {
+      "id": "health_decrease",
+      "main": "state_changed",
+      "name": "血量减少"
+    },
+    {
+      "id": "status_defused",
+      "main": "state_changed",
+      "name": "Spike 已拆除"
+    },
+    {
+      "id": "status_dropped",
+      "main": "state_changed",
+      "name": "Spike 掉落"
+    },
+    {
+      "id": "status_planted",
+      "main": "state_changed",
+      "name": "Spike 已安放"
+    },
+    {
+      "id": "status_planting",
+      "main": "state_changed",
+      "name": "正在安放 Spike"
+    }
+  ],
+  "counts": {
+    "appearance_teammate": 26,
+    "appearance_enemy": 13,
+    "ammo_decrease": 23,
+    "death_teammate": 3,
+    "status_dropped": 2,
+    "health_decrease": 5,
+    "death_enemy": 5,
+    "enemy_non_death_disappearance": 11,
+    "ammo_increase": 3,
+    "object_smoke": 3,
+    "unknown": 18,
+    "status_planting": 1,
+    "status_planted": 2,
+    "tracking_loss_suspected": 2,
+    "object_dropped_weapon": 3,
+    "object_dropped_spike": 1,
+    "appearance_unknown": 1,
+    "status_defused": 1,
+    "object_wall_effect": 2,
+    "effect_flashed": 2,
+    "left_view_suspected": 1
+  }
+}

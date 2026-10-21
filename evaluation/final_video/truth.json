@@ -1,0 +1,2299 @@
+{
+  "protocol": "protocol.json",
+  "annotation_status": "assistant-reviewed development reference; not independent gold",
+  "events": [
+    {
+      "clip": "p006",
+      "local_time": 0,
+      "timestamp": 0.0,
+      "event": "object_detected",
+      "subject": {
+        "type": "wall_effect"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "id": "gt_000"
+    },
+    {
+      "clip": "p006",
+      "local_time": 0,
+      "timestamp": 0.0,
+      "event": "person_appeared",
+      "subject": {
+        "team": "teammate"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "reference_entity": "sage",
+      "id": "gt_001"
+    },
+    {
+      "clip": "p006",
+      "local_time": 0,
+      "timestamp": 0.0,
+      "event": "person_appeared",
+      "subject": {
+        "team": "enemy"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "reference_entity": "waylay",
+      "id": "gt_002"
+    },
+    {
+      "clip": "p006",
+      "local_time": 0.88,
+      "timestamp": 0.88,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "annotations/v3/p006/evaluation_views/base_events_truth.json",
+      "details": {
+        "field": "ammo",
+        "from": 12,
+        "to": 11
+      },
+      "id": "gt_003"
+    },
+    {
+      "clip": "p006",
+      "local_time": 1.0,
+      "timestamp": 1.0,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "annotations/v3/p006/evaluation_views/base_events_truth.json",
+      "details": {
+        "field": "ammo",
+        "from": 11,
+        "to": 10
+      },
+      "id": "gt_004"
+    },
+    {
+      "clip": "p006",
+      "local_time": 1.12,
+      "timestamp": 1.12,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "annotations/v3/p006/evaluation_views/base_events_truth.json",
+      "details": {
+        "field": "ammo",
+        "from": 10,
+        "to": 9
+      },
+      "id": "gt_005"
+    },
+    {
+      "clip": "p006",
+      "local_time": 1.24,
+      "timestamp": 1.24,
+      "event": "object_detected",
+      "subject": {
+        "type": "dropped_spike"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "id": "gt_006"
+    },
+    {
+      "clip": "p006",
+      "local_time": 1.32,
+      "timestamp": 1.32,
+      "event": "person_disappeared",
+      "subject": {
+        "team": "teammate"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "reason": "death"
+      },
+      "reference_entity": "sage",
+      "id": "gt_007"
+    },
+    {
+      "clip": "p006",
+      "local_time": 1.32,
+      "timestamp": 1.32,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "annotations/v3/p006/evaluation_views/base_events_truth.json",
+      "details": {
+        "field": "ammo",
+        "from": 9,
+        "to": 8
+      },
+      "id": "gt_008"
+    },
+    {
+      "clip": "p006",
+      "local_time": 1.32,
+      "timestamp": 1.32,
+      "event": "state_changed",
+      "subject": {
+        "type": "spike"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "status": "dropped"
+      },
+      "id": "gt_009"
+    },
+    {
+      "clip": "p006",
+      "local_time": 1.4,
+      "timestamp": 1.4,
+      "event": "object_detected",
+      "subject": {
+        "type": "dropped_weapon"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "id": "gt_010"
+    },
+    {
+      "clip": "p006",
+      "local_time": 1.48,
+      "timestamp": 1.48,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "annotations/v3/p006/evaluation_views/base_events_truth.json",
+      "details": {
+        "field": "ammo",
+        "from": 8,
+        "to": 7
+      },
+      "id": "gt_011"
+    },
+    {
+      "clip": "p006",
+      "local_time": 1.68,
+      "timestamp": 1.68,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "annotations/v3/p006/evaluation_views/base_events_truth.json",
+      "details": {
+        "field": "ammo",
+        "from": 7,
+        "to": 6
+      },
+      "id": "gt_012"
+    },
+    {
+      "clip": "p006",
+      "local_time": 1.88,
+      "timestamp": 1.88,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "annotations/v3/p006/evaluation_views/base_events_truth.json",
+      "details": {
+        "field": "ammo",
+        "from": 6,
+        "to": 5
+      },
+      "id": "gt_013"
+    },
+    {
+      "clip": "p006",
+      "local_time": 1.92,
+      "timestamp": 1.92,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "annotations/v3/p006/evaluation_views/base_events_truth.json",
+      "details": {
+        "field": "health",
+        "from": 100,
+        "to": 91
+      },
+      "id": "gt_014"
+    },
+    {
+      "clip": "p006",
+      "local_time": 2.0,
+      "timestamp": 2.0,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "annotations/v3/p006/evaluation_views/base_events_truth.json",
+      "details": {
+        "field": "ammo",
+        "from": 5,
+        "to": 4
+      },
+      "id": "gt_015"
+    },
+    {
+      "clip": "p006",
+      "local_time": 2.2,
+      "timestamp": 2.2,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "annotations/v3/p006/evaluation_views/base_events_truth.json",
+      "details": {
+        "field": "ammo",
+        "from": 4,
+        "to": 3
+      },
+      "id": "gt_016"
+    },
+    {
+      "clip": "p006",
+      "local_time": 2.4,
+      "timestamp": 2.4,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "annotations/v3/p006/evaluation_views/base_events_truth.json",
+      "details": {
+        "field": "ammo",
+        "from": 3,
+        "to": 2
+      },
+      "id": "gt_017"
+    },
+    {
+      "clip": "p006",
+      "local_time": 2.4,
+      "timestamp": 2.4,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "annotations/v3/p006/evaluation_views/base_events_truth.json",
+      "details": {
+        "field": "health",
+        "from": 91,
+        "to": 65
+      },
+      "id": "gt_018"
+    },
+    {
+      "clip": "p006",
+      "local_time": 2.52,
+      "timestamp": 2.52,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "annotations/v3/p006/evaluation_views/base_events_truth.json",
+      "details": {
+        "field": "ammo",
+        "from": 2,
+        "to": 1
+      },
+      "id": "gt_019"
+    },
+    {
+      "clip": "p006",
+      "local_time": 2.6,
+      "timestamp": 2.6,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "annotations/v3/p006/evaluation_views/base_events_truth.json",
+      "details": {
+        "field": "health",
+        "from": 65,
+        "to": 35
+      },
+      "id": "gt_020"
+    },
+    {
+      "clip": "p006",
+      "local_time": 2.68,
+      "timestamp": 2.68,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "annotations/v3/p006/evaluation_views/base_events_truth.json",
+      "details": {
+        "field": "ammo",
+        "from": 1,
+        "to": 0
+      },
+      "id": "gt_021"
+    },
+    {
+      "clip": "p006",
+      "local_time": 2.8,
+      "timestamp": 2.8,
+      "event": "person_disappeared",
+      "subject": {
+        "team": "enemy"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "reason": "death"
+      },
+      "reference_entity": "waylay",
+      "id": "gt_022"
+    },
+    {
+      "clip": "p006",
+      "local_time": 2.96,
+      "timestamp": 2.96,
+      "event": "person_appeared",
+      "subject": {
+        "team": "teammate"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "reference_entity": "reyna_1",
+      "id": "gt_023"
+    },
+    {
+      "clip": "p006",
+      "local_time": 3.92,
+      "timestamp": 3.92,
+      "event": "person_disappeared",
+      "subject": {
+        "team": "teammate"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "reason": "non_death"
+      },
+      "reference_entity": "reyna_1",
+      "id": "gt_024"
+    },
+    {
+      "clip": "p006",
+      "local_time": 4.0,
+      "timestamp": 4.0,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "annotations/v3/p006/evaluation_views/base_events_truth.json",
+      "details": {
+        "field": "ammo",
+        "from": 0,
+        "to": 12
+      },
+      "id": "gt_025"
+    },
+    {
+      "clip": "p006",
+      "local_time": 4.08,
+      "timestamp": 4.08,
+      "event": "person_appeared",
+      "subject": {
+        "team": "teammate"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "reference_entity": "reyna_2",
+      "id": "gt_026"
+    },
+    {
+      "clip": "p006",
+      "local_time": 5.08,
+      "timestamp": 5.08,
+      "event": "object_detected",
+      "subject": {
+        "type": "smoke"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "id": "gt_027"
+    },
+    {
+      "clip": "p006",
+      "local_time": 5.6,
+      "timestamp": 5.6,
+      "event": "state_changed",
+      "subject": {
+        "type": "spike"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "status": "planting"
+      },
+      "id": "gt_028"
+    },
+    {
+      "clip": "p006",
+      "local_time": 6.36,
+      "timestamp": 6.36,
+      "event": "person_disappeared",
+      "subject": {
+        "team": "teammate"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "reason": "non_death"
+      },
+      "reference_entity": "reyna_2",
+      "id": "gt_029"
+    },
+    {
+      "clip": "p006",
+      "local_time": 8.9,
+      "timestamp": 8.9,
+      "event": "object_detected",
+      "subject": {
+        "type": "smoke"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "id": "gt_030"
+    },
+    {
+      "clip": "p006",
+      "local_time": 9.64,
+      "timestamp": 9.64,
+      "event": "state_changed",
+      "subject": {
+        "type": "spike"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "status": "planted"
+      },
+      "id": "gt_031"
+    },
+    {
+      "clip": "p006",
+      "local_time": 13.6,
+      "timestamp": 13.6,
+      "event": "person_disappeared",
+      "subject": {
+        "team": "teammate"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "reason": "death"
+      },
+      "reference_entity": "tejo",
+      "id": "gt_032"
+    },
+    {
+      "clip": "p006",
+      "local_time": 14.2,
+      "timestamp": 14.2,
+      "event": "person_appeared",
+      "subject": {
+        "team": "teammate"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "reference_entity": "yoru",
+      "id": "gt_033"
+    },
+    {
+      "clip": "p006",
+      "local_time": 14.72,
+      "timestamp": 14.72,
+      "event": "person_disappeared",
+      "subject": {
+        "team": "enemy"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "reason": "death"
+      },
+      "reference_entity": "phoenix",
+      "id": "gt_034"
+    },
+    {
+      "clip": "p006",
+      "local_time": 17.88,
+      "timestamp": 17.88,
+      "event": "person_disappeared",
+      "subject": {
+        "team": "teammate"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "reason": "non_death"
+      },
+      "reference_entity": "yoru",
+      "id": "gt_035"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 0,
+      "timestamp": 20.0,
+      "event": "state_changed",
+      "subject": {
+        "type": "spike"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "status": "planted"
+      },
+      "id": "gt_036"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 0.167,
+      "timestamp": 20.167,
+      "event": "object_detected",
+      "subject": {
+        "type": "dropped_weapon"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "id": "gt_037"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 1.4,
+      "timestamp": 21.4,
+      "event": "person_appeared",
+      "subject": {
+        "team": "enemy"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "reference_entity": "cypher",
+      "id": "gt_038"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 1.5,
+      "timestamp": 21.5,
+      "event": "person_appeared",
+      "subject": {
+        "team": "enemy"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "reference_entity": "fade",
+      "id": "gt_039"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 1.633333,
+      "timestamp": 21.633333,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw consecutive frames, details/weapon_ammo_0.jpg; 5→4 boundary estimated within 0.1s",
+      "details": {
+        "field": "ammo",
+        "from": 25,
+        "to": 24
+      },
+      "id": "gt_040"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 1.733333,
+      "timestamp": 21.733333,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw consecutive frames, details/weapon_ammo_0.jpg; 5→4 boundary estimated within 0.1s",
+      "details": {
+        "field": "ammo",
+        "from": 24,
+        "to": 23
+      },
+      "id": "gt_041"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 1.833333,
+      "timestamp": 21.833333,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw consecutive frames, details/weapon_ammo_0.jpg; 5→4 boundary estimated within 0.1s",
+      "details": {
+        "field": "ammo",
+        "from": 23,
+        "to": 22
+      },
+      "id": "gt_042"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 1.933333,
+      "timestamp": 21.933333,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw consecutive frames, details/weapon_ammo_0.jpg; 5→4 boundary estimated within 0.1s",
+      "details": {
+        "field": "ammo",
+        "from": 22,
+        "to": 21
+      },
+      "id": "gt_043"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 2.033333,
+      "timestamp": 22.033333,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw consecutive frames, details/weapon_ammo_0.jpg; 5→4 boundary estimated within 0.1s",
+      "details": {
+        "field": "ammo",
+        "from": 21,
+        "to": 20
+      },
+      "id": "gt_044"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 2.133333,
+      "timestamp": 22.133333,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw consecutive frames, details/weapon_ammo_0.jpg; 5→4 boundary estimated within 0.1s",
+      "details": {
+        "field": "ammo",
+        "from": 20,
+        "to": 19
+      },
+      "id": "gt_045"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 2.233333,
+      "timestamp": 22.233333,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw consecutive frames, details/weapon_ammo_0.jpg; 5→4 boundary estimated within 0.1s",
+      "details": {
+        "field": "ammo",
+        "from": 19,
+        "to": 18
+      },
+      "id": "gt_046"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 2.333333,
+      "timestamp": 22.333333,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw consecutive frames, details/weapon_ammo_0.jpg; 5→4 boundary estimated within 0.1s",
+      "details": {
+        "field": "ammo",
+        "from": 18,
+        "to": 17
+      },
+      "id": "gt_047"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 2.4,
+      "timestamp": 22.4,
+      "event": "person_disappeared",
+      "subject": {
+        "team": "enemy"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "reason": "death"
+      },
+      "reference_entity": "cypher",
+      "id": "gt_048"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 2.466667,
+      "timestamp": 22.466667,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw consecutive frames, details/weapon_ammo_0.jpg; 5→4 boundary estimated within 0.1s",
+      "details": {
+        "field": "ammo",
+        "from": 17,
+        "to": 16
+      },
+      "id": "gt_049"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 2.533333,
+      "timestamp": 22.533333,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw consecutive frames, details/weapon_ammo_0.jpg; 5→4 boundary estimated within 0.1s",
+      "details": {
+        "field": "ammo",
+        "from": 16,
+        "to": 15
+      },
+      "id": "gt_050"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 2.666667,
+      "timestamp": 22.666667,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw consecutive frames, details/weapon_ammo_0.jpg; 5→4 boundary estimated within 0.1s",
+      "details": {
+        "field": "ammo",
+        "from": 15,
+        "to": 14
+      },
+      "id": "gt_051"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 2.733333,
+      "timestamp": 22.733333,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw consecutive frames, details/weapon_ammo_0.jpg; 5→4 boundary estimated within 0.1s",
+      "details": {
+        "field": "ammo",
+        "from": 14,
+        "to": 13
+      },
+      "id": "gt_052"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 2.866667,
+      "timestamp": 22.866667,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw consecutive frames, details/weapon_ammo_0.jpg; 5→4 boundary estimated within 0.1s",
+      "details": {
+        "field": "ammo",
+        "from": 13,
+        "to": 12
+      },
+      "id": "gt_053"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 2.866667,
+      "timestamp": 22.866667,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw consecutive HUD frames, details/weapon_hp_0.jpg",
+      "details": {
+        "field": "health",
+        "from": 100,
+        "to": 89
+      },
+      "id": "gt_054"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 2.966667,
+      "timestamp": 22.966667,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw consecutive frames, details/weapon_ammo_0.jpg; 5→4 boundary estimated within 0.1s",
+      "details": {
+        "field": "ammo",
+        "from": 12,
+        "to": 11
+      },
+      "id": "gt_055"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 3,
+      "timestamp": 23.0,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw consecutive HUD frames, details/weapon_hp_0.jpg",
+      "details": {
+        "field": "health",
+        "from": 89,
+        "to": 78
+      },
+      "id": "gt_056"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 3.066667,
+      "timestamp": 23.066667,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw consecutive frames, details/weapon_ammo_0.jpg; 5→4 boundary estimated within 0.1s",
+      "details": {
+        "field": "ammo",
+        "from": 11,
+        "to": 10
+      },
+      "id": "gt_057"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 3.066667,
+      "timestamp": 23.066667,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw consecutive HUD frames, details/weapon_hp_0.jpg",
+      "details": {
+        "field": "health",
+        "from": 78,
+        "to": 42
+      },
+      "id": "gt_058"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 3.2,
+      "timestamp": 23.2,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw consecutive frames, details/weapon_ammo_0.jpg; 5→4 boundary estimated within 0.1s",
+      "details": {
+        "field": "ammo",
+        "from": 10,
+        "to": 9
+      },
+      "id": "gt_059"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 3.233333,
+      "timestamp": 23.233333,
+      "event": "person_disappeared",
+      "subject": {
+        "team": "enemy"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "reason": "death"
+      },
+      "reference_entity": "fade",
+      "id": "gt_060"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 3.266667,
+      "timestamp": 23.266667,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw consecutive frames, details/weapon_ammo_0.jpg; 5→4 boundary estimated within 0.1s",
+      "details": {
+        "field": "ammo",
+        "from": 9,
+        "to": 8
+      },
+      "id": "gt_061"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 3.366667,
+      "timestamp": 23.366667,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw consecutive frames, details/weapon_ammo_0.jpg; 5→4 boundary estimated within 0.1s",
+      "details": {
+        "field": "ammo",
+        "from": 8,
+        "to": 7
+      },
+      "id": "gt_062"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 3.466667,
+      "timestamp": 23.466667,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw consecutive frames, details/weapon_ammo_0.jpg; 5→4 boundary estimated within 0.1s",
+      "details": {
+        "field": "ammo",
+        "from": 7,
+        "to": 6
+      },
+      "id": "gt_063"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 3.566667,
+      "timestamp": 23.566667,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw consecutive frames, details/weapon_ammo_0.jpg; 5→4 boundary estimated within 0.1s",
+      "details": {
+        "field": "ammo",
+        "from": 6,
+        "to": 5
+      },
+      "id": "gt_064"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 5.733333,
+      "timestamp": 25.733333,
+      "event": "person_appeared",
+      "subject": {
+        "team": "enemy"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "reference_entity": "reyna",
+      "id": "gt_065"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 5.766667,
+      "timestamp": 25.766667,
+      "event": "state_changed",
+      "subject": {
+        "type": "spike"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "status": "defused"
+      },
+      "id": "gt_066"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 5.9,
+      "timestamp": 25.9,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw consecutive frames, details/weapon_ammo_0.jpg; 5→4 boundary estimated within 0.1s",
+      "details": {
+        "field": "ammo",
+        "from": 5,
+        "to": 4
+      },
+      "id": "gt_067"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 6.066667,
+      "timestamp": 26.066667,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw consecutive frames, details/weapon_ammo_0.jpg; 5→4 boundary estimated within 0.1s",
+      "details": {
+        "field": "ammo",
+        "from": 4,
+        "to": 3
+      },
+      "id": "gt_068"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 6.1,
+      "timestamp": 26.1,
+      "event": "person_appeared",
+      "subject": {
+        "team": "enemy"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "reference_entity": "jett",
+      "id": "gt_069"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 6.1,
+      "timestamp": 26.1,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw consecutive frames, details/weapon_ammo_0.jpg; 5→4 boundary estimated within 0.1s",
+      "details": {
+        "field": "ammo",
+        "from": 3,
+        "to": 2
+      },
+      "id": "gt_070"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 6.2,
+      "timestamp": 26.2,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw consecutive frames, details/weapon_ammo_0.jpg; 5→4 boundary estimated within 0.1s",
+      "details": {
+        "field": "ammo",
+        "from": 2,
+        "to": 1
+      },
+      "id": "gt_071"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 6.366667,
+      "timestamp": 26.366667,
+      "event": "person_disappeared",
+      "subject": {
+        "team": "teammate"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "reason": "death"
+      },
+      "reference_entity": "spectated_fade",
+      "id": "gt_072"
+    },
+    {
+      "clip": "weapon",
+      "local_time": 7.633333,
+      "timestamp": 27.633333,
+      "event": "person_disappeared",
+      "subject": {
+        "team": "enemy"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "reason": "non_death"
+      },
+      "reference_entity": "jett",
+      "id": "gt_073"
+    },
+    {
+      "clip": "spike",
+      "local_time": 0,
+      "timestamp": 27.966667,
+      "event": "object_detected",
+      "subject": {
+        "type": "dropped_weapon"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "id": "gt_074"
+    },
+    {
+      "clip": "spike",
+      "local_time": 0.966667,
+      "timestamp": 28.933334,
+      "event": "person_appeared",
+      "subject": {
+        "team": "enemy"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "reference_entity": "neon",
+      "id": "gt_075"
+    },
+    {
+      "clip": "spike",
+      "local_time": 1.566667,
+      "timestamp": 29.533334,
+      "event": "person_disappeared",
+      "subject": {
+        "team": "enemy"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "reason": "death"
+      },
+      "reference_entity": "neon",
+      "id": "gt_076"
+    },
+    {
+      "clip": "spike",
+      "local_time": 1.566667,
+      "timestamp": 29.533334,
+      "event": "state_changed",
+      "subject": {
+        "type": "spike"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "status": "dropped"
+      },
+      "id": "gt_077"
+    },
+    {
+      "clip": "spike",
+      "local_time": 1.566667,
+      "timestamp": 29.533334,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "field": "ammo",
+        "from": 5,
+        "to": 4
+      },
+      "id": "gt_078"
+    },
+    {
+      "clip": "agents",
+      "local_time": 0,
+      "timestamp": 31.9,
+      "event": "person_appeared",
+      "subject": {
+        "team": "teammate"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "reference_entity": "fade",
+      "id": "gt_079"
+    },
+    {
+      "clip": "agents",
+      "local_time": 0,
+      "timestamp": 31.9,
+      "event": "person_appeared",
+      "subject": {
+        "team": "teammate"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "reference_entity": "reyna",
+      "id": "gt_080"
+    },
+    {
+      "clip": "agents",
+      "local_time": 0.1,
+      "timestamp": 32.0,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw every-frame HUD crops, details/agents_ammo_0..2.jpg",
+      "details": {
+        "field": "ammo",
+        "from": 27,
+        "to": 26
+      },
+      "id": "gt_081"
+    },
+    {
+      "clip": "agents",
+      "local_time": 0.166667,
+      "timestamp": 32.066667,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw every-frame HUD crops, details/agents_ammo_0..2.jpg",
+      "details": {
+        "field": "ammo",
+        "from": 26,
+        "to": 25
+      },
+      "id": "gt_082"
+    },
+    {
+      "clip": "agents",
+      "local_time": 0.233333,
+      "timestamp": 32.133333,
+      "event": "person_appeared",
+      "subject": {
+        "team": "teammate"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "reference_entity": "jett",
+      "id": "gt_083"
+    },
+    {
+      "clip": "agents",
+      "local_time": 0.266667,
+      "timestamp": 32.166667,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw every-frame HUD crops, details/agents_ammo_0..2.jpg",
+      "details": {
+        "field": "ammo",
+        "from": 25,
+        "to": 24
+      },
+      "id": "gt_084"
+    },
+    {
+      "clip": "agents",
+      "local_time": 0.366667,
+      "timestamp": 32.266667,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw every-frame HUD crops, details/agents_ammo_0..2.jpg",
+      "details": {
+        "field": "ammo",
+        "from": 24,
+        "to": 23
+      },
+      "id": "gt_085"
+    },
+    {
+      "clip": "agents",
+      "local_time": 0.466667,
+      "timestamp": 32.366667,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw every-frame HUD crops, details/agents_ammo_0..2.jpg",
+      "details": {
+        "field": "ammo",
+        "from": 23,
+        "to": 22
+      },
+      "id": "gt_086"
+    },
+    {
+      "clip": "agents",
+      "local_time": 1.033333,
+      "timestamp": 32.933333,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw every-frame HUD crops, details/agents_ammo_0..2.jpg",
+      "details": {
+        "field": "ammo",
+        "from": 22,
+        "to": 21
+      },
+      "id": "gt_087"
+    },
+    {
+      "clip": "agents",
+      "local_time": 1.1,
+      "timestamp": 33.0,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw every-frame HUD crops, details/agents_ammo_0..2.jpg",
+      "details": {
+        "field": "ammo",
+        "from": 21,
+        "to": 20
+      },
+      "id": "gt_088"
+    },
+    {
+      "clip": "agents",
+      "local_time": 1.633333,
+      "timestamp": 33.533333,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw every-frame HUD crops, details/agents_ammo_0..2.jpg",
+      "details": {
+        "field": "ammo",
+        "from": 20,
+        "to": 19
+      },
+      "id": "gt_089"
+    },
+    {
+      "clip": "agents",
+      "local_time": 1.7,
+      "timestamp": 33.6,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw every-frame HUD crops, details/agents_ammo_0..2.jpg",
+      "details": {
+        "field": "ammo",
+        "from": 19,
+        "to": 18
+      },
+      "id": "gt_090"
+    },
+    {
+      "clip": "agents",
+      "local_time": 2.233333,
+      "timestamp": 34.133333,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw every-frame HUD crops, details/agents_ammo_0..2.jpg",
+      "details": {
+        "field": "ammo",
+        "from": 18,
+        "to": 17
+      },
+      "id": "gt_091"
+    },
+    {
+      "clip": "agents",
+      "local_time": 2.4,
+      "timestamp": 34.3,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw every-frame HUD crops, details/agents_ammo_0..2.jpg",
+      "details": {
+        "field": "ammo",
+        "from": 17,
+        "to": 16
+      },
+      "id": "gt_092"
+    },
+    {
+      "clip": "agents",
+      "local_time": 2.866667,
+      "timestamp": 34.766667,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw every-frame HUD crops, details/agents_ammo_0..2.jpg",
+      "details": {
+        "field": "ammo",
+        "from": 16,
+        "to": 15
+      },
+      "id": "gt_093"
+    },
+    {
+      "clip": "agents",
+      "local_time": 2.966667,
+      "timestamp": 34.866667,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw every-frame HUD crops, details/agents_ammo_0..2.jpg",
+      "details": {
+        "field": "ammo",
+        "from": 15,
+        "to": 14
+      },
+      "id": "gt_094"
+    },
+    {
+      "clip": "agents",
+      "local_time": 3.433333,
+      "timestamp": 35.333333,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw every-frame HUD crops, details/agents_ammo_0..2.jpg",
+      "details": {
+        "field": "ammo",
+        "from": 14,
+        "to": 13
+      },
+      "id": "gt_095"
+    },
+    {
+      "clip": "agents",
+      "local_time": 3.5,
+      "timestamp": 35.4,
+      "event": "person_appeared",
+      "subject": {
+        "team": "teammate"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "reference_entity": "clove",
+      "id": "gt_096"
+    },
+    {
+      "clip": "agents",
+      "local_time": 3.566667,
+      "timestamp": 35.466667,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw every-frame HUD crops, details/agents_ammo_0..2.jpg",
+      "details": {
+        "field": "ammo",
+        "from": 13,
+        "to": 12
+      },
+      "id": "gt_097"
+    },
+    {
+      "clip": "agents",
+      "local_time": 3.933333,
+      "timestamp": 35.833333,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw every-frame HUD crops, details/agents_ammo_0..2.jpg",
+      "details": {
+        "field": "ammo",
+        "from": 12,
+        "to": 11
+      },
+      "id": "gt_098"
+    },
+    {
+      "clip": "agents",
+      "local_time": 4.033333,
+      "timestamp": 35.933333,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw every-frame HUD crops, details/agents_ammo_0..2.jpg",
+      "details": {
+        "field": "ammo",
+        "from": 11,
+        "to": 10
+      },
+      "id": "gt_099"
+    },
+    {
+      "clip": "agents",
+      "local_time": 4.433333,
+      "timestamp": 36.333333,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw every-frame HUD crops, details/agents_ammo_0..2.jpg",
+      "details": {
+        "field": "ammo",
+        "from": 10,
+        "to": 9
+      },
+      "id": "gt_100"
+    },
+    {
+      "clip": "agents",
+      "local_time": 4.533333,
+      "timestamp": 36.433333,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw every-frame HUD crops, details/agents_ammo_0..2.jpg",
+      "details": {
+        "field": "ammo",
+        "from": 9,
+        "to": 8
+      },
+      "id": "gt_101"
+    },
+    {
+      "clip": "agents",
+      "local_time": 4.933333,
+      "timestamp": 36.833333,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw every-frame HUD crops, details/agents_ammo_0..2.jpg",
+      "details": {
+        "field": "ammo",
+        "from": 8,
+        "to": 7
+      },
+      "id": "gt_102"
+    },
+    {
+      "clip": "agents",
+      "local_time": 5.033333,
+      "timestamp": 36.933333,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw every-frame HUD crops, details/agents_ammo_0..2.jpg",
+      "details": {
+        "field": "ammo",
+        "from": 7,
+        "to": 6
+      },
+      "id": "gt_103"
+    },
+    {
+      "clip": "agents",
+      "local_time": 5.133333,
+      "timestamp": 37.033333,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw every-frame HUD crops, details/agents_ammo_0..2.jpg",
+      "details": {
+        "field": "ammo",
+        "from": 6,
+        "to": 5
+      },
+      "id": "gt_104"
+    },
+    {
+      "clip": "agents",
+      "local_time": 5.866667,
+      "timestamp": 37.766667,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw every-frame HUD crops, details/agents_ammo_0..2.jpg",
+      "details": {
+        "field": "ammo",
+        "from": 5,
+        "to": 4
+      },
+      "id": "gt_105"
+    },
+    {
+      "clip": "agents",
+      "local_time": 5.933333,
+      "timestamp": 37.833333,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw every-frame HUD crops, details/agents_ammo_0..2.jpg",
+      "details": {
+        "field": "ammo",
+        "from": 4,
+        "to": 3
+      },
+      "id": "gt_106"
+    },
+    {
+      "clip": "agents",
+      "local_time": 6.0,
+      "timestamp": 37.9,
+      "event": "person_disappeared",
+      "subject": {
+        "team": "teammate"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "reason": "non_death"
+      },
+      "reference_entity": "clove",
+      "id": "gt_107"
+    },
+    {
+      "clip": "agents",
+      "local_time": 6.166667,
+      "timestamp": 38.066667,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw every-frame HUD crops, details/agents_ammo_0..2.jpg",
+      "details": {
+        "field": "ammo",
+        "from": 3,
+        "to": 2
+      },
+      "id": "gt_108"
+    },
+    {
+      "clip": "agents",
+      "local_time": 6.533333,
+      "timestamp": 38.433333,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw every-frame HUD crops, details/agents_ammo_0..2.jpg",
+      "details": {
+        "field": "ammo",
+        "from": 2,
+        "to": 1
+      },
+      "id": "gt_109"
+    },
+    {
+      "clip": "agents",
+      "local_time": 6.8,
+      "timestamp": 38.7,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Raw every-frame HUD crops, details/agents_ammo_0..2.jpg",
+      "details": {
+        "field": "ammo",
+        "from": 1,
+        "to": 0
+      },
+      "id": "gt_110"
+    },
+    {
+      "clip": "baseline",
+      "local_time": 0.2,
+      "timestamp": 39.1,
+      "event": "person_disappeared",
+      "subject": {
+        "team": "enemy"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "reason": "death"
+      },
+      "reference_entity": "sage",
+      "id": "gt_111"
+    },
+    {
+      "clip": "baseline",
+      "local_time": 1,
+      "timestamp": 39.9,
+      "event": "person_disappeared",
+      "subject": {
+        "team": "teammate"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "reason": "death"
+      },
+      "reference_entity": "reyna",
+      "id": "gt_112"
+    },
+    {
+      "clip": "baseline",
+      "local_time": 2.266667,
+      "timestamp": 41.166667,
+      "event": "person_appeared",
+      "subject": {
+        "team": "teammate"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "reference_entity": "ally_1",
+      "id": "gt_113"
+    },
+    {
+      "clip": "baseline",
+      "local_time": 4.7,
+      "timestamp": 43.6,
+      "event": "person_disappeared",
+      "subject": {
+        "team": "teammate"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "reason": "non_death"
+      },
+      "reference_entity": "ally_1",
+      "id": "gt_114"
+    },
+    {
+      "clip": "baseline",
+      "local_time": 6.666667,
+      "timestamp": 45.566667,
+      "event": "person_appeared",
+      "subject": {
+        "team": "enemy"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "reference_entity": "enemy_1",
+      "id": "gt_115"
+    },
+    {
+      "clip": "baseline",
+      "local_time": 7.066667,
+      "timestamp": 45.966667,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "annotations/demo_truth_colab.json",
+      "details": {
+        "field": "ammo",
+        "from": 6,
+        "to": 5
+      },
+      "id": "gt_116"
+    },
+    {
+      "clip": "baseline",
+      "local_time": 7.366667,
+      "timestamp": 46.266667,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "annotations/demo_truth_colab.json",
+      "details": {
+        "field": "ammo",
+        "from": 5,
+        "to": 4
+      },
+      "id": "gt_117"
+    },
+    {
+      "clip": "baseline",
+      "local_time": 7.766667,
+      "timestamp": 46.666667,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "annotations/demo_truth_colab.json",
+      "details": {
+        "field": "ammo",
+        "from": 4,
+        "to": 3
+      },
+      "id": "gt_118"
+    },
+    {
+      "clip": "baseline",
+      "local_time": 8.133333,
+      "timestamp": 47.033333,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "annotations/demo_truth_colab.json",
+      "details": {
+        "field": "ammo",
+        "from": 3,
+        "to": 2
+      },
+      "id": "gt_119"
+    },
+    {
+      "clip": "baseline",
+      "local_time": 8.366667,
+      "timestamp": 47.266667,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "annotations/demo_truth_colab.json",
+      "details": {
+        "field": "health",
+        "from": 100,
+        "to": 74
+      },
+      "id": "gt_120"
+    },
+    {
+      "clip": "baseline",
+      "local_time": 9.133333,
+      "timestamp": 48.033333,
+      "event": "person_disappeared",
+      "subject": {
+        "team": "enemy"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "reason": "non_death"
+      },
+      "reference_entity": "enemy_1",
+      "id": "gt_121"
+    },
+    {
+      "clip": "baseline",
+      "local_time": 9.766667,
+      "timestamp": 48.666667,
+      "event": "person_appeared",
+      "subject": {
+        "team": "enemy"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "reference_entity": "enemy_2",
+      "id": "gt_122"
+    },
+    {
+      "clip": "baseline",
+      "local_time": 10.1,
+      "timestamp": 49.0,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "annotations/demo_truth_colab.json",
+      "details": {
+        "field": "ammo",
+        "from": 2,
+        "to": 1
+      },
+      "id": "gt_123"
+    },
+    {
+      "clip": "baseline",
+      "local_time": 11.033333,
+      "timestamp": 49.933333,
+      "event": "person_disappeared",
+      "subject": {
+        "team": "enemy"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "reason": "non_death"
+      },
+      "reference_entity": "enemy_2",
+      "id": "gt_124"
+    },
+    {
+      "clip": "baseline",
+      "local_time": 12,
+      "timestamp": 50.9,
+      "event": "person_disappeared",
+      "subject": {
+        "team": "enemy"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "reason": "death"
+      },
+      "reference_entity": "yoru",
+      "id": "gt_125"
+    },
+    {
+      "clip": "baseline",
+      "local_time": 12.5,
+      "timestamp": 51.4,
+      "event": "object_detected",
+      "subject": {
+        "type": "dropped_weapon"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "id": "gt_126"
+    },
+    {
+      "clip": "baseline",
+      "local_time": 14.166667,
+      "timestamp": 53.066667,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "annotations/demo_truth_colab.json",
+      "details": {
+        "field": "ammo",
+        "from": 1,
+        "to": 6
+      },
+      "id": "gt_127"
+    },
+    {
+      "clip": "baseline",
+      "local_time": 15.266667,
+      "timestamp": 54.166667,
+      "event": "person_appeared",
+      "subject": {
+        "team": "teammate"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "reference_entity": "ally_2",
+      "id": "gt_128"
+    },
+    {
+      "clip": "baseline",
+      "local_time": 15.566667,
+      "timestamp": 54.466667,
+      "event": "person_appeared",
+      "subject": {
+        "team": "enemy"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "reference_entity": "enemy_3",
+      "id": "gt_129"
+    },
+    {
+      "clip": "baseline",
+      "local_time": 16.166667,
+      "timestamp": 55.066667,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "annotations/demo_truth_colab.json",
+      "details": {
+        "field": "ammo",
+        "from": 6,
+        "to": 5
+      },
+      "id": "gt_130"
+    },
+    {
+      "clip": "baseline",
+      "local_time": 16.466667,
+      "timestamp": 55.366667,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "annotations/demo_truth_colab.json",
+      "details": {
+        "field": "ammo",
+        "from": 5,
+        "to": 4
+      },
+      "id": "gt_131"
+    },
+    {
+      "clip": "baseline",
+      "local_time": 16.766667,
+      "timestamp": 55.666667,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "annotations/demo_truth_colab.json",
+      "details": {
+        "field": "ammo",
+        "from": 4,
+        "to": 3
+      },
+      "id": "gt_132"
+    },
+    {
+      "clip": "baseline",
+      "local_time": 17.166667,
+      "timestamp": 56.066667,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "annotations/demo_truth_colab.json",
+      "details": {
+        "field": "ammo",
+        "from": 3,
+        "to": 2
+      },
+      "id": "gt_133"
+    },
+    {
+      "clip": "baseline",
+      "local_time": 17.466667,
+      "timestamp": 56.366667,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "annotations/demo_truth_colab.json",
+      "details": {
+        "field": "health",
+        "from": 74,
+        "to": 53
+      },
+      "id": "gt_134"
+    },
+    {
+      "clip": "baseline",
+      "local_time": 17.533333,
+      "timestamp": 56.433333,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "annotations/demo_truth_colab.json",
+      "details": {
+        "field": "ammo",
+        "from": 2,
+        "to": 1
+      },
+      "id": "gt_135"
+    },
+    {
+      "clip": "baseline",
+      "local_time": 18.333333,
+      "timestamp": 57.233333,
+      "event": "person_disappeared",
+      "subject": {
+        "team": "enemy"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "reason": "non_death"
+      },
+      "reference_entity": "enemy_3",
+      "id": "gt_136"
+    },
+    {
+      "clip": "baseline",
+      "local_time": 18.9,
+      "timestamp": 57.8,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "annotations/demo_truth_colab.json",
+      "details": {
+        "field": "ammo",
+        "from": 1,
+        "to": 0
+      },
+      "id": "gt_137"
+    },
+    {
+      "clip": "baseline",
+      "local_time": 20.433333,
+      "timestamp": 59.333333,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "annotations/demo_truth_colab.json",
+      "details": {
+        "field": "ammo",
+        "from": 0,
+        "to": 6
+      },
+      "id": "gt_138"
+    },
+    {
+      "clip": "native",
+      "local_time": 0,
+      "timestamp": 59.9,
+      "event": "object_detected",
+      "subject": {
+        "type": "wall_effect"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "id": "gt_139"
+    },
+    {
+      "clip": "native",
+      "local_time": 2.8,
+      "timestamp": 62.7,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "effect": "flashed"
+      },
+      "id": "gt_140"
+    },
+    {
+      "clip": "native",
+      "local_time": 5.2,
+      "timestamp": 65.1,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "effect": "revealed"
+      },
+      "id": "gt_141"
+    },
+    {
+      "clip": "native",
+      "local_time": 7.133333,
+      "timestamp": 67.033333,
+      "event": "person_disappeared",
+      "subject": {
+        "team": "teammate"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "reason": "death"
+      },
+      "reference_entity": "ally_offscreen",
+      "id": "gt_142"
+    },
+    {
+      "clip": "native",
+      "local_time": 8.6,
+      "timestamp": 68.5,
+      "event": "person_appeared",
+      "subject": {
+        "team": "enemy"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "reference_entity": "enemy_1",
+      "id": "gt_143"
+    },
+    {
+      "clip": "native",
+      "local_time": 9.133333,
+      "timestamp": 69.033333,
+      "event": "person_appeared",
+      "subject": {
+        "team": "teammate"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "reference_entity": "ally_left",
+      "id": "gt_144"
+    },
+    {
+      "clip": "native",
+      "local_time": 9.2,
+      "timestamp": 69.1,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "field": "ammo",
+        "from": 4,
+        "to": 3
+      },
+      "id": "gt_145"
+    },
+    {
+      "clip": "native",
+      "local_time": 9.533333,
+      "timestamp": 69.433333,
+      "event": "state_changed",
+      "subject": {
+        "type": "spike"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "status": "planted"
+      },
+      "id": "gt_146"
+    },
+    {
+      "clip": "native",
+      "local_time": 9.6,
+      "timestamp": 69.5,
+      "event": "person_appeared",
+      "subject": {
+        "team": "teammate"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "reference_entity": "ally_right",
+      "id": "gt_147"
+    },
+    {
+      "clip": "native",
+      "local_time": 9.933333,
+      "timestamp": 69.833333,
+      "event": "person_disappeared",
+      "subject": {
+        "team": "teammate"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "reason": "death"
+      },
+      "reference_entity": "ally_right",
+      "id": "gt_148"
+    },
+    {
+      "clip": "native",
+      "local_time": 10.4,
+      "timestamp": 70.3,
+      "event": "person_disappeared",
+      "subject": {
+        "team": "teammate"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "reason": "non_death"
+      },
+      "reference_entity": "ally_left",
+      "id": "gt_149"
+    },
+    {
+      "clip": "native",
+      "local_time": 10.4,
+      "timestamp": 70.3,
+      "event": "person_disappeared",
+      "subject": {
+        "team": "enemy"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "reason": "non_death"
+      },
+      "reference_entity": "enemy_1",
+      "id": "gt_150"
+    },
+    {
+      "clip": "native",
+      "local_time": 11.066667,
+      "timestamp": 70.966667,
+      "event": "object_detected",
+      "subject": {
+        "type": "wall_effect"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "id": "gt_151"
+    },
+    {
+      "clip": "native",
+      "local_time": 15.6,
+      "timestamp": 75.5,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "effect": "flashed"
+      },
+      "id": "gt_152"
+    },
+    {
+      "clip": "native",
+      "local_time": 17.8,
+      "timestamp": 77.7,
+      "event": "object_detected",
+      "subject": {
+        "type": "dropped_weapon"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "id": "gt_153"
+    },
+    {
+      "clip": "native",
+      "local_time": 18.866667,
+      "timestamp": 78.766667,
+      "event": "state_changed",
+      "subject": {
+        "type": "pov_player"
+      },
+      "basis": "Assistant review of raw source frames, 2026-10-21",
+      "details": {
+        "field": "ammo",
+        "from": 3,
+        "to": 17
+      },
+      "id": "gt_154"
+    }
+  ]
+}

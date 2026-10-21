@@ -1,0 +1,131 @@
+prediction_index,clip,local_time,merged_time,semantic_key,result,matched_reference,time_error_s
+0,p006,0.08,0.08,"('person_appeared', 'teammate')",TP,gt_001,0.08
+1,p006,0.76,0.76,"('person_appeared', 'enemy')",FP,,
+2,p006,0.88,0.88,"('state_changed', 'ammo', 12, 11)",TP,gt_003,0.0
+3,p006,1.0,1.0,"('state_changed', 'ammo', 11, 10)",TP,gt_004,0.0
+4,p006,1.12,1.12,"('state_changed', 'ammo', 10, 9)",TP,gt_005,0.0
+5,p006,1.32,1.32,"('state_changed', 'ammo', 9, 8)",TP,gt_008,0.0
+6,p006,1.4,1.4,"('person_disappeared', 'teammate', 'death')",TP,gt_007,0.08
+7,p006,1.4,1.4,"('state_changed', 'spike', 'dropped')",TP,gt_009,0.08
+8,p006,1.56,1.56,"('state_changed', 'ammo', 8, 7)",TP,gt_011,0.08
+9,p006,1.68,1.68,"('state_changed', 'ammo', 7, 6)",TP,gt_012,0.0
+10,p006,1.88,1.88,"('state_changed', 'ammo', 6, 5)",TP,gt_013,0.0
+11,p006,1.92,1.92,"('state_changed', 'health', 100, 91)",TP,gt_014,0.0
+12,p006,2.0,2.0,"('state_changed', 'ammo', 5, 4)",TP,gt_015,0.0
+13,p006,2.2,2.2,"('state_changed', 'ammo', 4, 3)",TP,gt_016,0.0
+14,p006,2.4,2.4,"('state_changed', 'ammo', 3, 2)",TP,gt_017,0.0
+15,p006,2.4,2.4,"('state_changed', 'health', 91, 65)",TP,gt_018,0.0
+16,p006,2.52,2.52,"('state_changed', 'ammo', 2, 1)",TP,gt_019,0.0
+17,p006,2.6,2.6,"('state_changed', 'health', 65, 35)",TP,gt_020,0.0
+18,p006,2.68,2.68,"('state_changed', 'ammo', 1, 0)",TP,gt_021,0.0
+19,p006,2.8,2.8,"('person_disappeared', 'enemy', 'death')",TP,gt_022,0.0
+20,p006,3.24,3.24,"('person_appeared', 'enemy')",FP,,
+21,p006,3.96,3.96,"('person_disappeared', 'enemy', 'non_death')",FP,,
+22,p006,4.08,4.08,"('state_changed', 'ammo', 0, 12)",TP,gt_025,0.08
+23,p006,4.28,4.28,"('person_appeared', 'teammate')",TP,gt_026,0.2
+24,p006,4.44,4.44,"('person_disappeared', 'enemy', 'non_death')",FP,,
+25,p006,5.16,5.16,"('object_detected', 'smoke')",TP,gt_027,0.08
+26,p006,5.6,5.6,"('person_disappeared', 'teammate', 'non_death')",FP,,
+27,p006,5.6,5.6,"('state_changed', 'spike', 'planting')",TP,gt_028,0.0
+28,p006,9.12,9.12,"('object_detected', 'smoke')",TP,gt_030,0.22
+29,p006,9.88,9.88,"('person_appeared', 'teammate')",FP,,
+30,p006,10.2,10.2,"('state_changed', 'spike', 'planted')",FP,,
+31,p006,11.2,11.2,"('person_disappeared', 'teammate', 'non_death')",FP,,
+32,p006,11.28,11.28,"('object_detected', 'smoke')",FP,,
+33,p006,11.48,11.48,"('person_appeared', 'teammate')",FP,,
+34,p006,12.56,12.56,"('person_disappeared', 'teammate', 'non_death')",FP,,
+35,p006,13.68,13.68,"('person_appeared', 'teammate')",FP,,
+36,p006,13.8,13.8,"('person_disappeared', 'teammate', 'death')",TP,gt_032,0.2
+37,p006,14.56,14.56,"('person_appeared', 'teammate')",TP,gt_033,0.36
+38,p006,14.64,14.64,"('object_detected', 'cypher_tripwire_anchor')",FP,,
+39,p006,14.76,14.76,"('person_disappeared', 'teammate', 'non_death')",FP,,
+40,p006,14.8,14.8,"('person_disappeared', 'enemy', 'death')",TP,gt_034,0.08
+41,p006,15.76,15.76,"('person_appeared', 'teammate')",FP,,
+42,p006,16.56,16.56,"('person_disappeared', 'teammate', 'non_death')",FP,,
+43,p006,17.76,17.76,"('person_disappeared', 'teammate', 'non_death')",TP,gt_035,0.12
+44,weapon,0.0,20.0,"('state_changed', 'spike', 'planted')",TP,gt_036,0.0
+45,weapon,0.233,20.233,"('object_detected', 'dropped_weapon')",TP,gt_037,0.066
+46,weapon,0.733,20.733,"('object_detected', 'dropped_spike')",FP,,
+47,weapon,2.533,22.533,"('person_appeared', 'enemy')",FP,,
+48,weapon,2.6,22.6,"('person_disappeared', 'enemy', 'death')",TP,gt_048,0.2
+49,weapon,2.7,22.7,"('object_detected', 'dropped_weapon')",FP,,
+50,weapon,2.8,22.8,"('person_appeared', 'enemy')",FP,,
+51,weapon,3.4,23.4,"('person_disappeared', 'enemy', 'death')",TP,gt_060,0.166667
+52,weapon,3.733,23.733,"('object_detected', 'dropped_weapon')",FP,,
+53,weapon,3.967,23.967,"('person_disappeared', 'enemy', 'non_death')",FP,,
+54,weapon,4.333,24.333,"('person_disappeared', 'enemy', 'non_death')",FP,,
+55,weapon,5.867,25.867,"('person_appeared', 'teammate')",FP,,
+56,weapon,6.6,26.6,"('person_disappeared', 'teammate', 'death')",TP,gt_072,0.233333
+57,weapon,6.933,26.933,"('person_disappeared', 'teammate', 'non_death')",FP,,
+58,weapon,7.2,27.2,"('state_changed', 'spike', 'defused')",FP,,
+59,spike,0.0,27.966667,"('person_appeared', 'enemy')",FP,,
+60,spike,1.0,28.966667,"('person_appeared', 'enemy')",TP,gt_075,0.033333
+61,spike,1.6,29.566667,"('state_changed', 'spike', 'dropped')",TP,gt_077,0.033333
+62,spike,1.733,29.699667,"('person_disappeared', 'enemy', 'non_death')",FP,,
+63,spike,1.8,29.766667,"('person_disappeared', 'enemy', 'death')",TP,gt_076,0.233333
+64,spike,2.733,30.699667,"('person_appeared', 'enemy')",FP,,
+65,agents,0.0,31.9,"('person_appeared', 'teammate')",TP,gt_079,0.0
+66,agents,0.0,31.9,"('person_appeared', 'teammate')",TP,gt_080,0.0
+67,agents,0.633,32.533,"('person_appeared', 'teammate')",TP,gt_083,0.399667
+68,agents,0.633,32.533,"('person_appeared', 'teammate')",FP,,
+69,agents,1.267,33.167,"('person_disappeared', 'teammate', 'non_death')",FP,,
+70,agents,1.3,33.2,"('person_appeared', 'teammate')",FP,,
+71,agents,1.867,33.767,"('person_disappeared', 'teammate', 'non_death')",FP,,
+72,agents,1.867,33.767,"('person_appeared', 'teammate')",FP,,
+73,agents,1.967,33.867,"('person_disappeared', 'teammate', 'non_death')",FP,,
+74,agents,2.0,33.9,"('person_disappeared', 'teammate', 'non_death')",FP,,
+75,agents,2.5,34.4,"('person_appeared', 'teammate')",FP,,
+76,agents,3.667,35.567,"('person_appeared', 'teammate')",TP,gt_096,0.167
+77,agents,3.8,35.7,"('person_disappeared', 'teammate', 'non_death')",FP,,
+78,agents,3.833,35.733,"('person_disappeared', 'teammate', 'non_death')",FP,,
+79,agents,3.933,35.833,"('person_appeared', 'teammate')",FP,,
+80,agents,4.3,36.2,"('person_appeared', 'teammate')",FP,,
+81,agents,4.433,36.333,"('person_appeared', 'teammate')",FP,,
+82,agents,4.667,36.567,"('person_disappeared', 'teammate', 'non_death')",FP,,
+83,agents,4.8,36.7,"('person_disappeared', 'teammate', 'non_death')",FP,,
+84,agents,5.1,37.0,"('person_disappeared', 'teammate', 'non_death')",FP,,
+85,agents,5.367,37.267,"('person_appeared', 'teammate')",FP,,
+86,agents,5.367,37.267,"('person_appeared', 'teammate')",FP,,
+87,agents,5.633,37.533,"('person_disappeared', 'teammate', 'non_death')",FP,,
+88,agents,5.667,37.567,"('person_disappeared', 'teammate', 'non_death')",TP,gt_107,0.333
+89,agents,5.7,37.6,"('person_appeared', 'teammate')",FP,,
+90,agents,6.333,38.233,"('person_appeared', 'teammate')",FP,,
+91,agents,6.333,38.233,"('person_appeared', 'teammate')",FP,,
+92,agents,6.467,38.367,"('person_disappeared', 'teammate', 'non_death')",FP,,
+93,baseline,6.767,45.667,"('person_appeared', 'enemy')",TP,gt_115,0.100333
+94,baseline,7.1,46.0,"('state_changed', 'ammo', 6, 5)",TP,gt_116,0.033333
+95,baseline,7.4,46.3,"('state_changed', 'ammo', 5, 4)",TP,gt_117,0.033333
+96,baseline,7.433,46.333,"('person_appeared', 'enemy')",FP,,
+97,baseline,7.8,46.7,"('state_changed', 'ammo', 4, 3)",TP,gt_118,0.033333
+98,baseline,7.833,46.733,"('person_disappeared', 'enemy', 'non_death')",FP,,
+99,baseline,8.2,47.1,"('state_changed', 'ammo', 3, 2)",TP,gt_119,0.066667
+100,baseline,8.4,47.3,"('state_changed', 'health', 100, 74)",TP,gt_120,0.033333
+101,baseline,8.967,47.867,"('person_disappeared', 'enemy', 'non_death')",TP,gt_121,0.166333
+102,baseline,10.1,49.0,"('state_changed', 'ammo', 2, 1)",TP,gt_123,0.0
+103,baseline,12.6,51.5,"('person_appeared', 'enemy')",FP,,
+104,baseline,13.833,52.733,"('person_disappeared', 'enemy', 'non_death')",FP,,
+105,baseline,14.2,53.1,"('state_changed', 'ammo', 1, 6)",TP,gt_127,0.033333
+106,baseline,15.633,54.533,"('person_appeared', 'enemy')",TP,gt_129,0.066333
+107,baseline,16.2,55.1,"('state_changed', 'ammo', 6, 5)",TP,gt_130,0.033333
+108,baseline,16.5,55.4,"('state_changed', 'ammo', 5, 4)",TP,gt_131,0.033333
+109,baseline,16.8,55.7,"('state_changed', 'ammo', 4, 3)",TP,gt_132,0.033333
+110,baseline,17.2,56.1,"('state_changed', 'ammo', 3, 2)",TP,gt_133,0.033333
+111,baseline,17.2,56.1,"('person_appeared', 'enemy')",FP,,
+112,baseline,17.5,56.4,"('state_changed', 'health', 74, 53)",TP,gt_134,0.033333
+113,baseline,17.6,56.5,"('state_changed', 'ammo', 2, 1)",TP,gt_135,0.066667
+114,baseline,17.767,56.667,"('person_appeared', 'teammate')",FP,,
+115,baseline,17.933,56.833,"('person_disappeared', 'enemy', 'non_death')",FP,,
+116,baseline,18.3,57.2,"('person_disappeared', 'enemy', 'non_death')",TP,gt_136,0.033333
+117,baseline,18.9,57.8,"('state_changed', 'ammo', 1, 0)",TP,gt_137,0.0
+118,baseline,19.4,58.3,"('person_disappeared', 'teammate', 'non_death')",FP,,
+119,baseline,19.8,58.7,"('person_appeared', 'teammate')",FP,,
+120,baseline,20.5,59.4,"('state_changed', 'ammo', 0, 6)",TP,gt_138,0.066667
+121,native,1.333,61.233,"('object_detected', 'wall_effect')",FP,,
+122,native,2.933,62.833,"('state_changed', 'effect', 'flashed')",TP,gt_140,0.133
+123,native,5.867,65.767,"('person_appeared', 'teammate')",FP,,
+124,native,7.467,67.367,"('person_disappeared', 'teammate', 'non_death')",FP,,
+125,native,8.733,68.633,"('person_appeared', 'enemy')",TP,gt_143,0.133
+126,native,9.867,69.767,"('person_disappeared', 'enemy', 'non_death')",FP,,
+127,native,10.533,70.433,"('object_detected', 'dropped_weapon')",FP,,
+128,native,12.133,72.033,"('object_detected', 'wall_effect')",FP,,
+129,native,16.0,75.9,"('state_changed', 'effect', 'flashed')",TP,gt_152,0.4

@@ -1,0 +1,3 @@
+# Add to the inference environment when rebuilding annotated presentations.
+Pillow>=10
+imageio-ffmpeg==0.6.0

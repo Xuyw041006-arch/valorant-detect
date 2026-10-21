@@ -1,0 +1,100 @@
+{
+  "detector": {
+    "imgsz": 640,
+    "confidence": 0.15,
+    "iou": 0.5,
+    "max_det": 100
+  },
+  "tracker": {
+    "name": "bytetrack.yaml",
+    "buffer_seconds": 1.5,
+    "stitching": {
+      "enabled": true,
+      "local_reacquire": true,
+      "soft_team": true,
+      "ignore_team_for_person_bridge": true,
+      "max_gap_seconds": 0.5
+    }
+  },
+  "events": {
+    "event_confirmation_seconds": 0.25,
+    "event_min_observations": 3,
+    "disappearance_seconds": 0.8,
+    "label_window_seconds": 1.5,
+    "label_min_vote_ratio": 0.7,
+    "min_track_confidence": 0.25,
+    "hud_confirmation_seconds": 0.2,
+    "hud_min_observations": 2,
+    "hud_min_confidence": 0.6,
+    "hud_candidate_max_gap_seconds": 0.75,
+    "health_max": 100,
+    "ammo_max": 200
+  },
+  "hud": {
+    "enabled": false
+  },
+  "reset_times": [],
+  "visualization": {
+    "event_hold_seconds": 2.5,
+    "show_hud_rois": false,
+    "max_recent_events": 5
+  },
+  "specialists": {
+    "agent_identity": {
+      "enabled": true,
+      "mode": "classifier",
+      "weights": "weights/agent_identity.pt",
+      "label_semantics": "visible_world_body_identity",
+      "imgsz": 224,
+      "confidence": 0.75,
+      "classification_margin": 0.15,
+      "crop_margin": 0.05
+    },
+    "ground_weapon": {
+      "enabled": false
+    }
+  },
+  "tactical": {
+    "enabled": false
+  },
+  "utility": {
+    "enabled": false
+  },
+  "abilities": {
+    "world": {
+      "enabled": true,
+      "weights": "weights/world23.pt",
+      "imgsz": 960,
+      "confidence": 0.4,
+      "label_groups": {
+        "sage_barrier": "wall_effect",
+        "vision_wall": "wall_effect"
+      }
+    },
+    "smoke": {
+      "enabled": true,
+      "weights": "weights/smoke_specialist.pt",
+      "imgsz": 960,
+      "confidence": 0.4
+    },
+    "minimap": {
+      "enabled": false
+    },
+    "flash": {
+      "enabled": true,
+      "templates": [
+        "effects/images/cso_full_0087.jpg",
+        "effects/images/cso_full_0102.jpg"
+      ],
+      "threshold": 0.72
+    },
+    "status": {
+      "enabled": false
+    },
+    "enabled": true,
+    "sample_interval_seconds": 0.1
+  },
+  "narrative": {
+    "enabled": true
+  }
+}

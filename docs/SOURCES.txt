@@ -1,0 +1,21 @@
+SOURCE ATTRIBUTION / 素材来源
+
+BEACON gameplay: beacon-gui/BEACON-Dataset (P004/P006/P008 sessions), CC BY-NC 4.0.
+https://huggingface.co/datasets/beacon-gui/BEACON-Dataset
+
+D2E gameplay: open-world-agents/D2E-Original and D2E-480p, recording_20250815_203048_VALORANT_3c71ee23.mkv, CC BY-NC 4.0.
+https://huggingface.co/datasets/open-world-agents/D2E-Original
+https://huggingface.co/datasets/open-world-agents/D2E-480p
+
+License: https://creativecommons.org/licenses/by-nc/4.0/
+Changes: six existing excerpts joined at original playback speed, letterboxed to a shared canvas and converted to 30 FPS; Chinese and English detection overlays added. Source native game UI is unchanged. Standalone presentation cards removed. Footage has no audio in this export.
+改动：六个既有片段按原速拼接、加黑边统一画幅、转换为 30 FPS，并添加中英文检测标注；保留原生游戏界面，移除独立说明卡。导出视频无音轨。
+
+VALORANT game artwork belongs to Riot Games. This project is an independent technical demonstration, not a Riot-endorsed product. Model and dataset attribution is included in the repository THIRD_PARTY_NOTICES.md and weights/manifest.json.
+
+STILL-IMAGE SKILL COMPARISONS / 技能截图对比
+Roboflow valorantdetector-wvavl / valorant_detector, version 2, CC BY 4.0.
+https://universe.roboflow.com/valorantdetector-wvavl/valorant_detector/dataset/2
+https://creativecommons.org/licenses/by/4.0/
+Changes: publisher bounding boxes and saved model prediction boxes rendered for comparison.
+改动：绘制公开标注框与模型实际预测框，制作对比展示。

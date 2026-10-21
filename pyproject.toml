@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "valorant-event-detector"
+version = "1.0.0"
+description = "Video-only VALORANT object tracking, HUD OCR, and event extraction"
+requires-python = ">=3.10"
+dependencies = [
+  "ultralytics==8.4.63",
+  "easyocr==1.7.2",
+  "lap==0.5.12",
+  "opencv-python==4.11.0.86",
+  "opencv-python-headless==4.11.0.86",
+  "numpy==2.2.6",
+]
+
+[project.scripts]
+valorant-events = "valorant_events.pipeline:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

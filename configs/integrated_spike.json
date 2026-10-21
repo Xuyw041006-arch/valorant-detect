@@ -1,0 +1,193 @@
+{
+  "detector": {
+    "imgsz": 640,
+    "confidence": 0.15,
+    "iou": 0.5,
+    "max_det": 100
+  },
+  "tracker": {
+    "name": "bytetrack.yaml",
+    "buffer_seconds": 1.5,
+    "stitching": {
+      "enabled": true,
+      "local_reacquire": true,
+      "soft_team": true,
+      "ignore_team_for_person_bridge": true,
+      "max_gap_seconds": 0.5
+    }
+  },
+  "events": {
+    "event_confirmation_seconds": 0.25,
+    "event_min_observations": 3,
+    "disappearance_seconds": 0.8,
+    "label_window_seconds": 1.5,
+    "label_min_vote_ratio": 0.7,
+    "min_track_confidence": 0.25,
+    "hud_confirmation_seconds": 0.2,
+    "hud_min_observations": 2,
+    "hud_min_confidence": 0.6,
+    "hud_candidate_max_gap_seconds": 0.75,
+    "health_max": 100,
+    "ammo_max": 200
+  },
+  "hud": {
+    "enabled": false
+  },
+  "reset_times": [],
+  "visualization": {
+    "event_hold_seconds": 2.5,
+    "show_hud_rois": false,
+    "max_recent_events": 5
+  },
+  "specialists": {
+    "agent_identity": {
+      "enabled": true,
+      "mode": "classifier",
+      "weights": "weights/agent_identity.pt",
+      "label_semantics": "visible_world_body_identity",
+      "imgsz": 224,
+      "confidence": 0.75,
+      "classification_margin": 0.15,
+      "crop_margin": 0.05
+    },
+    "ground_weapon": {
+      "enabled": true,
+      "mode": "detector",
+      "weights": "weights/ground_weapon_v5.pt",
+      "label_semantics": "ground_dropped_weapon",
+      "imgsz": 960,
+      "confidence": 0.2
+    }
+  },
+  "tactical": {
+    "enabled": true,
+    "sample_interval_seconds": 0.2,
+    "minimap": {
+      "enabled": false
+    },
+    "ui": {
+      "enabled": true,
+      "ocr_enabled": true,
+      "languages": [
+        "en"
+      ],
+      "download_enabled": false,
+      "min_ocr_confidence": 0.6,
+      "spike_roi": [
+        0.4791666666666667,
+        0.01574074074074074,
+        0.5208333333333334,
+        0.08518518518518518
+      ],
+      "spike_template_path": "assets/tactical/spike_planted_red.png",
+      "spike_match_threshold": 0.75,
+      "banner_roi": [
+        0.425,
+        0.22,
+        0.575,
+        0.265
+      ],
+      "death_roi": [
+        0.8,
+        0.28,
+        0.99,
+        0.325
+      ],
+      "death_panel_events": false,
+      "killfeed_roi": [
+        0.77,
+        0.08888888888888889,
+        0.995,
+        0.24074074074074073
+      ],
+      "victim_color_to_team": {
+        "red": "enemy",
+        "teal": "teammate"
+      },
+      "min_observations": 2,
+      "confirmation_seconds": 0.15,
+      "max_gap_seconds": 0.75,
+      "dedupe_seconds": 10,
+      "killfeed_row_pitch_at_1080": 39,
+      "killfeed_row_height_at_1080": 34,
+      "killfeed_row_offset_at_1080": 0,
+      "spike_text_roi": [
+        0.3,
+        0.1,
+        0.7,
+        0.35
+      ],
+      "ocr_scale": 1,
+      "planting_roi": [
+        0.3,
+        0.1,
+        0.7,
+        0.25
+      ],
+      "phrases": {
+        "planting": [
+          "ALLY PLANTING"
+        ]
+      },
+      "ocr_scales": {
+        "banner": 3,
+        "spike_text": 2,
+        "planting": 2
+      },
+      "recognition_methods": {
+        "banner": "recognize"
+      },
+      "ocr_allowlists": {
+        "banner": "ABCDEFGHIJKLMNOPQRSTUVWXYZ "
+      },
+      "weapon_recognition": {
+        "enabled": true,
+        "threshold": 0.72,
+        "margin": 0.06
+      }
+    },
+    "calibration_aspect_ratio": 1.7777777777777777,
+    "profile_name": "P008_drop_prompt_development",
+    "gpu": true
+  },
+  "utility": {
+    "enabled": false
+  },
+  "abilities": {
+    "world": {
+      "enabled": true,
+      "weights": "weights/world23.pt",
+      "imgsz": 960,
+      "confidence": 0.4,
+      "label_groups": {
+        "sage_barrier": "wall_effect",
+        "vision_wall": "wall_effect"
+      }
+    },
+    "smoke": {
+      "enabled": true,
+      "weights": "weights/smoke_specialist.pt",
+      "imgsz": 960,
+      "confidence": 0.4
+    },
+    "minimap": {
+      "enabled": false
+    },
+    "flash": {
+      "enabled": true,
+      "templates": [
+        "effects/images/cso_full_0087.jpg",
+        "effects/images/cso_full_0102.jpg"
+      ],
+      "threshold": 0.72
+    },
+    "status": {
+      "enabled": false
+    },
+    "enabled": true,
+    "sample_interval_seconds": 0.1
+  },
+  "narrative": {
+    "enabled": true
+  }
+}

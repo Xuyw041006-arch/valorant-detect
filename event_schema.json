@@ -1,0 +1,273 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "VALORANT compact event stream",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "timestamp",
+      "event",
+      "confidence",
+      "subject"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "timestamp": {
+        "type": "number",
+        "minimum": 0
+      },
+      "event": {
+        "enum": [
+          "person_appeared",
+          "person_disappeared",
+          "object_detected",
+          "state_changed"
+        ]
+      },
+      "confidence": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 1
+      },
+      "subject": {
+        "type": "object"
+      },
+      "details": {
+        "type": "object",
+        "minProperties": 1
+      }
+    },
+    "allOf": [
+      {
+        "if": {
+          "properties": {
+            "event": {
+              "enum": [
+                "person_appeared",
+                "person_disappeared"
+              ]
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "subject": {
+              "type": "object",
+              "required": [
+                "team",
+                "agent"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "team": {
+                  "enum": [
+                    "enemy",
+                    "teammate",
+                    "unknown"
+                  ]
+                },
+                "agent": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "track_id": {
+                  "type": "integer"
+                }
+              }
+            }
+          }
+        },
+        "else": {
+          "properties": {
+            "subject": {
+              "type": "object",
+              "required": [
+                "type"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "type": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "event": {
+              "const": "person_appeared"
+            }
+          }
+        },
+        "then": {
+          "not": {
+            "required": [
+              "details"
+            ]
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "event": {
+              "const": "person_disappeared"
+            }
+          }
+        },
+        "then": {
+          "required": [
+            "details"
+          ],
+          "properties": {
+            "details": {
+              "type": "object",
+              "required": [
+                "reason"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "reason": {
+                  "enum": [
+                    "death",
+                    "death_suspected",
+                    "left_view_suspected",
+                    "tracking_loss_suspected",
+                    "unknown"
+                  ]
+                },
+                "killer": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "weapon": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "event": {
+              "const": "state_changed"
+            }
+          }
+        },
+        "then": {
+          "required": [
+            "details"
+          ]
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "event": {
+              "const": "state_changed"
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "details": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "required": [
+                    "field",
+                    "from",
+                    "to"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "field": {
+                      "enum": [
+                        "health",
+                        "ammo"
+                      ]
+                    },
+                    "from": {
+                      "type": "number"
+                    },
+                    "to": {
+                      "type": "number"
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "required": [
+                    "status"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "status": {
+                      "type": "string"
+                    },
+                    "reason": {
+                      "type": "string"
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "required": [
+                    "effect"
+                  ],
+                  "additionalProperties": false,
+                  "properties": {
+                    "effect": {
+                      "type": "string"
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "if": {
+          "properties": {
+            "event": {
+              "const": "object_detected"
+            }
+          }
+        },
+        "then": {
+          "properties": {
+            "details": {
+              "type": "object",
+              "minProperties": 1,
+              "additionalProperties": false,
+              "properties": {
+                "source": {
+                  "type": "string"
+                },
+                "reobserved": {
+                  "const": true
+                },
+                "review": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

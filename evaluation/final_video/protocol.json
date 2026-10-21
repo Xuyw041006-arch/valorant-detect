@@ -1,0 +1,30 @@
+{
+  "version": "1.0",
+  "scope": "79.9-second final V10 video; six original clips. Event evaluation only; still-image gallery excluded.",
+  "status": "Post-hoc development review by assistant; not independent human or held-out evaluation.",
+  "prediction_input": "diagnostics/all_predictions/events.json (132 unfiltered records)",
+  "matching": {
+    "tolerance_seconds": 0.5,
+    "method": "Maximum-cardinality one-to-one temporal matching within clip and semantic key. Duplicate predictions are false positives.",
+    "key": "event family, team for persons, death/non-death disappearance, exact object class, exact HUD field and before/after values, exact Spike status or effect",
+    "not_scored": [
+      "agent name",
+      "killer identity",
+      "kill weapon identity",
+      "track ID consistency",
+      "box IoU",
+      "minimap coordinate accuracy"
+    ]
+  },
+  "annotation": {
+    "person": "Rendered world body, including visible portion, excludes corpse and pure through-wall silhouette. Same person occluded for <0.8s stays one episode.",
+    "disappearance": "Last visible time +0.8s; only if within clip. If same visible person has confirmed death, use death event once instead of a later non-death disappearance.",
+    "death": "First complete new killfeed row, includes off-screen and spectated ally deaths; initial pre-existing rows excluded.",
+    "objects": "First visible presence episode of each supported object class; re-observation after >=0.8s absence is new; multiple simultaneous same-class instances count once. Initial visible object counts at time zero.",
+    "hud": "First legible new numeric value. Initial health/ammo are state, not changes. Weapon swaps count numeric magazine changes. Spectated HUD included. First planted-Spike icon is accepted; defuse requires explicit text.",
+    "effects": "New recognizable flash/reveal onsets; supported world utilities only. No inferred causes/owners.",
+    "boundary": "No disappearance or HUD change manufactured across the six edits.",
+    "method": "Raw source overview contact sheets, transition crops and existing source-frame annotations. Added numeric HUD transitions reviewed on consecutive decoded frames. New world timestamps are sampled estimates (typically 0.1–0.25s precision), not second-annotator verified.",
+    "limitations": "Supported observable event vocabulary only, not every possible game mechanic. Narrow confidence intervals would be inappropriate for six reused clips."
+  }
+}

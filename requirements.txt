@@ -1,0 +1,8 @@
+# Torch/torchvision are intentionally not pinned: retain the platform CUDA build.
+ultralytics==8.4.63
+easyocr==1.7.2
+lap==0.5.12
+opencv-python==4.11.0.86
+# EasyOCR requires headless; align its shared cv2 version with Ultralytics.
+opencv-python-headless==4.11.0.86
+numpy==2.2.6

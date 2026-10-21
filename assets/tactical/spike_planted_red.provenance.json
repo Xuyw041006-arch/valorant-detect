@@ -1,0 +1,20 @@
+{
+  "source_video": "media/extensions/weapon_demo.mp4",
+  "source_video_sha256": "1d0d51a7c2dbbca9aabb6fa53547d7ac3c7458ef304f240ce2822b9e56ae8bed",
+  "frame_index": 0,
+  "timestamp": 0,
+  "bbox_xyxy": [
+    920,
+    17,
+    1000,
+    92
+  ],
+  "source_resolution": [
+    1920,
+    1080
+  ],
+  "method": "HSV red mask, Hue 0:10 or170:179, S/V>=110, OpenCV HSV",
+  "purpose": "Calibrated development UI template; not independent evaluation",
+  "semantics": "Spike already planted at clip start; actual plant time unknown",
+  "license": "Source public BEACON gameplay: CC BY-NC 4.0; see docs/data_sources.md"
+}

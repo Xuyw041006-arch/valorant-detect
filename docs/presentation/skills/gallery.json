@@ -1,0 +1,86 @@
+[
+  {
+    "id": "7dcb9f2f5611e127",
+    "label": "fade_eye",
+    "title": {
+      "zh": "黑梦 · 诡眼",
+      "en": "Fade · Haunt"
+    },
+    "caption": {
+      "zh": "识别场景中的侦查眼。",
+      "en": "Locates the recon eye in the scene."
+    },
+    "gt": "presentation/skills/7dcb9f2f5611e127_gt.jpg",
+    "prediction": "presentation/skills/7dcb9f2f5611e127_prediction.jpg"
+  },
+  {
+    "id": "929385bb6b6f0abe",
+    "label": "skye_trailblazer",
+    "title": {
+      "zh": "斯凯 · 探路者（狗）",
+      "en": "Skye · Trailblazer"
+    },
+    "caption": {
+      "zh": "识别前进中的探路者。",
+      "en": "Locates the moving Trailblazer."
+    },
+    "gt": "presentation/skills/929385bb6b6f0abe_gt.jpg",
+    "prediction": "presentation/skills/929385bb6b6f0abe_prediction.jpg"
+  },
+  {
+    "id": "7ac405659bdecaa0",
+    "label": "sova_drone",
+    "title": {
+      "zh": "猎枭 · 枭鹰无人机",
+      "en": "Sova · Owl Drone"
+    },
+    "caption": {
+      "zh": "识别空中的侦查无人机。",
+      "en": "Locates the airborne recon drone."
+    },
+    "gt": "presentation/skills/7ac405659bdecaa0_gt.jpg",
+    "prediction": "presentation/skills/7ac405659bdecaa0_prediction.jpg"
+  },
+  {
+    "id": "a1a351fef0822df6",
+    "label": "reyna_leer",
+    "title": {
+      "zh": "芮娜 · 睥睨",
+      "en": "Reyna · Leer"
+    },
+    "caption": {
+      "zh": "识别场景中的致盲眼。",
+      "en": "Locates the floating Leer eye."
+    },
+    "gt": "presentation/skills/a1a351fef0822df6_gt.jpg",
+    "prediction": "presentation/skills/a1a351fef0822df6_prediction.jpg"
+  },
+  {
+    "id": "378c8d08c9b05d8d",
+    "label": "gekko_dizzy",
+    "title": {
+      "zh": "盖可 · 眩晕（Dizzy）",
+      "en": "Gekko · Dizzy"
+    },
+    "caption": {
+      "zh": "识别飞行中的技能实体。",
+      "en": "Locates Dizzy in flight."
+    },
+    "gt": "presentation/skills/378c8d08c9b05d8d_gt.jpg",
+    "prediction": "presentation/skills/378c8d08c9b05d8d_prediction.jpg"
+  },
+  {
+    "id": "880e817565923d75",
+    "label": "cypher_tripwire_anchor",
+    "title": {
+      "zh": "零 · 陷阱线锚点",
+      "en": "Cypher · Trapwire anchor"
+    },
+    "caption": {
+      "zh": "识别墙面上的陷阱线装置。",
+      "en": "Locates the trapwire anchor on the wall."
+    },
+    "gt": "presentation/skills/880e817565923d75_gt.jpg",
+    "prediction": "presentation/skills/880e817565923d75_prediction.jpg"
+  }
+]

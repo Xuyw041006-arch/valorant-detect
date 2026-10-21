@@ -1,0 +1,2293 @@
+{
+  "policy": "Offline retrospective occurrence-time overlays; source boxes only; seek to centre of exact annotated frame. Confirmation times remain unchanged in evidence.",
+  "fps": 30,
+  "records": [
+    {
+      "event_index": 0,
+      "clip": "p006",
+      "local_frame": 3,
+      "frame": 3,
+      "frame_time": 0.1,
+      "seek_time": 0.11666666666666667,
+      "event_time": 0.08,
+      "confirmed_at": 0.48,
+      "panel_event_indices": [
+        0
+      ],
+      "target_text": "发现友方 Sage。",
+      "person_box_drawn": true,
+      "source_frame": 2
+    },
+    {
+      "event_index": 1,
+      "clip": "p006",
+      "local_frame": 23,
+      "frame": 23,
+      "frame_time": 0.7666666666666667,
+      "seek_time": 0.7833333333333333,
+      "event_time": 0.76,
+      "confirmed_at": 2.76,
+      "panel_event_indices": [
+        0,
+        1
+      ],
+      "target_text": "发现敌方 Reyna。",
+      "person_box_drawn": true,
+      "source_frame": 19
+    },
+    {
+      "event_index": 2,
+      "clip": "p006",
+      "local_frame": 27,
+      "frame": 27,
+      "frame_time": 0.9,
+      "seek_time": 0.9166666666666666,
+      "event_time": 0.88,
+      "confirmed_at": 0.92,
+      "panel_event_indices": [
+        0,
+        1,
+        2
+      ],
+      "target_text": "弹匣弹药 12 → 11。",
+      "person_box_drawn": null,
+      "source_frame": 22
+    },
+    {
+      "event_index": 3,
+      "clip": "p006",
+      "local_frame": 30,
+      "frame": 30,
+      "frame_time": 1.0,
+      "seek_time": 1.0166666666666666,
+      "event_time": 1.0,
+      "confirmed_at": 1.04,
+      "panel_event_indices": [
+        1,
+        2,
+        3
+      ],
+      "target_text": "弹匣弹药 11 → 10。",
+      "person_box_drawn": null,
+      "source_frame": 25
+    },
+    {
+      "event_index": 4,
+      "clip": "p006",
+      "local_frame": 34,
+      "frame": 34,
+      "frame_time": 1.1333333333333333,
+      "seek_time": 1.15,
+      "event_time": 1.12,
+      "confirmed_at": 1.16,
+      "panel_event_indices": [
+        2,
+        3,
+        4
+      ],
+      "target_text": "弹匣弹药 10 → 9。",
+      "person_box_drawn": null,
+      "source_frame": 28
+    },
+    {
+      "event_index": 5,
+      "clip": "p006",
+      "local_frame": 40,
+      "frame": 40,
+      "frame_time": 1.3333333333333333,
+      "seek_time": 1.35,
+      "event_time": 1.32,
+      "confirmed_at": 1.36,
+      "panel_event_indices": [
+        3,
+        4,
+        5
+      ],
+      "target_text": "弹匣弹药 9 → 8。",
+      "person_box_drawn": null,
+      "source_frame": 33
+    },
+    {
+      "event_index": 6,
+      "clip": "p006",
+      "local_frame": 42,
+      "frame": 42,
+      "frame_time": 1.4,
+      "seek_time": 1.4166666666666667,
+      "event_time": 1.4,
+      "confirmed_at": 1.6,
+      "panel_event_indices": [
+        5,
+        6,
+        7
+      ],
+      "target_text": "友方 Sage 被击杀；击杀者 Waylay，武器 Ghost。",
+      "person_box_drawn": null,
+      "source_frame": 35
+    },
+    {
+      "event_index": 7,
+      "clip": "p006",
+      "local_frame": 42,
+      "frame": 42,
+      "frame_time": 1.4,
+      "seek_time": 1.4166666666666667,
+      "event_time": 1.4,
+      "confirmed_at": 1.6,
+      "panel_event_indices": [
+        5,
+        6,
+        7
+      ],
+      "target_text": "Spike：掉落（携包者被击杀）。",
+      "person_box_drawn": null,
+      "source_frame": 35
+    },
+    {
+      "event_index": 8,
+      "clip": "p006",
+      "local_frame": 47,
+      "frame": 47,
+      "frame_time": 1.5666666666666667,
+      "seek_time": 1.5833333333333333,
+      "event_time": 1.56,
+      "confirmed_at": 1.6,
+      "panel_event_indices": [
+        6,
+        7,
+        8
+      ],
+      "target_text": "弹匣弹药 8 → 7。",
+      "person_box_drawn": null,
+      "source_frame": 39
+    },
+    {
+      "event_index": 9,
+      "clip": "p006",
+      "local_frame": 51,
+      "frame": 51,
+      "frame_time": 1.7,
+      "seek_time": 1.7166666666666666,
+      "event_time": 1.68,
+      "confirmed_at": 1.72,
+      "panel_event_indices": [
+        7,
+        8,
+        9
+      ],
+      "target_text": "弹匣弹药 7 → 6。",
+      "person_box_drawn": null,
+      "source_frame": 42
+    },
+    {
+      "event_index": 10,
+      "clip": "p006",
+      "local_frame": 57,
+      "frame": 57,
+      "frame_time": 1.9,
+      "seek_time": 1.9166666666666667,
+      "event_time": 1.88,
+      "confirmed_at": 1.92,
+      "panel_event_indices": [
+        8,
+        9,
+        10
+      ],
+      "target_text": "弹匣弹药 6 → 5。",
+      "person_box_drawn": null,
+      "source_frame": 47
+    },
+    {
+      "event_index": 11,
+      "clip": "p006",
+      "local_frame": 58,
+      "frame": 58,
+      "frame_time": 1.9333333333333333,
+      "seek_time": 1.95,
+      "event_time": 1.92,
+      "confirmed_at": 1.96,
+      "panel_event_indices": [
+        9,
+        10,
+        11
+      ],
+      "target_text": "血量 100 → 91。",
+      "person_box_drawn": null,
+      "source_frame": 48
+    },
+    {
+      "event_index": 12,
+      "clip": "p006",
+      "local_frame": 60,
+      "frame": 60,
+      "frame_time": 2.0,
+      "seek_time": 2.0166666666666666,
+      "event_time": 2.0,
+      "confirmed_at": 2.04,
+      "panel_event_indices": [
+        10,
+        11,
+        12
+      ],
+      "target_text": "弹匣弹药 5 → 4。",
+      "person_box_drawn": null,
+      "source_frame": 50
+    },
+    {
+      "event_index": 13,
+      "clip": "p006",
+      "local_frame": 66,
+      "frame": 66,
+      "frame_time": 2.2,
+      "seek_time": 2.216666666666667,
+      "event_time": 2.2,
+      "confirmed_at": 2.24,
+      "panel_event_indices": [
+        11,
+        12,
+        13
+      ],
+      "target_text": "弹匣弹药 4 → 3。",
+      "person_box_drawn": null,
+      "source_frame": 55
+    },
+    {
+      "event_index": 14,
+      "clip": "p006",
+      "local_frame": 72,
+      "frame": 72,
+      "frame_time": 2.4,
+      "seek_time": 2.4166666666666665,
+      "event_time": 2.4,
+      "confirmed_at": 2.44,
+      "panel_event_indices": [
+        13,
+        14,
+        15
+      ],
+      "target_text": "弹匣弹药 3 → 2。",
+      "person_box_drawn": null,
+      "source_frame": 60
+    },
+    {
+      "event_index": 15,
+      "clip": "p006",
+      "local_frame": 72,
+      "frame": 72,
+      "frame_time": 2.4,
+      "seek_time": 2.4166666666666665,
+      "event_time": 2.4,
+      "confirmed_at": 2.44,
+      "panel_event_indices": [
+        13,
+        14,
+        15
+      ],
+      "target_text": "血量 91 → 65。",
+      "person_box_drawn": null,
+      "source_frame": 60
+    },
+    {
+      "event_index": 16,
+      "clip": "p006",
+      "local_frame": 76,
+      "frame": 76,
+      "frame_time": 2.533333333333333,
+      "seek_time": 2.55,
+      "event_time": 2.52,
+      "confirmed_at": 2.56,
+      "panel_event_indices": [
+        14,
+        15,
+        16
+      ],
+      "target_text": "弹匣弹药 2 → 1。",
+      "person_box_drawn": null,
+      "source_frame": 63
+    },
+    {
+      "event_index": 17,
+      "clip": "p006",
+      "local_frame": 78,
+      "frame": 78,
+      "frame_time": 2.6,
+      "seek_time": 2.6166666666666667,
+      "event_time": 2.6,
+      "confirmed_at": 2.64,
+      "panel_event_indices": [
+        15,
+        16,
+        17
+      ],
+      "target_text": "血量 65 → 35。",
+      "person_box_drawn": null,
+      "source_frame": 65
+    },
+    {
+      "event_index": 18,
+      "clip": "p006",
+      "local_frame": 81,
+      "frame": 81,
+      "frame_time": 2.7,
+      "seek_time": 2.716666666666667,
+      "event_time": 2.68,
+      "confirmed_at": 2.72,
+      "panel_event_indices": [
+        16,
+        17,
+        18
+      ],
+      "target_text": "弹匣弹药 1 → 0。",
+      "person_box_drawn": null,
+      "source_frame": 67
+    },
+    {
+      "event_index": 19,
+      "clip": "p006",
+      "local_frame": 84,
+      "frame": 84,
+      "frame_time": 2.8,
+      "seek_time": 2.816666666666667,
+      "event_time": 2.8,
+      "confirmed_at": 3.0,
+      "panel_event_indices": [
+        17,
+        18,
+        19
+      ],
+      "target_text": "敌方 Waylay 被击杀；击杀者 Brimstone，武器 Classic。",
+      "person_box_drawn": null,
+      "source_frame": 70
+    },
+    {
+      "event_index": 20,
+      "clip": "p006",
+      "local_frame": 98,
+      "frame": 98,
+      "frame_time": 3.2666666666666666,
+      "seek_time": 3.283333333333333,
+      "event_time": 3.24,
+      "confirmed_at": 3.52,
+      "panel_event_indices": [
+        18,
+        19,
+        20
+      ],
+      "target_text": "发现敌方 未知特工。",
+      "person_box_drawn": true,
+      "source_frame": 81
+    },
+    {
+      "event_index": 21,
+      "clip": "p006",
+      "local_frame": 119,
+      "frame": 119,
+      "frame_time": 3.966666666666667,
+      "seek_time": 3.9833333333333334,
+      "event_time": 3.96,
+      "confirmed_at": 3.96,
+      "panel_event_indices": [
+        19,
+        20,
+        21
+      ],
+      "target_text": "敌方 Reyna：非死亡消失。",
+      "person_box_drawn": null,
+      "source_frame": 99
+    },
+    {
+      "event_index": 22,
+      "clip": "p006",
+      "local_frame": 123,
+      "frame": 123,
+      "frame_time": 4.1,
+      "seek_time": 4.116666666666666,
+      "event_time": 4.08,
+      "confirmed_at": 4.12,
+      "panel_event_indices": [
+        20,
+        21,
+        22
+      ],
+      "target_text": "弹匣弹药 0 → 12。",
+      "person_box_drawn": null,
+      "source_frame": 102
+    },
+    {
+      "event_index": 23,
+      "clip": "p006",
+      "local_frame": 129,
+      "frame": 129,
+      "frame_time": 4.3,
+      "seek_time": 4.316666666666666,
+      "event_time": 4.28,
+      "confirmed_at": 4.8,
+      "panel_event_indices": [
+        21,
+        22,
+        23
+      ],
+      "target_text": "发现友方 Reyna。",
+      "person_box_drawn": true,
+      "source_frame": 107
+    },
+    {
+      "event_index": 24,
+      "clip": "p006",
+      "local_frame": 134,
+      "frame": 134,
+      "frame_time": 4.466666666666667,
+      "seek_time": 4.483333333333333,
+      "event_time": 4.44,
+      "confirmed_at": 4.44,
+      "panel_event_indices": [
+        22,
+        23,
+        24
+      ],
+      "target_text": "敌方 未知特工：非死亡消失。",
+      "person_box_drawn": null,
+      "source_frame": 111
+    },
+    {
+      "event_index": 25,
+      "clip": "p006",
+      "local_frame": 155,
+      "frame": 155,
+      "frame_time": 5.166666666666667,
+      "seek_time": 5.183333333333334,
+      "event_time": 5.16,
+      "confirmed_at": 5.28,
+      "panel_event_indices": [
+        23,
+        24,
+        25
+      ],
+      "target_text": "发现烟雾。",
+      "person_box_drawn": null,
+      "source_frame": 129
+    },
+    {
+      "event_index": 26,
+      "clip": "p006",
+      "local_frame": 168,
+      "frame": 168,
+      "frame_time": 5.6,
+      "seek_time": 5.616666666666666,
+      "event_time": 5.6,
+      "confirmed_at": 5.6,
+      "panel_event_indices": [
+        25,
+        26,
+        27
+      ],
+      "target_text": "友方 Reyna 消失：原因未知。",
+      "person_box_drawn": null,
+      "source_frame": 140
+    },
+    {
+      "event_index": 27,
+      "clip": "p006",
+      "local_frame": 168,
+      "frame": 168,
+      "frame_time": 5.6,
+      "seek_time": 5.616666666666666,
+      "event_time": 5.6,
+      "confirmed_at": 5.8,
+      "panel_event_indices": [
+        25,
+        26,
+        27
+      ],
+      "target_text": "Spike：正在安放。",
+      "person_box_drawn": null,
+      "source_frame": 140
+    },
+    {
+      "event_index": 28,
+      "clip": "p006",
+      "local_frame": 274,
+      "frame": 274,
+      "frame_time": 9.133333333333333,
+      "seek_time": 9.15,
+      "event_time": 9.12,
+      "confirmed_at": 9.24,
+      "panel_event_indices": [
+        26,
+        27,
+        28
+      ],
+      "target_text": "发现烟雾。",
+      "person_box_drawn": null,
+      "source_frame": 228
+    },
+    {
+      "event_index": 29,
+      "clip": "p006",
+      "local_frame": 297,
+      "frame": 297,
+      "frame_time": 9.9,
+      "seek_time": 9.916666666666666,
+      "event_time": 9.88,
+      "confirmed_at": 10.16,
+      "panel_event_indices": [
+        27,
+        28,
+        29
+      ],
+      "target_text": "发现友方 未知特工。",
+      "person_box_drawn": true,
+      "source_frame": 247
+    },
+    {
+      "event_index": 30,
+      "clip": "p006",
+      "local_frame": 306,
+      "frame": 306,
+      "frame_time": 10.2,
+      "seek_time": 10.216666666666667,
+      "event_time": 10.2,
+      "confirmed_at": 10.4,
+      "panel_event_indices": [
+        28,
+        29,
+        30
+      ],
+      "target_text": "Spike：已安放。",
+      "person_box_drawn": null,
+      "source_frame": 255
+    },
+    {
+      "event_index": 31,
+      "clip": "p006",
+      "local_frame": 336,
+      "frame": 336,
+      "frame_time": 11.2,
+      "seek_time": 11.216666666666667,
+      "event_time": 11.2,
+      "confirmed_at": 11.2,
+      "panel_event_indices": [
+        29,
+        30,
+        31
+      ],
+      "target_text": "友方 未知特工 消失：原因未知。",
+      "person_box_drawn": null,
+      "source_frame": 280
+    },
+    {
+      "event_index": 32,
+      "clip": "p006",
+      "local_frame": 339,
+      "frame": 339,
+      "frame_time": 11.3,
+      "seek_time": 11.316666666666666,
+      "event_time": 11.28,
+      "confirmed_at": 11.4,
+      "panel_event_indices": [
+        30,
+        31,
+        32
+      ],
+      "target_text": "发现烟雾。",
+      "person_box_drawn": null,
+      "source_frame": 282
+    },
+    {
+      "event_index": 33,
+      "clip": "p006",
+      "local_frame": 345,
+      "frame": 345,
+      "frame_time": 11.5,
+      "seek_time": 11.516666666666667,
+      "event_time": 11.48,
+      "confirmed_at": 11.76,
+      "panel_event_indices": [
+        31,
+        32,
+        33
+      ],
+      "target_text": "发现友方 Iso。",
+      "person_box_drawn": true,
+      "source_frame": 287
+    },
+    {
+      "event_index": 34,
+      "clip": "p006",
+      "local_frame": 377,
+      "frame": 377,
+      "frame_time": 12.566666666666666,
+      "seek_time": 12.583333333333334,
+      "event_time": 12.56,
+      "confirmed_at": 12.56,
+      "panel_event_indices": [
+        32,
+        33,
+        34
+      ],
+      "target_text": "友方 Iso 消失：原因未知。",
+      "person_box_drawn": null,
+      "source_frame": 314
+    },
+    {
+      "event_index": 35,
+      "clip": "p006",
+      "local_frame": 411,
+      "frame": 411,
+      "frame_time": 13.7,
+      "seek_time": 13.716666666666667,
+      "event_time": 13.68,
+      "confirmed_at": 13.96,
+      "panel_event_indices": [
+        33,
+        34,
+        35
+      ],
+      "target_text": "发现友方 Raze。",
+      "person_box_drawn": true,
+      "source_frame": 342
+    },
+    {
+      "event_index": 36,
+      "clip": "p006",
+      "local_frame": 414,
+      "frame": 414,
+      "frame_time": 13.8,
+      "seek_time": 13.816666666666666,
+      "event_time": 13.8,
+      "confirmed_at": 14.0,
+      "panel_event_indices": [
+        34,
+        35,
+        36
+      ],
+      "target_text": "友方 Tejo 被击杀；击杀者 Yoru，武器 Ghost。",
+      "person_box_drawn": null,
+      "source_frame": 345
+    },
+    {
+      "event_index": 37,
+      "clip": "p006",
+      "local_frame": 437,
+      "frame": 437,
+      "frame_time": 14.566666666666666,
+      "seek_time": 14.583333333333334,
+      "event_time": 14.56,
+      "confirmed_at": 15.76,
+      "panel_event_indices": [
+        35,
+        36,
+        37
+      ],
+      "target_text": "发现友方 Yoru。",
+      "person_box_drawn": true,
+      "source_frame": 364
+    },
+    {
+      "event_index": 38,
+      "clip": "p006",
+      "local_frame": 443,
+      "frame": 443,
+      "frame_time": 14.766666666666667,
+      "seek_time": 14.783333333333333,
+      "event_time": 14.76,
+      "confirmed_at": 14.76,
+      "panel_event_indices": [
+        36,
+        37,
+        38
+      ],
+      "target_text": "友方 Raze 消失：原因未知。",
+      "person_box_drawn": null,
+      "source_frame": 369
+    },
+    {
+      "event_index": 39,
+      "clip": "p006",
+      "local_frame": 444,
+      "frame": 444,
+      "frame_time": 14.8,
+      "seek_time": 14.816666666666666,
+      "event_time": 14.8,
+      "confirmed_at": 15.0,
+      "panel_event_indices": [
+        37,
+        38,
+        39
+      ],
+      "target_text": "敌方 未知特工 被击杀；击杀者 Yoru，武器 Classic。",
+      "person_box_drawn": null,
+      "source_frame": 370
+    },
+    {
+      "event_index": 40,
+      "clip": "p006",
+      "local_frame": 473,
+      "frame": 473,
+      "frame_time": 15.766666666666667,
+      "seek_time": 15.783333333333333,
+      "event_time": 15.76,
+      "confirmed_at": 16.96,
+      "panel_event_indices": [
+        38,
+        39,
+        40
+      ],
+      "target_text": "发现友方 Yoru。",
+      "person_box_drawn": true,
+      "source_frame": 394
+    },
+    {
+      "event_index": 41,
+      "clip": "p006",
+      "local_frame": 497,
+      "frame": 497,
+      "frame_time": 16.566666666666666,
+      "seek_time": 16.583333333333332,
+      "event_time": 16.56,
+      "confirmed_at": 16.56,
+      "panel_event_indices": [
+        39,
+        40,
+        41
+      ],
+      "target_text": "友方 Yoru 消失：可能跟踪丢失。",
+      "person_box_drawn": null,
+      "source_frame": 414
+    },
+    {
+      "event_index": 42,
+      "clip": "p006",
+      "local_frame": 533,
+      "frame": 533,
+      "frame_time": 17.766666666666666,
+      "seek_time": 17.783333333333335,
+      "event_time": 17.76,
+      "confirmed_at": 17.76,
+      "panel_event_indices": [
+        40,
+        41,
+        42
+      ],
+      "target_text": "友方 Yoru 消失：原因未知。",
+      "person_box_drawn": null,
+      "source_frame": 444
+    },
+    {
+      "event_index": 43,
+      "clip": "weapon",
+      "local_frame": 0,
+      "frame": 600,
+      "frame_time": 20.0,
+      "seek_time": 20.016666666666666,
+      "event_time": 20.0,
+      "confirmed_at": 20.2,
+      "panel_event_indices": [
+        43
+      ],
+      "target_text": "Spike：已安放。",
+      "person_box_drawn": null,
+      "source_frame": 0
+    },
+    {
+      "event_index": 44,
+      "clip": "weapon",
+      "local_frame": 7,
+      "frame": 607,
+      "frame_time": 20.233333333333334,
+      "seek_time": 20.25,
+      "event_time": 20.233,
+      "confirmed_at": 20.4,
+      "panel_event_indices": [
+        43,
+        44
+      ],
+      "target_text": "发现地上武器。",
+      "person_box_drawn": null,
+      "source_frame": 7
+    },
+    {
+      "event_index": 45,
+      "clip": "weapon",
+      "local_frame": 22,
+      "frame": 622,
+      "frame_time": 20.733333333333334,
+      "seek_time": 20.75,
+      "event_time": 20.733,
+      "confirmed_at": 21.0,
+      "panel_event_indices": [
+        43,
+        44,
+        45
+      ],
+      "target_text": "疑似掉落 Spike，状态待核实。",
+      "person_box_drawn": null,
+      "source_frame": 22
+    },
+    {
+      "event_index": 46,
+      "clip": "weapon",
+      "local_frame": 76,
+      "frame": 676,
+      "frame_time": 22.533333333333335,
+      "seek_time": 22.55,
+      "event_time": 22.533,
+      "confirmed_at": 22.833,
+      "panel_event_indices": [
+        44,
+        45,
+        46
+      ],
+      "target_text": "发现敌方 未知特工。",
+      "person_box_drawn": true,
+      "source_frame": 76
+    },
+    {
+      "event_index": 47,
+      "clip": "weapon",
+      "local_frame": 78,
+      "frame": 678,
+      "frame_time": 22.6,
+      "seek_time": 22.616666666666667,
+      "event_time": 22.6,
+      "confirmed_at": 22.8,
+      "panel_event_indices": [
+        45,
+        46,
+        47
+      ],
+      "target_text": "敌方 Cypher 被击杀；击杀者 Fade，武器 Vandal。",
+      "person_box_drawn": null,
+      "source_frame": 78
+    },
+    {
+      "event_index": 48,
+      "clip": "weapon",
+      "local_frame": 81,
+      "frame": 681,
+      "frame_time": 22.7,
+      "seek_time": 22.716666666666665,
+      "event_time": 22.7,
+      "confirmed_at": 22.867,
+      "panel_event_indices": [
+        46,
+        47,
+        48
+      ],
+      "target_text": "再次发现地上武器。",
+      "person_box_drawn": null,
+      "source_frame": 81
+    },
+    {
+      "event_index": 49,
+      "clip": "weapon",
+      "local_frame": 84,
+      "frame": 684,
+      "frame_time": 22.8,
+      "seek_time": 22.816666666666666,
+      "event_time": 22.8,
+      "confirmed_at": 23.167,
+      "panel_event_indices": [
+        47,
+        48,
+        49
+      ],
+      "target_text": "发现敌方 未知特工。",
+      "person_box_drawn": true,
+      "source_frame": 84
+    },
+    {
+      "event_index": 50,
+      "clip": "weapon",
+      "local_frame": 102,
+      "frame": 702,
+      "frame_time": 23.4,
+      "seek_time": 23.416666666666668,
+      "event_time": 23.4,
+      "confirmed_at": 23.6,
+      "panel_event_indices": [
+        48,
+        49,
+        50
+      ],
+      "target_text": "敌方 Fade 被击杀；击杀者 Fade，武器 Vandal。",
+      "person_box_drawn": null,
+      "source_frame": 102
+    },
+    {
+      "event_index": 51,
+      "clip": "weapon",
+      "local_frame": 112,
+      "frame": 712,
+      "frame_time": 23.733333333333334,
+      "seek_time": 23.75,
+      "event_time": 23.733,
+      "confirmed_at": 23.9,
+      "panel_event_indices": [
+        49,
+        50,
+        51
+      ],
+      "target_text": "再次发现地上武器。",
+      "person_box_drawn": null,
+      "source_frame": 112
+    },
+    {
+      "event_index": 52,
+      "clip": "weapon",
+      "local_frame": 119,
+      "frame": 719,
+      "frame_time": 23.966666666666665,
+      "seek_time": 23.983333333333334,
+      "event_time": 23.967,
+      "confirmed_at": 23.967,
+      "panel_event_indices": [
+        50,
+        51,
+        52
+      ],
+      "target_text": "敌方 未知特工：非死亡消失。",
+      "person_box_drawn": null,
+      "source_frame": 119
+    },
+    {
+      "event_index": 53,
+      "clip": "weapon",
+      "local_frame": 130,
+      "frame": 730,
+      "frame_time": 24.333333333333332,
+      "seek_time": 24.35,
+      "event_time": 24.333,
+      "confirmed_at": 24.333,
+      "panel_event_indices": [
+        51,
+        52,
+        53
+      ],
+      "target_text": "敌方 未知特工：非死亡消失。",
+      "person_box_drawn": null,
+      "source_frame": 130
+    },
+    {
+      "event_index": 54,
+      "clip": "weapon",
+      "local_frame": 176,
+      "frame": 776,
+      "frame_time": 25.866666666666667,
+      "seek_time": 25.883333333333333,
+      "event_time": 25.867,
+      "confirmed_at": 26.133,
+      "panel_event_indices": [
+        52,
+        53,
+        54
+      ],
+      "target_text": "发现阵营未知 Reyna。",
+      "person_box_drawn": true,
+      "source_frame": 176
+    },
+    {
+      "event_index": 55,
+      "clip": "weapon",
+      "local_frame": 198,
+      "frame": 798,
+      "frame_time": 26.6,
+      "seek_time": 26.616666666666667,
+      "event_time": 26.6,
+      "confirmed_at": 26.8,
+      "panel_event_indices": [
+        53,
+        54,
+        55
+      ],
+      "target_text": "友方 Fade 被击杀；击杀者 Reyna，武器 Vandal。",
+      "person_box_drawn": null,
+      "source_frame": 198
+    },
+    {
+      "event_index": 56,
+      "clip": "weapon",
+      "local_frame": 208,
+      "frame": 808,
+      "frame_time": 26.933333333333334,
+      "seek_time": 26.95,
+      "event_time": 26.933,
+      "confirmed_at": 26.933,
+      "panel_event_indices": [
+        54,
+        55,
+        56
+      ],
+      "target_text": "阵营未知 Reyna 消失：原因未知。",
+      "person_box_drawn": null,
+      "source_frame": 208
+    },
+    {
+      "event_index": 57,
+      "clip": "weapon",
+      "local_frame": 216,
+      "frame": 816,
+      "frame_time": 27.2,
+      "seek_time": 27.216666666666665,
+      "event_time": 27.2,
+      "confirmed_at": 27.6,
+      "panel_event_indices": [
+        55,
+        56,
+        57
+      ],
+      "target_text": "Spike：已拆除。",
+      "person_box_drawn": null,
+      "source_frame": 216
+    },
+    {
+      "event_index": 58,
+      "clip": "spike",
+      "local_frame": 0,
+      "frame": 839,
+      "frame_time": 27.966666666666665,
+      "seek_time": 27.983333333333334,
+      "event_time": 27.966667,
+      "confirmed_at": 28.233667,
+      "panel_event_indices": [
+        58
+      ],
+      "target_text": "发现敌方 未知特工。",
+      "person_box_drawn": true,
+      "source_frame": 0
+    },
+    {
+      "event_index": 59,
+      "clip": "spike",
+      "local_frame": 30,
+      "frame": 869,
+      "frame_time": 28.966666666666665,
+      "seek_time": 28.983333333333334,
+      "event_time": 28.966667,
+      "confirmed_at": 29.499667,
+      "panel_event_indices": [
+        58,
+        59
+      ],
+      "target_text": "发现敌方 Neon。",
+      "person_box_drawn": true,
+      "source_frame": 30
+    },
+    {
+      "event_index": 60,
+      "clip": "spike",
+      "local_frame": 48,
+      "frame": 887,
+      "frame_time": 29.566666666666666,
+      "seek_time": 29.583333333333332,
+      "event_time": 29.566667,
+      "confirmed_at": 29.766667,
+      "panel_event_indices": [
+        58,
+        59,
+        60
+      ],
+      "target_text": "Spike：掉落（携包者被击杀）。",
+      "person_box_drawn": null,
+      "source_frame": 48
+    },
+    {
+      "event_index": 61,
+      "clip": "spike",
+      "local_frame": 52,
+      "frame": 891,
+      "frame_time": 29.7,
+      "seek_time": 29.716666666666665,
+      "event_time": 29.699667,
+      "confirmed_at": 29.699667,
+      "panel_event_indices": [
+        59,
+        60,
+        61
+      ],
+      "target_text": "敌方 未知特工：非死亡消失。",
+      "person_box_drawn": null,
+      "source_frame": 52
+    },
+    {
+      "event_index": 62,
+      "clip": "spike",
+      "local_frame": 54,
+      "frame": 893,
+      "frame_time": 29.766666666666666,
+      "seek_time": 29.783333333333335,
+      "event_time": 29.766667,
+      "confirmed_at": 30.299667,
+      "panel_event_indices": [
+        60,
+        61,
+        62
+      ],
+      "target_text": "敌方 Neon 被击杀；击杀者 Neon，武器 Operator。",
+      "person_box_drawn": null,
+      "source_frame": 54
+    },
+    {
+      "event_index": 63,
+      "clip": "spike",
+      "local_frame": 82,
+      "frame": 921,
+      "frame_time": 30.7,
+      "seek_time": 30.716666666666665,
+      "event_time": 30.699667,
+      "confirmed_at": 31.033667,
+      "panel_event_indices": [
+        61,
+        62,
+        63
+      ],
+      "target_text": "发现敌方 未知特工。",
+      "person_box_drawn": true,
+      "source_frame": 82
+    },
+    {
+      "event_index": 64,
+      "clip": "agents",
+      "local_frame": 0,
+      "frame": 957,
+      "frame_time": 31.9,
+      "seek_time": 31.916666666666668,
+      "event_time": 31.9,
+      "confirmed_at": 32.333,
+      "panel_event_indices": [
+        64,
+        65
+      ],
+      "target_text": "发现友方 Reyna。",
+      "person_box_drawn": true,
+      "source_frame": 0
+    },
+    {
+      "event_index": 65,
+      "clip": "agents",
+      "local_frame": 0,
+      "frame": 957,
+      "frame_time": 31.9,
+      "seek_time": 31.916666666666668,
+      "event_time": 31.9,
+      "confirmed_at": 32.367,
+      "panel_event_indices": [
+        64,
+        65
+      ],
+      "target_text": "发现友方 未知特工。",
+      "person_box_drawn": true,
+      "source_frame": 0
+    },
+    {
+      "event_index": 66,
+      "clip": "agents",
+      "local_frame": 19,
+      "frame": 976,
+      "frame_time": 32.53333333333333,
+      "seek_time": 32.55,
+      "event_time": 32.533,
+      "confirmed_at": 32.8,
+      "panel_event_indices": [
+        65,
+        66,
+        67
+      ],
+      "target_text": "发现友方 未知特工。",
+      "person_box_drawn": true,
+      "source_frame": 19
+    },
+    {
+      "event_index": 67,
+      "clip": "agents",
+      "local_frame": 19,
+      "frame": 976,
+      "frame_time": 32.53333333333333,
+      "seek_time": 32.55,
+      "event_time": 32.533,
+      "confirmed_at": 32.867,
+      "panel_event_indices": [
+        65,
+        66,
+        67
+      ],
+      "target_text": "发现友方 未知特工。",
+      "person_box_drawn": true,
+      "source_frame": 19
+    },
+    {
+      "event_index": 68,
+      "clip": "agents",
+      "local_frame": 38,
+      "frame": 995,
+      "frame_time": 33.166666666666664,
+      "seek_time": 33.18333333333333,
+      "event_time": 33.167,
+      "confirmed_at": 33.167,
+      "panel_event_indices": [
+        66,
+        67,
+        68
+      ],
+      "target_text": "友方 未知特工 消失：原因未知。",
+      "person_box_drawn": null,
+      "source_frame": 38
+    },
+    {
+      "event_index": 69,
+      "clip": "agents",
+      "local_frame": 39,
+      "frame": 996,
+      "frame_time": 33.2,
+      "seek_time": 33.21666666666667,
+      "event_time": 33.2,
+      "confirmed_at": 34.9,
+      "panel_event_indices": [
+        67,
+        68,
+        69
+      ],
+      "target_text": "发现友方 未知特工。",
+      "person_box_drawn": true,
+      "source_frame": 39
+    },
+    {
+      "event_index": 70,
+      "clip": "agents",
+      "local_frame": 56,
+      "frame": 1013,
+      "frame_time": 33.766666666666666,
+      "seek_time": 33.78333333333333,
+      "event_time": 33.767,
+      "confirmed_at": 33.767,
+      "panel_event_indices": [
+        69,
+        70,
+        71
+      ],
+      "target_text": "友方 未知特工 消失：原因未知。",
+      "person_box_drawn": null,
+      "source_frame": 56
+    },
+    {
+      "event_index": 71,
+      "clip": "agents",
+      "local_frame": 56,
+      "frame": 1013,
+      "frame_time": 33.766666666666666,
+      "seek_time": 33.78333333333333,
+      "event_time": 33.767,
+      "confirmed_at": 35.733,
+      "panel_event_indices": [
+        69,
+        70,
+        71
+      ],
+      "target_text": "发现友方 未知特工。",
+      "person_box_drawn": true,
+      "source_frame": 56
+    },
+    {
+      "event_index": 72,
+      "clip": "agents",
+      "local_frame": 59,
+      "frame": 1016,
+      "frame_time": 33.86666666666667,
+      "seek_time": 33.88333333333333,
+      "event_time": 33.867,
+      "confirmed_at": 33.867,
+      "panel_event_indices": [
+        70,
+        71,
+        72
+      ],
+      "target_text": "友方 未知特工 消失：原因未知。",
+      "person_box_drawn": null,
+      "source_frame": 59
+    },
+    {
+      "event_index": 73,
+      "clip": "agents",
+      "local_frame": 60,
+      "frame": 1017,
+      "frame_time": 33.9,
+      "seek_time": 33.916666666666664,
+      "event_time": 33.9,
+      "confirmed_at": 33.9,
+      "panel_event_indices": [
+        71,
+        72,
+        73
+      ],
+      "target_text": "友方 Reyna 消失：原因未知。",
+      "person_box_drawn": null,
+      "source_frame": 60
+    },
+    {
+      "event_index": 74,
+      "clip": "agents",
+      "local_frame": 75,
+      "frame": 1032,
+      "frame_time": 34.4,
+      "seek_time": 34.416666666666664,
+      "event_time": 34.4,
+      "confirmed_at": 34.9,
+      "panel_event_indices": [
+        72,
+        73,
+        74
+      ],
+      "target_text": "发现友方 Jett。",
+      "person_box_drawn": true,
+      "source_frame": 75
+    },
+    {
+      "event_index": 75,
+      "clip": "agents",
+      "local_frame": 110,
+      "frame": 1067,
+      "frame_time": 35.56666666666667,
+      "seek_time": 35.583333333333336,
+      "event_time": 35.567,
+      "confirmed_at": 35.833,
+      "panel_event_indices": [
+        73,
+        74,
+        75
+      ],
+      "target_text": "发现友方 未知特工。",
+      "person_box_drawn": true,
+      "source_frame": 110
+    },
+    {
+      "event_index": 76,
+      "clip": "agents",
+      "local_frame": 114,
+      "frame": 1071,
+      "frame_time": 35.7,
+      "seek_time": 35.71666666666667,
+      "event_time": 35.7,
+      "confirmed_at": 35.7,
+      "panel_event_indices": [
+        74,
+        75,
+        76
+      ],
+      "target_text": "友方 Jett 消失：原因未知。",
+      "person_box_drawn": null,
+      "source_frame": 114
+    },
+    {
+      "event_index": 77,
+      "clip": "agents",
+      "local_frame": 115,
+      "frame": 1072,
+      "frame_time": 35.733333333333334,
+      "seek_time": 35.75,
+      "event_time": 35.733,
+      "confirmed_at": 35.733,
+      "panel_event_indices": [
+        75,
+        76,
+        77
+      ],
+      "target_text": "友方 未知特工 消失：原因未知。",
+      "person_box_drawn": null,
+      "source_frame": 115
+    },
+    {
+      "event_index": 78,
+      "clip": "agents",
+      "local_frame": 118,
+      "frame": 1075,
+      "frame_time": 35.833333333333336,
+      "seek_time": 35.85,
+      "event_time": 35.833,
+      "confirmed_at": 36.167,
+      "panel_event_indices": [
+        76,
+        77,
+        78
+      ],
+      "target_text": "发现友方 未知特工。",
+      "person_box_drawn": true,
+      "source_frame": 118
+    },
+    {
+      "event_index": 79,
+      "clip": "agents",
+      "local_frame": 129,
+      "frame": 1086,
+      "frame_time": 36.2,
+      "seek_time": 36.21666666666667,
+      "event_time": 36.2,
+      "confirmed_at": 36.633,
+      "panel_event_indices": [
+        77,
+        78,
+        79
+      ],
+      "target_text": "发现友方 未知特工。",
+      "person_box_drawn": true,
+      "source_frame": 129
+    },
+    {
+      "event_index": 80,
+      "clip": "agents",
+      "local_frame": 133,
+      "frame": 1090,
+      "frame_time": 36.333333333333336,
+      "seek_time": 36.35,
+      "event_time": 36.333,
+      "confirmed_at": 36.767,
+      "panel_event_indices": [
+        78,
+        79,
+        80
+      ],
+      "target_text": "发现友方 未知特工。",
+      "person_box_drawn": true,
+      "source_frame": 133
+    },
+    {
+      "event_index": 81,
+      "clip": "agents",
+      "local_frame": 140,
+      "frame": 1097,
+      "frame_time": 36.56666666666667,
+      "seek_time": 36.583333333333336,
+      "event_time": 36.567,
+      "confirmed_at": 36.567,
+      "panel_event_indices": [
+        79,
+        80,
+        81
+      ],
+      "target_text": "友方 未知特工 消失：原因未知。",
+      "person_box_drawn": null,
+      "source_frame": 140
+    },
+    {
+      "event_index": 82,
+      "clip": "agents",
+      "local_frame": 144,
+      "frame": 1101,
+      "frame_time": 36.7,
+      "seek_time": 36.71666666666667,
+      "event_time": 36.7,
+      "confirmed_at": 36.7,
+      "panel_event_indices": [
+        80,
+        81,
+        82
+      ],
+      "target_text": "友方 未知特工 消失：可能跟踪丢失。",
+      "person_box_drawn": null,
+      "source_frame": 144
+    },
+    {
+      "event_index": 83,
+      "clip": "agents",
+      "local_frame": 153,
+      "frame": 1110,
+      "frame_time": 37.0,
+      "seek_time": 37.016666666666666,
+      "event_time": 37.0,
+      "confirmed_at": 37.0,
+      "panel_event_indices": [
+        81,
+        82,
+        83
+      ],
+      "target_text": "友方 未知特工 消失：原因未知。",
+      "person_box_drawn": null,
+      "source_frame": 153
+    },
+    {
+      "event_index": 84,
+      "clip": "agents",
+      "local_frame": 161,
+      "frame": 1118,
+      "frame_time": 37.266666666666666,
+      "seek_time": 37.28333333333333,
+      "event_time": 37.267,
+      "confirmed_at": 37.533,
+      "panel_event_indices": [
+        83,
+        84,
+        85
+      ],
+      "target_text": "发现友方 Jett。",
+      "person_box_drawn": true,
+      "source_frame": 161
+    },
+    {
+      "event_index": 85,
+      "clip": "agents",
+      "local_frame": 161,
+      "frame": 1118,
+      "frame_time": 37.266666666666666,
+      "seek_time": 37.28333333333333,
+      "event_time": 37.267,
+      "confirmed_at": 38.133,
+      "panel_event_indices": [
+        83,
+        84,
+        85
+      ],
+      "target_text": "发现友方 未知特工。",
+      "person_box_drawn": true,
+      "source_frame": 161
+    },
+    {
+      "event_index": 86,
+      "clip": "agents",
+      "local_frame": 169,
+      "frame": 1126,
+      "frame_time": 37.53333333333333,
+      "seek_time": 37.55,
+      "event_time": 37.533,
+      "confirmed_at": 37.533,
+      "panel_event_indices": [
+        84,
+        85,
+        86
+      ],
+      "target_text": "友方 未知特工 消失：原因未知。",
+      "person_box_drawn": null,
+      "source_frame": 169
+    },
+    {
+      "event_index": 87,
+      "clip": "agents",
+      "local_frame": 170,
+      "frame": 1127,
+      "frame_time": 37.56666666666667,
+      "seek_time": 37.583333333333336,
+      "event_time": 37.567,
+      "confirmed_at": 37.567,
+      "panel_event_indices": [
+        85,
+        86,
+        87
+      ],
+      "target_text": "友方 未知特工 消失：原因未知。",
+      "person_box_drawn": null,
+      "source_frame": 170
+    },
+    {
+      "event_index": 88,
+      "clip": "agents",
+      "local_frame": 171,
+      "frame": 1128,
+      "frame_time": 37.6,
+      "seek_time": 37.61666666666667,
+      "event_time": 37.6,
+      "confirmed_at": 38.167,
+      "panel_event_indices": [
+        86,
+        87,
+        88
+      ],
+      "target_text": "发现友方 未知特工。",
+      "person_box_drawn": true,
+      "source_frame": 171
+    },
+    {
+      "event_index": 89,
+      "clip": "agents",
+      "local_frame": 190,
+      "frame": 1147,
+      "frame_time": 38.233333333333334,
+      "seek_time": 38.25,
+      "event_time": 38.233,
+      "confirmed_at": 38.5,
+      "panel_event_indices": [
+        88,
+        89,
+        90
+      ],
+      "target_text": "发现友方 未知特工。",
+      "person_box_drawn": true,
+      "source_frame": 190
+    },
+    {
+      "event_index": 90,
+      "clip": "agents",
+      "local_frame": 190,
+      "frame": 1147,
+      "frame_time": 38.233333333333334,
+      "seek_time": 38.25,
+      "event_time": 38.233,
+      "confirmed_at": 38.667,
+      "panel_event_indices": [
+        88,
+        89,
+        90
+      ],
+      "target_text": "发现友方 Jett。",
+      "person_box_drawn": true,
+      "source_frame": 190
+    },
+    {
+      "event_index": 91,
+      "clip": "agents",
+      "local_frame": 194,
+      "frame": 1151,
+      "frame_time": 38.36666666666667,
+      "seek_time": 38.38333333333333,
+      "event_time": 38.367,
+      "confirmed_at": 38.367,
+      "panel_event_indices": [
+        89,
+        90,
+        91
+      ],
+      "target_text": "友方 Jett 消失：原因未知。",
+      "person_box_drawn": null,
+      "source_frame": 194
+    },
+    {
+      "event_index": 92,
+      "clip": "baseline",
+      "local_frame": 203,
+      "frame": 1370,
+      "frame_time": 45.666666666666664,
+      "seek_time": 45.68333333333333,
+      "event_time": 45.667,
+      "confirmed_at": 45.933,
+      "panel_event_indices": [
+        92
+      ],
+      "target_text": "发现敌方 未知特工。",
+      "person_box_drawn": true,
+      "source_frame": 203
+    },
+    {
+      "event_index": 93,
+      "clip": "baseline",
+      "local_frame": 213,
+      "frame": 1380,
+      "frame_time": 46.0,
+      "seek_time": 46.016666666666666,
+      "event_time": 46.0,
+      "confirmed_at": 46.1,
+      "panel_event_indices": [
+        92,
+        93
+      ],
+      "target_text": "弹匣弹药 6 → 5。",
+      "person_box_drawn": null,
+      "source_frame": 213
+    },
+    {
+      "event_index": 94,
+      "clip": "baseline",
+      "local_frame": 222,
+      "frame": 1389,
+      "frame_time": 46.3,
+      "seek_time": 46.31666666666667,
+      "event_time": 46.3,
+      "confirmed_at": 46.4,
+      "panel_event_indices": [
+        92,
+        93,
+        94
+      ],
+      "target_text": "弹匣弹药 5 → 4。",
+      "person_box_drawn": null,
+      "source_frame": 222
+    },
+    {
+      "event_index": 95,
+      "clip": "baseline",
+      "local_frame": 223,
+      "frame": 1390,
+      "frame_time": 46.333333333333336,
+      "seek_time": 46.35,
+      "event_time": 46.333,
+      "confirmed_at": 46.6,
+      "panel_event_indices": [
+        93,
+        94,
+        95
+      ],
+      "target_text": "发现敌方 未知特工。",
+      "person_box_drawn": true,
+      "source_frame": 223
+    },
+    {
+      "event_index": 96,
+      "clip": "baseline",
+      "local_frame": 234,
+      "frame": 1401,
+      "frame_time": 46.7,
+      "seek_time": 46.71666666666667,
+      "event_time": 46.7,
+      "confirmed_at": 46.8,
+      "panel_event_indices": [
+        94,
+        95,
+        96
+      ],
+      "target_text": "弹匣弹药 4 → 3。",
+      "person_box_drawn": null,
+      "source_frame": 234
+    },
+    {
+      "event_index": 97,
+      "clip": "baseline",
+      "local_frame": 235,
+      "frame": 1402,
+      "frame_time": 46.733333333333334,
+      "seek_time": 46.75,
+      "event_time": 46.733,
+      "confirmed_at": 46.733,
+      "panel_event_indices": [
+        95,
+        96,
+        97
+      ],
+      "target_text": "敌方 未知特工：非死亡消失。",
+      "person_box_drawn": null,
+      "source_frame": 235
+    },
+    {
+      "event_index": 98,
+      "clip": "baseline",
+      "local_frame": 246,
+      "frame": 1413,
+      "frame_time": 47.1,
+      "seek_time": 47.11666666666667,
+      "event_time": 47.1,
+      "confirmed_at": 47.2,
+      "panel_event_indices": [
+        96,
+        97,
+        98
+      ],
+      "target_text": "弹匣弹药 3 → 2。",
+      "person_box_drawn": null,
+      "source_frame": 246
+    },
+    {
+      "event_index": 99,
+      "clip": "baseline",
+      "local_frame": 252,
+      "frame": 1419,
+      "frame_time": 47.3,
+      "seek_time": 47.31666666666667,
+      "event_time": 47.3,
+      "confirmed_at": 47.4,
+      "panel_event_indices": [
+        97,
+        98,
+        99
+      ],
+      "target_text": "血量 100 → 74。",
+      "person_box_drawn": null,
+      "source_frame": 252
+    },
+    {
+      "event_index": 100,
+      "clip": "baseline",
+      "local_frame": 269,
+      "frame": 1436,
+      "frame_time": 47.86666666666667,
+      "seek_time": 47.88333333333333,
+      "event_time": 47.867,
+      "confirmed_at": 47.867,
+      "panel_event_indices": [
+        98,
+        99,
+        100
+      ],
+      "target_text": "敌方 未知特工：非死亡消失。",
+      "person_box_drawn": null,
+      "source_frame": 269
+    },
+    {
+      "event_index": 101,
+      "clip": "baseline",
+      "local_frame": 303,
+      "frame": 1470,
+      "frame_time": 49.0,
+      "seek_time": 49.016666666666666,
+      "event_time": 49.0,
+      "confirmed_at": 49.1,
+      "panel_event_indices": [
+        99,
+        100,
+        101
+      ],
+      "target_text": "弹匣弹药 2 → 1。",
+      "person_box_drawn": null,
+      "source_frame": 303
+    },
+    {
+      "event_index": 102,
+      "clip": "baseline",
+      "local_frame": 378,
+      "frame": 1545,
+      "frame_time": 51.5,
+      "seek_time": 51.516666666666666,
+      "event_time": 51.5,
+      "confirmed_at": 51.933,
+      "panel_event_indices": [
+        100,
+        101,
+        102
+      ],
+      "target_text": "发现敌方 未知特工。",
+      "person_box_drawn": true,
+      "source_frame": 378
+    },
+    {
+      "event_index": 103,
+      "clip": "baseline",
+      "local_frame": 415,
+      "frame": 1582,
+      "frame_time": 52.733333333333334,
+      "seek_time": 52.75,
+      "event_time": 52.733,
+      "confirmed_at": 52.733,
+      "panel_event_indices": [
+        101,
+        102,
+        103
+      ],
+      "target_text": "敌方 未知特工：非死亡消失。",
+      "person_box_drawn": null,
+      "source_frame": 415
+    },
+    {
+      "event_index": 104,
+      "clip": "baseline",
+      "local_frame": 426,
+      "frame": 1593,
+      "frame_time": 53.1,
+      "seek_time": 53.11666666666667,
+      "event_time": 53.1,
+      "confirmed_at": 53.2,
+      "panel_event_indices": [
+        102,
+        103,
+        104
+      ],
+      "target_text": "弹匣弹药 1 → 6。",
+      "person_box_drawn": null,
+      "source_frame": 426
+    },
+    {
+      "event_index": 105,
+      "clip": "baseline",
+      "local_frame": 469,
+      "frame": 1636,
+      "frame_time": 54.53333333333333,
+      "seek_time": 54.55,
+      "event_time": 54.533,
+      "confirmed_at": 54.8,
+      "panel_event_indices": [
+        103,
+        104,
+        105
+      ],
+      "target_text": "发现敌方 未知特工。",
+      "person_box_drawn": true,
+      "source_frame": 469
+    },
+    {
+      "event_index": 106,
+      "clip": "baseline",
+      "local_frame": 486,
+      "frame": 1653,
+      "frame_time": 55.1,
+      "seek_time": 55.11666666666667,
+      "event_time": 55.1,
+      "confirmed_at": 55.2,
+      "panel_event_indices": [
+        104,
+        105,
+        106
+      ],
+      "target_text": "弹匣弹药 6 → 5。",
+      "person_box_drawn": null,
+      "source_frame": 486
+    },
+    {
+      "event_index": 107,
+      "clip": "baseline",
+      "local_frame": 495,
+      "frame": 1662,
+      "frame_time": 55.4,
+      "seek_time": 55.416666666666664,
+      "event_time": 55.4,
+      "confirmed_at": 55.5,
+      "panel_event_indices": [
+        105,
+        106,
+        107
+      ],
+      "target_text": "弹匣弹药 5 → 4。",
+      "person_box_drawn": null,
+      "source_frame": 495
+    },
+    {
+      "event_index": 108,
+      "clip": "baseline",
+      "local_frame": 504,
+      "frame": 1671,
+      "frame_time": 55.7,
+      "seek_time": 55.71666666666667,
+      "event_time": 55.7,
+      "confirmed_at": 55.8,
+      "panel_event_indices": [
+        106,
+        107,
+        108
+      ],
+      "target_text": "弹匣弹药 4 → 3。",
+      "person_box_drawn": null,
+      "source_frame": 504
+    },
+    {
+      "event_index": 109,
+      "clip": "baseline",
+      "local_frame": 516,
+      "frame": 1683,
+      "frame_time": 56.1,
+      "seek_time": 56.11666666666667,
+      "event_time": 56.1,
+      "confirmed_at": 56.2,
+      "panel_event_indices": [
+        108,
+        109,
+        110
+      ],
+      "target_text": "弹匣弹药 3 → 2。",
+      "person_box_drawn": null,
+      "source_frame": 516
+    },
+    {
+      "event_index": 110,
+      "clip": "baseline",
+      "local_frame": 516,
+      "frame": 1683,
+      "frame_time": 56.1,
+      "seek_time": 56.11666666666667,
+      "event_time": 56.1,
+      "confirmed_at": 56.4,
+      "panel_event_indices": [
+        108,
+        109,
+        110
+      ],
+      "target_text": "发现敌方 未知特工。",
+      "person_box_drawn": true,
+      "source_frame": 516
+    },
+    {
+      "event_index": 111,
+      "clip": "baseline",
+      "local_frame": 525,
+      "frame": 1692,
+      "frame_time": 56.4,
+      "seek_time": 56.416666666666664,
+      "event_time": 56.4,
+      "confirmed_at": 56.5,
+      "panel_event_indices": [
+        109,
+        110,
+        111
+      ],
+      "target_text": "血量 74 → 53。",
+      "person_box_drawn": null,
+      "source_frame": 525
+    },
+    {
+      "event_index": 112,
+      "clip": "baseline",
+      "local_frame": 528,
+      "frame": 1695,
+      "frame_time": 56.5,
+      "seek_time": 56.516666666666666,
+      "event_time": 56.5,
+      "confirmed_at": 56.6,
+      "panel_event_indices": [
+        110,
+        111,
+        112
+      ],
+      "target_text": "弹匣弹药 2 → 1。",
+      "person_box_drawn": null,
+      "source_frame": 528
+    },
+    {
+      "event_index": 113,
+      "clip": "baseline",
+      "local_frame": 533,
+      "frame": 1700,
+      "frame_time": 56.666666666666664,
+      "seek_time": 56.68333333333333,
+      "event_time": 56.667,
+      "confirmed_at": 56.933,
+      "panel_event_indices": [
+        111,
+        112,
+        113
+      ],
+      "target_text": "发现友方 未知特工。",
+      "person_box_drawn": true,
+      "source_frame": 533
+    },
+    {
+      "event_index": 114,
+      "clip": "baseline",
+      "local_frame": 538,
+      "frame": 1705,
+      "frame_time": 56.833333333333336,
+      "seek_time": 56.85,
+      "event_time": 56.833,
+      "confirmed_at": 56.833,
+      "panel_event_indices": [
+        112,
+        113,
+        114
+      ],
+      "target_text": "敌方 未知特工：非死亡消失。",
+      "person_box_drawn": null,
+      "source_frame": 538
+    },
+    {
+      "event_index": 115,
+      "clip": "baseline",
+      "local_frame": 549,
+      "frame": 1716,
+      "frame_time": 57.2,
+      "seek_time": 57.21666666666667,
+      "event_time": 57.2,
+      "confirmed_at": 57.2,
+      "panel_event_indices": [
+        113,
+        114,
+        115
+      ],
+      "target_text": "敌方 未知特工：非死亡消失。",
+      "person_box_drawn": null,
+      "source_frame": 549
+    },
+    {
+      "event_index": 116,
+      "clip": "baseline",
+      "local_frame": 567,
+      "frame": 1734,
+      "frame_time": 57.8,
+      "seek_time": 57.81666666666667,
+      "event_time": 57.8,
+      "confirmed_at": 57.9,
+      "panel_event_indices": [
+        114,
+        115,
+        116
+      ],
+      "target_text": "弹匣弹药 1 → 0。",
+      "person_box_drawn": null,
+      "source_frame": 567
+    },
+    {
+      "event_index": 117,
+      "clip": "baseline",
+      "local_frame": 582,
+      "frame": 1749,
+      "frame_time": 58.3,
+      "seek_time": 58.31666666666667,
+      "event_time": 58.3,
+      "confirmed_at": 58.3,
+      "panel_event_indices": [
+        115,
+        116,
+        117
+      ],
+      "target_text": "友方 未知特工 消失：原因未知。",
+      "person_box_drawn": null,
+      "source_frame": 582
+    },
+    {
+      "event_index": 118,
+      "clip": "baseline",
+      "local_frame": 594,
+      "frame": 1761,
+      "frame_time": 58.7,
+      "seek_time": 58.71666666666667,
+      "event_time": 58.7,
+      "confirmed_at": 59.1,
+      "panel_event_indices": [
+        116,
+        117,
+        118
+      ],
+      "target_text": "发现友方 未知特工。",
+      "person_box_drawn": true,
+      "source_frame": 594
+    },
+    {
+      "event_index": 119,
+      "clip": "baseline",
+      "local_frame": 615,
+      "frame": 1782,
+      "frame_time": 59.4,
+      "seek_time": 59.416666666666664,
+      "event_time": 59.4,
+      "confirmed_at": 59.5,
+      "panel_event_indices": [
+        117,
+        118,
+        119
+      ],
+      "target_text": "弹匣弹药 0 → 6。",
+      "person_box_drawn": null,
+      "source_frame": 615
+    },
+    {
+      "event_index": 120,
+      "clip": "native",
+      "local_frame": 40,
+      "frame": 1837,
+      "frame_time": 61.233333333333334,
+      "seek_time": 61.25,
+      "event_time": 61.233,
+      "confirmed_at": 61.367,
+      "panel_event_indices": [
+        120
+      ],
+      "target_text": "发现墙体效果。",
+      "person_box_drawn": null,
+      "source_frame": 20
+    },
+    {
+      "event_index": 121,
+      "clip": "native",
+      "local_frame": 88,
+      "frame": 1885,
+      "frame_time": 62.833333333333336,
+      "seek_time": 62.85,
+      "event_time": 62.833,
+      "confirmed_at": 62.967,
+      "panel_event_indices": [
+        120,
+        121
+      ],
+      "target_text": "当前视角：闪光影响。",
+      "person_box_drawn": null,
+      "source_frame": 44
+    },
+    {
+      "event_index": 122,
+      "clip": "native",
+      "local_frame": 176,
+      "frame": 1973,
+      "frame_time": 65.76666666666667,
+      "seek_time": 65.78333333333333,
+      "event_time": 65.767,
+      "confirmed_at": 66.033,
+      "panel_event_indices": [
+        120,
+        121,
+        122
+      ],
+      "target_text": "发现友方 未知特工。",
+      "person_box_drawn": true,
+      "source_frame": 88
+    },
+    {
+      "event_index": 123,
+      "clip": "native",
+      "local_frame": 224,
+      "frame": 2021,
+      "frame_time": 67.36666666666666,
+      "seek_time": 67.38333333333334,
+      "event_time": 67.367,
+      "confirmed_at": 67.367,
+      "panel_event_indices": [
+        121,
+        122,
+        123
+      ],
+      "target_text": "友方 未知特工 消失：疑似离开视野。",
+      "person_box_drawn": null,
+      "source_frame": 112
+    },
+    {
+      "event_index": 124,
+      "clip": "native",
+      "local_frame": 262,
+      "frame": 2059,
+      "frame_time": 68.63333333333334,
+      "seek_time": 68.65,
+      "event_time": 68.633,
+      "confirmed_at": 68.967,
+      "panel_event_indices": [
+        122,
+        123,
+        124
+      ],
+      "target_text": "发现敌方 未知特工。",
+      "person_box_drawn": true,
+      "source_frame": 131
+    },
+    {
+      "event_index": 125,
+      "clip": "native",
+      "local_frame": 296,
+      "frame": 2093,
+      "frame_time": 69.76666666666667,
+      "seek_time": 69.78333333333333,
+      "event_time": 69.767,
+      "confirmed_at": 69.767,
+      "panel_event_indices": [
+        123,
+        124,
+        125
+      ],
+      "target_text": "敌方 未知特工：非死亡消失。",
+      "person_box_drawn": null,
+      "source_frame": 148
+    },
+    {
+      "event_index": 126,
+      "clip": "native",
+      "local_frame": 364,
+      "frame": 2161,
+      "frame_time": 72.03333333333333,
+      "seek_time": 72.05,
+      "event_time": 72.033,
+      "confirmed_at": 72.167,
+      "panel_event_indices": [
+        124,
+        125,
+        126
+      ],
+      "target_text": "发现墙体效果。",
+      "person_box_drawn": null,
+      "source_frame": 182
+    },
+    {
+      "event_index": 127,
+      "clip": "native",
+      "local_frame": 480,
+      "frame": 2277,
+      "frame_time": 75.9,
+      "seek_time": 75.91666666666667,
+      "event_time": 75.9,
+      "confirmed_at": 76.033,
+      "panel_event_indices": [
+        125,
+        126,
+        127
+      ],
+      "target_text": "当前视角：闪光影响。",
+      "person_box_drawn": null,
+      "source_frame": 240
+    }
+  ]
+}

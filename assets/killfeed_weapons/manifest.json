@@ -1,0 +1,154 @@
+{
+  "source": "https://valorant-api.com/v1/weapons?language=en-US",
+  "provider": "VALORANT-API unofficial community static assets; Riot Games owns game art",
+  "retrieved": "2026-10-21",
+  "items": [
+    {
+      "name": "Odin",
+      "uuid": "63e6c2b6-4a8e-869c-3d4c-e38355226584",
+      "file": "odin.png",
+      "url": "https://media.valorant-api.com/weapons/63e6c2b6-4a8e-869c-3d4c-e38355226584/killstreamicon.png",
+      "sha256": "24f02d735b00244b4064e170659312929660c8c421241c6849d76602fa738ef9"
+    },
+    {
+      "name": "Ares",
+      "uuid": "55d8a0f4-4274-ca67-fe2c-06ab45efdf58",
+      "file": "ares.png",
+      "url": "https://media.valorant-api.com/weapons/55d8a0f4-4274-ca67-fe2c-06ab45efdf58/killstreamicon.png",
+      "sha256": "95b114a0009ca56223da99600c3eae237a68fe9b77a1ecba256095b998b442bd"
+    },
+    {
+      "name": "Vandal",
+      "uuid": "9c82e19d-4575-0200-1a81-3eacf00cf872",
+      "file": "vandal.png",
+      "url": "https://media.valorant-api.com/weapons/9c82e19d-4575-0200-1a81-3eacf00cf872/killstreamicon.png",
+      "sha256": "5c36befd628ca0881488fbba25cf27234fd5852339442bfda713330cb99d9f47"
+    },
+    {
+      "name": "Warden",
+      "uuid": "8db0a1bf-4a50-832a-4566-faaaa6d250ca",
+      "file": "warden.png",
+      "url": "https://media.valorant-api.com/weapons/8db0a1bf-4a50-832a-4566-faaaa6d250ca/killstreamicon.png",
+      "sha256": "198fb17a3676829a2cce811e08ac3033badca9ca93d9084e693a50bc0d166a77"
+    },
+    {
+      "name": "Bulldog",
+      "uuid": "ae3de142-4d85-2547-dd26-4e90bed35cf7",
+      "file": "bulldog.png",
+      "url": "https://media.valorant-api.com/weapons/ae3de142-4d85-2547-dd26-4e90bed35cf7/killstreamicon.png",
+      "sha256": "627c339777e99cf2578164a041efbce8fbb812a530d873dc90cf5cef68aeb7e8"
+    },
+    {
+      "name": "Phantom",
+      "uuid": "ee8e8d15-496b-07ac-e5f6-8fae5d4c7b1a",
+      "file": "phantom.png",
+      "url": "https://media.valorant-api.com/weapons/ee8e8d15-496b-07ac-e5f6-8fae5d4c7b1a/killstreamicon.png",
+      "sha256": "c4a5350b251e34a771b4ce1a0abb55c1df62bf66090ccae405bdd38a0589087f"
+    },
+    {
+      "name": "Judge",
+      "uuid": "ec845bf4-4f79-ddda-a3da-0db3774b2794",
+      "file": "judge.png",
+      "url": "https://media.valorant-api.com/weapons/ec845bf4-4f79-ddda-a3da-0db3774b2794/killstreamicon.png",
+      "sha256": "9f54b767eb9ce101b161db3b222cda00e3a91fc3d878bdaac5672e3893c57e59"
+    },
+    {
+      "name": "Bucky",
+      "uuid": "910be174-449b-c412-ab22-d0873436b21b",
+      "file": "bucky.png",
+      "url": "https://media.valorant-api.com/weapons/910be174-449b-c412-ab22-d0873436b21b/killstreamicon.png",
+      "sha256": "0991c9c18c1cb31189b066d5fb3eb198670d6fddc933add25d70d52c43087a08"
+    },
+    {
+      "name": "Frenzy",
+      "uuid": "44d4e95c-4157-0037-81b2-17841bf2e8e3",
+      "file": "frenzy.png",
+      "url": "https://media.valorant-api.com/weapons/44d4e95c-4157-0037-81b2-17841bf2e8e3/killstreamicon.png",
+      "sha256": "8e59d2fdba1545e218cd134ed0cc4b0a91ba7801b777e958e138cd04de2f49b2"
+    },
+    {
+      "name": "Classic",
+      "uuid": "29a0cfab-485b-f5d5-779a-b59f85e204a8",
+      "file": "classic.png",
+      "url": "https://media.valorant-api.com/weapons/29a0cfab-485b-f5d5-779a-b59f85e204a8/killstreamicon.png",
+      "sha256": "7eae18aef76cc4206b2b2b718cccd2de9a96ea047cc5ea9142865f28d2c76df1"
+    },
+    {
+      "name": "Bandit",
+      "uuid": "410b2e0b-4ceb-1321-1727-20858f7f3477",
+      "file": "bandit.png",
+      "url": "https://media.valorant-api.com/weapons/410b2e0b-4ceb-1321-1727-20858f7f3477/killstreamicon.png",
+      "sha256": "eac50b3505e38cf1a29bff30d59dad589e030efe51ac81b6d8d2a2249530ba82"
+    },
+    {
+      "name": "Ghost",
+      "uuid": "1baa85b4-4c70-1284-64bb-6481dfc3bb4e",
+      "file": "ghost.png",
+      "url": "https://media.valorant-api.com/weapons/1baa85b4-4c70-1284-64bb-6481dfc3bb4e/killstreamicon.png",
+      "sha256": "a36c304475fa180cdd3e443b4d935a9358d2f0630444de8b8c0904c272b63d91"
+    },
+    {
+      "name": "Sheriff",
+      "uuid": "e336c6b8-418d-9340-d77f-7a9e4cfe0702",
+      "file": "sheriff.png",
+      "url": "https://media.valorant-api.com/weapons/e336c6b8-418d-9340-d77f-7a9e4cfe0702/killstreamicon.png",
+      "sha256": "f21c3d45b50afa2c485b47c06582eac78e41636e05b46a3c0dd3bb2c7281a163"
+    },
+    {
+      "name": "Shorty",
+      "uuid": "42da8ccc-40d5-affc-beec-15aa47b42eda",
+      "file": "shorty.png",
+      "url": "https://media.valorant-api.com/weapons/42da8ccc-40d5-affc-beec-15aa47b42eda/killstreamicon.png",
+      "sha256": "c1bd9c1d40864e01b14d3e1438d72fbcc8818d7f80c4bb85904bdc7f5767a6d7"
+    },
+    {
+      "name": "Operator",
+      "uuid": "a03b24d3-4319-996d-0f8c-94bbfba1dfc7",
+      "file": "operator.png",
+      "url": "https://media.valorant-api.com/weapons/a03b24d3-4319-996d-0f8c-94bbfba1dfc7/killstreamicon.png",
+      "sha256": "ce5c7e79d664d8c57b0e71839ac8106c21b5336a59241f961ab3c7f49cbac4cb"
+    },
+    {
+      "name": "Guardian",
+      "uuid": "4ade7faa-4cf1-8376-95ef-39884480959b",
+      "file": "guardian.png",
+      "url": "https://media.valorant-api.com/weapons/4ade7faa-4cf1-8376-95ef-39884480959b/killstreamicon.png",
+      "sha256": "e4eeb4c5183389144556302c0bace33031fd31c3c8d37af2b2d17c1836d88ead"
+    },
+    {
+      "name": "Outlaw",
+      "uuid": "5f0aaf7a-4289-3998-d5ff-eb9a5cf7ef5c",
+      "file": "outlaw.png",
+      "url": "https://media.valorant-api.com/weapons/5f0aaf7a-4289-3998-d5ff-eb9a5cf7ef5c/killstreamicon.png",
+      "sha256": "258f1735f418848f6ad8e95192692d5853db909dd7914c83214975fa19123577"
+    },
+    {
+      "name": "Marshal",
+      "uuid": "c4883e50-4494-202c-3ec3-6b8a9284f00b",
+      "file": "marshal.png",
+      "url": "https://media.valorant-api.com/weapons/c4883e50-4494-202c-3ec3-6b8a9284f00b/killstreamicon.png",
+      "sha256": "1d8310192c507913138557c46f325abe95374ee254660a7ea7a51925e32a0cca"
+    },
+    {
+      "name": "Spectre",
+      "uuid": "462080d1-4035-2937-7c09-27aa2a5c27a7",
+      "file": "spectre.png",
+      "url": "https://media.valorant-api.com/weapons/462080d1-4035-2937-7c09-27aa2a5c27a7/killstreamicon.png",
+      "sha256": "bb3dbea4aa46c86092f56ee10e7fbc2f087a4f35ba41d74136de6013af7cb7cd"
+    },
+    {
+      "name": "Stinger",
+      "uuid": "f7e1b454-4ad4-1063-ec0a-159e56b58941",
+      "file": "stinger.png",
+      "url": "https://media.valorant-api.com/weapons/f7e1b454-4ad4-1063-ec0a-159e56b58941/killstreamicon.png",
+      "sha256": "28c3de177f748e7c871e1a6f17004951440db37f0d83c9bd9df7403ce3866aaf"
+    },
+    {
+      "name": "Melee",
+      "uuid": "2f59173c-4bed-b6c3-2191-dea9b58be9c7",
+      "file": "melee.png",
+      "url": "https://media.valorant-api.com/weapons/2f59173c-4bed-b6c3-2191-dea9b58be9c7/killstreamicon.png",
+      "sha256": "533349f1a1ce12cb940f7d00b43d2073277f13705114408dc2f1c475551962ef"
+    }
+  ]
+}

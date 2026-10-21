@@ -1,0 +1,115 @@
+{
+  "scope": "Only checkpoints referenced by enabled final profiles. Weights unchanged from the final local release.",
+  "models": [
+    {
+      "file": "agent_identity.pt",
+      "sha256": "282f57bccc76f02841b41d9e09f84bbfb51567d041bbbf2c3e0fdea763daaba5",
+      "size_bytes": 3236674,
+      "task": "classify",
+      "classes": {
+        "0": "astra",
+        "1": "breach",
+        "2": "brimstone",
+        "3": "chamber",
+        "4": "cypher",
+        "5": "deadlock",
+        "6": "gekko",
+        "7": "harbor",
+        "8": "iso",
+        "9": "jett",
+        "10": "kayo",
+        "11": "neon",
+        "12": "omen",
+        "13": "phoenix",
+        "14": "raze",
+        "15": "reyna",
+        "16": "sage",
+        "17": "skye",
+        "18": "sova",
+        "19": "viper",
+        "20": "yoru"
+      },
+      "architecture": "yolo26n-cls.yaml"
+    },
+    {
+      "file": "best.pt",
+      "sha256": "0d5da1661c2d5706cd9d3ab991206a36c54aacf025ff22ad96261f3601917cef",
+      "size_bytes": 20315397,
+      "task": "detect",
+      "classes": {
+        "0": "enemy",
+        "1": "teammate",
+        "2": "dropped_spike",
+        "3": "planted_spike"
+      },
+      "architecture": "yolo26s.yaml"
+    },
+    {
+      "file": "ground_weapon_v5.pt",
+      "sha256": "cfcd9554ace3ac07c9d3085264f49a27ee4c0c279bbc37d6c7a0e5f038f9df31",
+      "size_bytes": 5404549,
+      "task": "detect",
+      "classes": {
+        "0": "dropped_weapon"
+      },
+      "architecture": "yolo26n.yaml"
+    },
+    {
+      "file": "minimap_v1.pt",
+      "sha256": "dc6b2e348a6a72ec8b8be6bfef626c2ce71738fafc8c84889678198514235b23",
+      "size_bytes": 5413061,
+      "task": "detect",
+      "classes": {
+        "0": "player_marker",
+        "1": "ally_death_marker",
+        "2": "enemy_death_marker",
+        "3": "spike_marker",
+        "4": "smoke_marker",
+        "5": "enemy_unknown_marker"
+      },
+      "architecture": "yolo26n.yaml"
+    },
+    {
+      "file": "smoke_specialist.pt",
+      "sha256": "8284dc838099c2c99e534bf84d462d47e3c4f0c05cef4080ccc07f2eff9c331f",
+      "size_bytes": 5451525,
+      "task": "detect",
+      "classes": {
+        "0": "smoke"
+      },
+      "architecture": "yolo26n.yaml"
+    },
+    {
+      "file": "world23.pt",
+      "sha256": "817ac7b198686654ea524e0f7ff564cdd99770a2445a286fc879d4564a15303c",
+      "size_bytes": 5468613,
+      "task": "detect",
+      "classes": {
+        "0": "smoke",
+        "1": "fade_eye",
+        "2": "fade_prowler",
+        "3": "sova_drone",
+        "4": "chamber_rendezvous",
+        "5": "chamber_trademark",
+        "6": "cypher_tripwire_anchor",
+        "7": "deadlock_barrier",
+        "8": "deadlock_sonic_sensor",
+        "9": "gekko_dizzy",
+        "10": "gekko_thrash",
+        "11": "gekko_wingman",
+        "12": "killjoy_device",
+        "13": "killjoy_lockdown",
+        "14": "ground_area_effect",
+        "15": "reyna_leer",
+        "16": "sage_barrier",
+        "17": "skye_trailblazer",
+        "18": "skye_hawk",
+        "19": "skye_seeker",
+        "20": "sova_recon_dart",
+        "21": "killjoy_turret",
+        "22": "vision_wall"
+      },
+      "architecture": "yolo26n.yaml"
+    }
+  ]
+}
