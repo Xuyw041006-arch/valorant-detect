@@ -14,21 +14,17 @@
 
 ```mermaid
 flowchart TD
-    A["游戏录像<br/>视频帧与时间戳"] --> B["片段配置与校准<br/>HUD 与小地图区域"]
-    B --> C["主视角目标检测<br/>目标框与类别"]
-    B --> D["Bonus 1 · OCR<br/>HUD 数值与提示"]
-    B --> E["Bonus 3 · 定位<br/>小地图可见符号"]
-    C --> F["ByteTrack 跟踪<br/>补充特工身份"]
-    D --> G["文字与图标解析<br/>数值、状态、击杀栏"]
-    E --> H["地图相对坐标<br/>视图变化时重置"]
-    F --> I["Bonus 2 · 时间平滑<br/>确认、投票、重关联、去重"]
-    G --> I
-    H --> I
-    I --> J["证据整合与事件推导<br/>出现、消失、物体、状态"]
-    J --> K["JSON / CSV 与逐帧记录<br/>时间、分数、证据"]
-    K --> L["中英文视频与交互 Demo<br/>分类、定位、暂停、对照"]
+    A["视频输入与区域校准<br/>帧、时间戳、片段配置"] --> B["主视角检测与跟踪<br/>YOLO + ByteTrack<br/>目标框与特工身份"]
+    A --> C["Bonus 1 · OCR<br/>血量、弹药、状态提示<br/>击杀栏文字与图标"]
+    A --> D["Bonus 3 · 定位<br/>小地图符号与坐标<br/>视图变化重置关联"]
+    B --> E["Bonus 2 · 时间平滑<br/>多帧确认与标签投票<br/>断裂重关联与去重"]
+    C --> E
+    D --> E
+    E --> F["证据整合<br/>四类事件推导"]
+    F --> G["事件与逐帧记录<br/>JSON / CSV / JSONL"]
+    F --> H["中英文视频与 Demo<br/>筛选、定位、暂停、对照"]
     classDef bonus fill:#e8f3ff,stroke:#2563eb,color:#172554;
-    class D,E,I bonus;
+    class C,D,E bonus;
 ```
 
 **Bonus 1：从游戏界面读取信息，而不只检测场景目标。** 先按归一化坐标裁剪血量、弹药、击杀栏和提示区域，按配置放大或二值化，再由 EasyOCR 读取。数字必须通过置信阈值、完整数字格式和合理范围检查；读取失败保持未知，不当作 0。经多次确认后，血量/弹药变化生成带 `field`、`from`、`to` 的 `state_changed`；`SPIKE DOWN`、`SPIKE CARRIER KILLED` 等文字为 Spike 状态提供证据。击杀栏另外结合头像与枪械图标匹配，在证据支持时补充死者、击杀者和枪械。实现见 [HUD OCR](src/valorant_events/hud.py)、[战术 UI 读取](src/valorant_events/tactical.py)和[击杀武器匹配](src/valorant_events/killfeed_weapon.py)。

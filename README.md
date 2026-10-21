@@ -14,21 +14,17 @@ Each frame supplies three observation paths: the world view, gameplay UI and min
 
 ```mermaid
 flowchart TD
-    A["Gameplay video<br/>Frames and timestamps"] --> B["Clip profile<br/>HUD and minimap calibration"]
-    B --> C["World-view detection<br/>Boxes and classes"]
-    B --> D["Bonus 1 · OCR<br/>HUD values and prompts"]
-    B --> E["Bonus 3 · Localization<br/>Visible minimap symbols"]
-    C --> F["ByteTrack tracking<br/>Add Agent identity"]
-    D --> G["Text and icon parsing<br/>Values, status and killfeed"]
-    E --> H["Map-relative positions<br/>Reset on view changes"]
-    F --> I["Bonus 2 · Smoothing<br/>Confirm, vote, reconnect, deduplicate"]
-    G --> I
-    H --> I
-    I --> J["Combine evidence<br/>Derive four event families"]
-    J --> K["JSON / CSV and frame traces<br/>Times, scores and evidence"]
-    K --> L["Bilingual video and demo<br/>Filter, seek, pause, compare"]
+    A["Video input and calibration<br/>Frames, timestamps, clip profile"] --> B["World detection and tracking<br/>YOLO + ByteTrack<br/>Boxes and Agent identity"]
+    A --> C["Bonus 1 · OCR<br/>Health, ammo, status prompts<br/>Killfeed text and icons"]
+    A --> D["Bonus 3 · Localization<br/>Minimap symbols and positions<br/>Reset on map-view changes"]
+    B --> E["Bonus 2 · Smoothing<br/>Confirmation and label voting<br/>Reassociation and deduplication"]
+    C --> E
+    D --> E
+    E --> F["Combine evidence<br/>Derive four event families"]
+    F --> G["Events and frame traces<br/>JSON / CSV / JSONL"]
+    F --> H["Bilingual video and demo<br/>Filter, seek, pause, compare"]
     classDef bonus fill:#e8f3ff,stroke:#2563eb,color:#172554;
-    class D,E,I bonus;
+    class C,D,E bonus;
 ```
 
 **Bonus 1 — Read gameplay UI information as well as world objects.** Normalized regions crop health, ammo, the killfeed and prompts. Profile-specific resizing or thresholding prepares the crops for EasyOCR. Numeric readings must pass confidence, complete-digit-string and range checks; failed readings remain unknown rather than becoming zero. After repeated confirmation, health/ammo changes produce `state_changed` records with `field`, `from` and `to`. Text such as `SPIKE DOWN` and `SPIKE CARRIER KILLED` supplies Spike-state evidence. Killfeed interpretation also uses portrait and weapon-icon matching to add victim, killer and weapon fields when supported. See [HUD OCR](src/valorant_events/hud.py), [tactical UI processing](src/valorant_events/tactical.py) and [killfeed weapon matching](src/valorant_events/killfeed_weapon.py).
