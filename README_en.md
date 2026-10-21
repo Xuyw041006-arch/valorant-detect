@@ -14,19 +14,19 @@ Each frame supplies three observation paths: the world view, gameplay UI and min
 
 ```mermaid
 flowchart TD
-    A["Gameplay video<br/>Decode frames and source timestamps"] --> B["Load the clip profile<br/>Calibrate HUD and minimap regions"]
-    B --> C["World-view detection<br/>People, Spike, weapons, abilities and smoke"]
-    B --> D["Bonus 1 · UI OCR<br/>Health, ammo, Spike and status prompts"]
-    B --> E["Bonus 3 · Minimap localization<br/>Visible symbols and region-relative positions"]
-    C --> F["ByteTrack association<br/>Specialist classifier adds Agent identity"]
-    D --> G["Parse values and prompts<br/>Add killfeed portrait and weapon-icon evidence"]
-    E --> H["Short-lived symbol association<br/>Detect map-view changes and reset"]
-    F --> I["Bonus 2 · Temporal smoothing<br/>Confirmation, label voting, reassociation and deduplication"]
+    A["Gameplay video<br/>Frames and timestamps"] --> B["Clip profile<br/>HUD and minimap calibration"]
+    B --> C["World-view detection<br/>Boxes and classes"]
+    B --> D["Bonus 1 · OCR<br/>HUD values and prompts"]
+    B --> E["Bonus 3 · Localization<br/>Visible minimap symbols"]
+    C --> F["ByteTrack tracking<br/>Add Agent identity"]
+    D --> G["Text and icon parsing<br/>Values, status and killfeed"]
+    E --> H["Map-relative positions<br/>Reset on view changes"]
+    F --> I["Bonus 2 · Smoothing<br/>Confirm, vote, reconnect, deduplicate"]
     G --> I
     H --> I
-    I --> J["Combine track and HUD evidence<br/>Appearance, disappearance, objects and state changes"]
-    J --> K["JSON / CSV events and frame traces<br/>Retain times, confidence scores and evidence"]
-    K --> L["Bilingual video and interactive demo<br/>Filter, seek and pause, compare source footage"]
+    I --> J["Combine evidence<br/>Derive four event families"]
+    J --> K["JSON / CSV and frame traces<br/>Times, scores and evidence"]
+    K --> L["Bilingual video and demo<br/>Filter, seek, pause, compare"]
     classDef bonus fill:#e8f3ff,stroke:#2563eb,color:#172554;
     class D,E,I bonus;
 ```
