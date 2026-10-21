@@ -10,13 +10,34 @@ The submission includes [Python source](src/valorant_events/), this bilingual RE
 
 ## Approach used
 
-The pipeline processes video frames, detects relevant objects, associates them across frames, reads calibrated HUD regions and applies temporal rules to generate events. Separate specialist models handle Agent identity, weapons, minimap symbols, abilities and smoke. This lets each task use suitable labels and thresholds, at the cost of additional inference work and calibration.
+Each frame supplies three observation paths: the world view, gameplay UI and minimap. Temporal rules stabilize those observations before evidence is combined into events. The diagram identifies where the first three assignment bonuses are used. It shows data flow; modules run at the sampling intervals enabled by each video profile, rather than every model running on every frame.
 
-All six demo clips use the same short-gap person reassociation: body appearance, motion-aligned position and an unambiguous inactive candidate. Team is **not** a merge condition. Raw team observations remain available for event descriptions; active simultaneous people and different object classes cannot merge. Local forward/backward optical flow follows the moving body when camera motion alone is insufficient.
+```mermaid
+flowchart TD
+    A["Gameplay video<br/>Decode frames and source timestamps"] --> B["Load the clip profile<br/>Calibrate HUD and minimap regions"]
+    B --> C["World-view detection<br/>People, Spike, weapons, abilities and smoke"]
+    B --> D["Bonus 1 · UI OCR<br/>Health, ammo, Spike and status prompts"]
+    B --> E["Bonus 3 · Minimap localization<br/>Visible symbols and region-relative positions"]
+    C --> F["ByteTrack association<br/>Specialist classifier adds Agent identity"]
+    D --> G["Parse values and prompts<br/>Add killfeed portrait and weapon-icon evidence"]
+    E --> H["Short-lived symbol association<br/>Detect map-view changes and reset"]
+    F --> I["Bonus 2 · Temporal smoothing<br/>Confirmation, label voting, reassociation and deduplication"]
+    G --> I
+    H --> I
+    I --> J["Combine track and HUD evidence<br/>Appearance, disappearance, objects and state changes"]
+    J --> K["JSON / CSV events and frame traces<br/>Retain times, confidence scores and evidence"]
+    K --> L["Bilingual video and interactive demo<br/>Filter, seek and pause, compare source footage"]
+    classDef bonus fill:#e8f3ff,stroke:#2563eb,color:#172554;
+    class D,E,I bonus;
+```
 
-The offline viewer uses one frame schedule for event text, boxes and click-to-pause, so selecting an event displays its corresponding annotated frame.
+**Bonus 1 — Read gameplay UI information as well as world objects.** Normalized regions crop health, ammo, the killfeed and prompts. Profile-specific resizing or thresholding prepares the crops for EasyOCR. Numeric readings must pass confidence, complete-digit-string and range checks; failed readings remain unknown rather than becoming zero. After repeated confirmation, health/ammo changes produce `state_changed` records with `field`, `from` and `to`. Text such as `SPIKE DOWN` and `SPIKE CARRIER KILLED` supplies Spike-state evidence. Killfeed interpretation also uses portrait and weapon-icon matching to add victim, killer and weapon fields when supported. See [HUD OCR](src/valorant_events/hud.py), [tactical UI processing](src/valorant_events/tactical.py) and [killfeed weapon matching](src/valorant_events/killfeed_weapon.py).
 
-The output includes annotated video, frame traces and JSON/CSV events. The final **79.9-second bilingual demo** joins six gameplay excerpts, resets state at each cut and provides category filtering, click-to-seek-and-pause and source-video comparison. Selected ability screenshots below the video compare ground truth with model predictions.
+**Bonus 2 — Stabilize observations across time.** ByteTrack associates boxes; the event layer then applies confidence-weighted label voting, multi-frame confirmation, disappearance waiting and prompt deduplication. For example, the [P006 profile](configs/integrated_p006.json) requires at least three supporting observations spanning 0.25 seconds and 70% of weighted votes within a 1.5-second window. An enemy track must remain absent for 0.8 seconds before ordinary disappearance is emitted. All six clips also enable person reassociation across gaps of up to 0.5 seconds: body-color appearance and position aligned using camera motion or local forward/backward optical flow must agree, with ambiguous candidates rejected. **Team agreement is not required for person merging.** Raw team observations remain available for descriptions; simultaneously visible people and different object classes cannot merge. This reduces repeated appearances caused by brief misses, at the cost of confirmation latency and possible incorrect associations. See [temporal event rules](src/valorant_events/events.py) and [track reassociation](src/valorant_events/stitching.py).
+
+**Bonus 3 — Locate objects and visible minimap information.** World-view detections retain bounding boxes and tracks. Profiles with minimap processing enabled crop the configured region and use a specialist detector for player, death, last-known-enemy and smoke symbols, storing region-relative `[x, y]` coordinates in the 0–1 range in `tactical.jsonl`. Icon-edge colors support team assignment only when calibrated; unknown teams stay unknown. To accommodate player settings, the [calibration tool](docs/hud_calibration.html) records region size, fixed/rotating mode and full/partial coverage. At runtime, estimated rotation, scale and translation beyond configured limits—or an unresolved visual change—reset old associations, reducing confusion between map movement and player movement. Positions describe visible image evidence, not world coordinates. Last-known markers are not current enemy locations, and a death icon alone does not establish the death of a particular world-view person. The unstable minimap ability-type classifier remains disabled. See [minimap detection and association](src/valorant_events/tactical.py).
+
+Evidence integration represents death as a subtype of person disappearance, using supporting killfeed observations where available; uncertain identities and attributes remain unknown. Separate models, labels and thresholds allow task-specific fine-tuning but add inference and calibration cost. The final **79.9-second bilingual demo** joins six excerpts and resets state at each cut. Event text, boxes and click-to-pause share one frame schedule. Selected ability screenshots below the video compare reference annotations (GT) with predictions.
 
 ## Models and tools selected
 
