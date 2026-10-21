@@ -96,21 +96,21 @@ The three examples below retain the original detection boxes, text and gameplay 
 
 ### 1. Incorrect Agent identity or association (33.10 seconds)
 
-The game's portrait and name for the character on the left show **Fade**, but the detection box is labeled “Teammate Reyna” in Chinese. Detecting a character does not guarantee that the Agent identity or its association with the bounding box is correct.
+The game's portrait and name for the character on the left show **Fade**, but the detection box is labeled “Ally Reyna”. Detecting a character does not guarantee that the Agent identity or its association with the bounding box is correct.
 
-![Incorrect Agent identity or association](docs/failure_cases/identity_33_10.png)
+![Incorrect Agent identity or association](docs/failure_cases/identity_33_10_en.png)
 
 ### 2. A disappearance event while the character is still visible (34.30 seconds)
 
-Reyna remains visible on the box, but the event panel has already recorded “Teammate Reyna disappeared: reason unknown” at 33.9 seconds. When detection or track association breaks, a brief missed detection can be interpreted as a disappearance.
+Reyna remains visible on the box, but the event panel has already recorded “Ally Reyna disappeared: cause unknown” at 33.9 seconds. When detection or track association breaks, a brief missed detection can be interpreted as a disappearance.
 
-![Character remains visible despite a disappearance event](docs/failure_cases/disappearance_34_30.png)
+![Character remains visible despite a disappearance event](docs/failure_cases/disappearance_34_30_en.png)
 
 ### 3. Missed visible enemies (22.00 seconds)
 
 Two enemies with yellow outlines are visible in the central passage, but neither has a detection box. The frame record also contains no person tracks at this timestamp. Small targets or unusual outline appearances can still be missed.
 
-![Two visible enemies without detections](docs/failure_cases/missed_enemies_22_00.png)
+![Two visible enemies without detections](docs/failure_cases/missed_enemies_22_00_en.png)
 
 ## Running locally
 
