@@ -60,5 +60,6 @@
     }
   ],
   "editing_policy": "Only real-video sections of the two V8 presentations, in their existing order. All still-image cards and explanatory intertitles removed. Real gameplay flash footage retained. Normal playback speed; no inference across cuts.",
-  "event_count": 130
+  "event_count": 128,
+  "raw_prediction_count": 130
 }

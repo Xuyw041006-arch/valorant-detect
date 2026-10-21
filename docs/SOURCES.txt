@@ -11,7 +11,7 @@ License: https://creativecommons.org/licenses/by-nc/4.0/
 Changes: six existing excerpts joined at original playback speed, letterboxed to a shared canvas and converted to 30 FPS; Chinese and English detection overlays added. Source native game UI is unchanged. Standalone presentation cards removed. Footage has no audio in this export.
 改动：六个既有片段按原速拼接、加黑边统一画幅、转换为 30 FPS，并添加中英文检测标注；保留原生游戏界面，移除独立说明卡。导出视频无音轨。
 
-VALORANT game artwork belongs to Riot Games. This project is an independent technical demonstration, not a Riot-endorsed product. Model and dataset attribution is included in the repository THIRD_PARTY_NOTICES.md and weights/manifest.json.
+VALORANT game artwork belongs to Riot Games. This project is an independent technical demonstration, not a Riot-endorsed product. Dataset sources are listed in the Data sources section of README.md (数据来源声明 in README_zh.md); model details are in weights/manifest.json.
 
 STILL-IMAGE SKILL COMPARISONS / 技能截图对比
 Roboflow valorantdetector-wvavl / valorant_detector, version 2, CC BY 4.0.
